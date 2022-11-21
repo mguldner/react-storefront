@@ -1,16 +1,18 @@
 import { useFetch } from "@/checkout-storefront/hooks/useFetch";
 import { createSafeContext } from "@/checkout-storefront/providers/createSafeContext";
 import { getAppConfig } from "@/checkout-storefront/fetch";
-import { PropsWithChildren, useEffect, useRef } from "react";
+import { PropsWithChildren, useCallback, useEffect, useRef } from "react";
 import type { AppConfig, AppEnv, BrandingColors, BrandingColorsData } from "./types";
 import { getParsedCssBody } from "./utils";
 import { defaultAppColors, STYLE_ELEMENT_ID } from "./consts";
 import { isEqual } from "lodash-es";
 import { useDynamicAppConfig } from "@/checkout-storefront/hooks/useDynamicAppConfig";
+import { getQueryParams } from "@/checkout-storefront/lib/utils/url";
 interface AppConfigContextConsumerProps {
   config?: AppConfig | null;
   loading: boolean;
   env: AppEnv;
+  saleorApiUrl: string;
 }
 
 const [useAppConfig, Provider] = createSafeContext<AppConfigContextConsumerProps>();
@@ -20,8 +22,9 @@ export const AppConfigProvider: React.FC<PropsWithChildren<{ env: AppEnv }>> = (
   children,
   env,
 }) => {
+  const { saleorApiUrl } = getQueryParams();
   const [{ data: storedAppConfig, loading }] = useFetch(getAppConfig, {
-    args: { checkoutApiUrl: env.checkoutApiUrl },
+    args: { checkoutApiUrl: env.checkoutApiUrl, saleorApiUrl },
   });
   const dynamicAppConfig = useDynamicAppConfig<AppConfig>({
     checkoutAppUrl: env.checkoutAppUrl,
@@ -48,13 +51,13 @@ export const AppConfigProvider: React.FC<PropsWithChildren<{ env: AppEnv }>> = (
     return styleEl;
   };
 
-  const appendStylingToBody = (brandingColors: BrandingColorsData) => {
+  const appendStylingToBody = useCallback((brandingColors: BrandingColorsData) => {
     const css = getParsedCssBody(fulfillStyling(brandingColors));
 
     const styleEl = getOrCreateStyleEl();
     styleEl.appendChild(document.createTextNode(css));
     document.head.appendChild(styleEl);
-  };
+  }, []);
 
   const handleAppStylingUpdate = () => {
     const hasStylingConfigChanged = !isEqual(appConfig?.branding, stylingRef.current);
@@ -68,9 +71,14 @@ export const AppConfigProvider: React.FC<PropsWithChildren<{ env: AppEnv }>> = (
 
   const handleAppDefaultStylingSetup = () => appendStylingToBody(defaultAppColors);
 
-  useEffect(handleAppDefaultStylingSetup, []);
+  useEffect(handleAppDefaultStylingSetup, [appendStylingToBody]);
 
-  useEffect(handleAppStylingUpdate, [appConfig]);
+  useEffect(handleAppStylingUpdate, [appConfig, appendStylingToBody]);
 
-  return <Provider value={{ config: appConfig, env, loading }}>{children}</Provider>;
+  if (!saleorApiUrl) {
+    console.warn(`Missing saleorApiUrl query param`);
+    return null;
+  }
+
+  return <Provider value={{ config: appConfig, env, loading, saleorApiUrl }}>{children}</Provider>;
 };

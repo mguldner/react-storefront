@@ -4,24 +4,27 @@ import { useAlerts } from "@/checkout-storefront/hooks/useAlerts";
 import { useErrorMessages } from "@/checkout-storefront/hooks/useErrorMessages";
 import { useFormattedMessages } from "@/checkout-storefront/hooks/useFormattedMessages";
 import { useGetInputProps } from "@/checkout-storefront/hooks/useGetInputProps";
-import {
-  extractMutationErrors,
-  getQueryVariables,
-  useValidationResolver,
-} from "@/checkout-storefront/lib/utils";
+import { extractMutationErrors, useValidationResolver } from "@/checkout-storefront/lib/utils";
+import { contactLabels, contactMessages } from "./messages";
 import { useAuth } from "@saleor/sdk";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { object, string } from "yup";
 import { SignInFormContainer, SignInFormContainerProps } from "./SignInFormContainer";
+import { clearQueryParams, getQueryParams } from "@/checkout-storefront/lib/utils/url";
 
-type ResetPasswordProps = Pick<SignInFormContainerProps, "onSectionChange">;
+interface ResetPasswordProps extends Pick<SignInFormContainerProps, "onSectionChange"> {
+  onResetPasswordSuccess: () => void;
+}
 
 interface FormData {
   password: string;
 }
 
-export const ResetPassword: React.FC<ResetPasswordProps> = ({ onSectionChange }) => {
+export const ResetPassword: React.FC<ResetPasswordProps> = ({
+  onSectionChange,
+  onResetPasswordSuccess,
+}) => {
   const formatMessage = useFormattedMessages();
   const { errorMessages } = useErrorMessages();
   const { setPassword: resetPassword } = useAuth();
@@ -37,11 +40,11 @@ export const ResetPassword: React.FC<ResetPasswordProps> = ({ onSectionChange })
   const getInputProps = useGetInputProps(rest);
 
   const onSubmit = async ({ password }: FormData) => {
-    const { email, passwordResetToken } = getQueryVariables();
+    const { passwordResetEmail, passwordResetToken } = getQueryParams();
 
     const result = await resetPassword({
       password,
-      email: email as string,
+      email: passwordResetEmail as string,
       token: passwordResetToken as string,
     });
 
@@ -49,23 +52,30 @@ export const ResetPassword: React.FC<ResetPasswordProps> = ({ onSectionChange })
 
     if (hasErrors) {
       showErrors(errors);
+      return;
     }
+
+    clearQueryParams("passwordResetToken", "passwordResetEmail");
+    onResetPasswordSuccess();
   };
 
   return (
     <SignInFormContainer
-      title={formatMessage("resetPassword")}
-      redirectSubtitle={formatMessage("rememberedYourPassword")}
-      redirectButtonLabel={formatMessage("signIn")}
+      title={formatMessage(contactMessages.resetPassword)}
+      redirectSubtitle={formatMessage(contactMessages.rememberedYourPassword)}
+      redirectButtonLabel={formatMessage(contactMessages.signIn)}
       onSectionChange={onSectionChange}
-      subtitle={formatMessage("providePassword")}
+      subtitle={formatMessage(contactMessages.providePassword)}
     >
-      <PasswordInput label={formatMessage("passwordLabel")} {...getInputProps("password")} />
+      <PasswordInput
+        label={formatMessage(contactMessages.password)}
+        {...getInputProps("password")}
+      />
       <div className="mt-4 actions">
         <Button
-          ariaLabel={formatMessage("resetPasswordLabel")}
+          ariaLabel={formatMessage(contactLabels.resetPassword)}
           onClick={handleSubmit(onSubmit)}
-          label={formatMessage("resetPassword")}
+          label={formatMessage(contactMessages.resetPassword)}
         />
       </div>
     </SignInFormContainer>

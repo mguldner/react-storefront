@@ -1,5 +1,4 @@
 import { getPrivateSettings } from "@/saleor-app-checkout/backend/configuration/settings";
-import { envVars } from "@/saleor-app-checkout/constants";
 import {
   OrderFragment,
   TransactionActionEnum,
@@ -8,11 +7,12 @@ import {
   TransactionStatus,
   TransactionUpdateInput,
 } from "@/saleor-app-checkout/graphql";
-import { CheckoutAPI, Client, Modification, Types } from "@adyen/api-library";
+import { CheckoutAPI, Client, Types } from "@adyen/api-library";
 import currency from "currency.js";
 import { getTransactionAmountGetterAsMoney } from "../../utils";
 import { failedEvents } from "./consts";
 import { getIntegerAmountFromSaleor, getSaleorAmountFromInteger } from "../../utils";
+import invariant from "ts-invariant";
 
 const OperationsEnum = Types.notification.NotificationRequestItem.OperationsEnum;
 const EventCodeEnum = Types.notification.NotificationRequestItem.EventCodeEnum;
@@ -39,28 +39,28 @@ export const mapAvailableActions = (
   });
 };
 
-export const getAdyenClient = async () => {
+export const getAdyenClient = async (saleorApiUrl: string) => {
   const {
-    paymentProviders: { adyen },
-  } = await getPrivateSettings(envVars.apiUrl, false);
+    paymentProviders: {
+      adyen: { apiKey, merchantAccount, clientKey, ...restAdyenSettings },
+    },
+  } = await getPrivateSettings({ saleorApiUrl, obfuscateEncryptedData: false });
 
-  if (!adyen.apiKey) {
-    throw "API key not defined";
-  }
-
-  if (!adyen.merchantAccount) {
-    throw "Merchant account not defined";
-  }
+  invariant(apiKey, "API key not defined");
+  invariant(merchantAccount, "Missing merchant account configuration");
 
   const client = new Client({
-    apiKey: adyen.apiKey,
+    apiKey: apiKey,
     environment: "TEST",
   });
 
   const checkout = new CheckoutAPI(client);
-  const modification = new Modification(client);
 
-  return { client, checkout, modification, config: adyen };
+  return {
+    client,
+    checkout,
+    config: { ...restAdyenSettings, clientKey, apiKey, merchantAccount },
+  };
 };
 
 export const getLineItems = (lines: OrderFragment["lines"]): Types.checkout.LineItem[] =>

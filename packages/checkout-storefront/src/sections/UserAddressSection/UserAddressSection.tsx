@@ -9,10 +9,12 @@ import { UserAddressList } from "./UserAddressList";
 import { AddressCreateForm } from "./AddressCreateForm";
 import { AddressEditForm } from "./AddressEditForm";
 import { UseErrors } from "@/checkout-storefront/hooks/useErrors";
-import { Title } from "@/checkout-storefront/components/Title";
+import { Title } from "@/checkout-storefront/components";
 import { AddressSectionSkeleton } from "@/checkout-storefront/sections/ShippingAddressSection/AddressSectionSkeleton";
+import { Text } from "@saleor/ui-kit";
 import { AddressListProvider } from "@/checkout-storefront/sections/UserAddressSection/AddressListProvider";
 import { useCheckout } from "@/checkout-storefront/hooks";
+import { userAddressLabels, userAddressMessages } from "./messages";
 
 export interface UserAddressSectionProps extends UseErrors<UserAddressFormData> {
   defaultAddress: Address;
@@ -65,11 +67,14 @@ export const UserAddressSection: React.FC<UserAddressSectionProps> = ({
         {displayAddressList && (
           <div className="flex flex-col">
             <Title>{title}</Title>
+            {addresses.length < 1 && (
+              <Text className="mb-3">{formatMessage(userAddressMessages.noAddresses)}</Text>
+            )}
             <Button
               variant="secondary"
-              ariaLabel={formatMessage("addAddressLabel")}
+              ariaLabel={formatMessage(userAddressLabels.addAddress)}
               onClick={() => setDisplayAddressCreate(true)}
-              label={formatMessage("addAddress")}
+              label={formatMessage(userAddressMessages.addAddress)}
               className="mb-4 w-full"
             />
             <UserAddressList type={type} onEditChange={(id: string) => setEditedAddressId(id)} />

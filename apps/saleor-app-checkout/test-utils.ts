@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call -- @todo */
+/* eslint-disable @typescript-eslint/no-unsafe-argument -- @todo */
 import { NextApiRequest, NextApiResponse } from "next";
 import { PollyConfig, PollyServer } from "@pollyjs/core";
 import omitDeep from "omit-deep-lodash";
@@ -10,15 +12,21 @@ import { MockedRequest } from "msw";
 import { Readable } from "node:stream";
 
 export type TestNextApiResponse = NextApiResponse & {
-  _getJSONData: <T extends Object>() => T;
+  _getJSONData: <T extends object>() => T;
   _getData: <T extends string>() => T;
 };
 
 export const mockRequest = (method: RequestMethod = "GET") => {
-  const { req, res } = createMocks({ method });
-  req.headers = {
-    "Content-Type": "application/json",
-  };
+  const { req, res } = createMocks({
+    method,
+    url: `https://test.localhost/?saleorApiUrl=${process.env.NEXT_PUBLIC_SALEOR_API_URL!}`,
+    query: {
+      saleorApiUrl: process.env.NEXT_PUBLIC_SALEOR_API_URL,
+    },
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
   return {
     req: req as unknown as NextApiRequest,
@@ -89,7 +97,7 @@ const tryParse = (text: string | undefined) => {
 
 export const setupPollyMiddleware = (server: PollyServer) => {
   // Hide sensitive data in headers or in body
-  server.any().on("beforePersist", (_, recording, event) => {
+  server.any().on("beforePersist", (_, recording) => {
     const requestJson = tryParse(recording.request.postData?.text);
     const requestHeaders = recording.request.headers.filter(
       (el: Record<string, string>) => !HEADERS_BLACKLIST.has(el.name)
@@ -157,7 +165,7 @@ export const setupPollyMiddleware = (server: PollyServer) => {
           statusText: "",
           delay: 0,
         }),
-      };
+      } as MockedRequest;
 
       const isHandledByMsw = handlers.some((handler) => handler.test(fakeReq));
 

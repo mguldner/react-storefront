@@ -1,11 +1,10 @@
-import { CountryCode } from "@/checkout-storefront/graphql";
+import { CountryCode, LanguageCodeEnum } from "@/checkout-storefront/graphql";
 import { ApiErrors } from "@/checkout-storefront/hooks";
-import { getCountryByCountryCode } from "@/checkout-storefront/lib/consts";
 import { FormDataBase } from "@/checkout-storefront/lib/globalTypes";
-import { reduce } from "lodash-es";
-import queryString from "query-string";
+import { Locale } from "@/checkout-storefront/lib/regions";
+import { reduce, snakeCase } from "lodash-es";
 import { ChangeEvent, ReactEventHandler } from "react";
-import { OperationResult } from "urql";
+import { AnyVariables, OperationResult } from "urql";
 
 export const getById =
   <T extends { id: string }>(idToCompare: string | undefined) =>
@@ -17,57 +16,20 @@ export const getByUnmatchingId =
   (obj: T) =>
     obj.id !== idToCompare;
 
-export type QueryVariables = Partial<
-  Record<
-    "checkoutId" | "passwordResetToken" | "email" | "orderId" | "redirectUrl" | "locale",
-    string
-  >
-> & { countryCode: CountryCode };
-
-export const getQueryVariables = (): QueryVariables => {
-  const vars = queryString.parse(location.search);
-  return {
-    ...vars,
-    checkoutId: vars.checkout as string | undefined,
-    orderId: vars.order as string | undefined,
-    passwordResetToken: vars.token as string | undefined,
-  } as QueryVariables;
-};
+export const localeToLanguageCode = (locale: Locale) =>
+  snakeCase(locale).toUpperCase() as LanguageCodeEnum;
 
 export const getCurrentHref = () => location.href;
 
-export const isOrderConfirmationPage = () => {
-  const { orderId } = getQueryVariables();
-  return typeof orderId === "string";
+export const getParsedLocaleData = (
+  locale: Locale
+): { locale: Locale; countryCode: CountryCode } => {
+  const [, countryCode] = locale?.split("-");
+
+  return { countryCode: countryCode as CountryCode, locale };
 };
 
-export const getLocalizationDataFromUrl = () => {
-  const { /*channel*/ locale } = getQueryVariables();
-
-  if (typeof locale !== "string") {
-    throw new Error("Invalid url");
-  }
-
-  const [, /*language*/ countryCode] = locale?.split("-");
-
-  return { country: getCountryByCountryCode(countryCode as CountryCode) };
-};
-
-export const extractCheckoutIdFromUrl = (): string => {
-  const { checkoutId } = getQueryVariables();
-
-  if (isOrderConfirmationPage()) {
-    return "";
-  }
-
-  if (typeof checkoutId !== "string") {
-    throw new Error("Checkout token does not exist");
-  }
-
-  return checkoutId;
-};
-
-export const extractMutationErrors = <TData extends FormDataBase, TVars = any>(
+export const extractMutationErrors = <TData extends FormDataBase, TVars extends AnyVariables = any>(
   result: OperationResult<TData, TVars> | any // any to cover apollo client
   // mutations, to be removed once we remove apollo client from sdk
 ): [boolean, ApiErrors<TData>] => {

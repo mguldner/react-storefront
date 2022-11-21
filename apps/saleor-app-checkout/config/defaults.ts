@@ -10,6 +10,8 @@ export const defaultActiveChannelPaymentProviders: ChannelActivePaymentProviders
   applePay: "",
   creditCard: "",
   paypal: "",
+  dropin: "",
+  dummy: "dummy",
 };
 
 export const defaultPaymentProviderSettings: PaymentProviderSettingsValues<"unencrypted"> = {
@@ -29,6 +31,9 @@ export const defaultPaymentProviderSettings: PaymentProviderSettingsValues<"unen
     publishableKey: "",
     secretKey: "",
     webhookSecret: "",
+  },
+  dummy: {
+    dummyKey: "",
   },
 };
 

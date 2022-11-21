@@ -1,6 +1,5 @@
 import { CountryCode } from "@/checkout-storefront/graphql";
 import {
-  MessageKey,
   useAddressFormUtils,
   useAlerts,
   useCheckout,
@@ -8,59 +7,86 @@ import {
 } from "@/checkout-storefront/hooks";
 import { AddressField, ErrorCode } from "@/checkout-storefront/lib/globalTypes";
 import { CheckoutFormData } from "@/checkout-storefront/sections/CheckoutForm/types";
-import { UsePaymentMethods } from "@/checkout-storefront/sections/PaymentSection";
 import { useAuthState } from "@saleor/sdk";
 import { flushSync } from "react-dom";
 import { UseFormReturn } from "react-hook-form";
 import { ValidationError } from "yup";
 import { isMatchingAddress } from "@/checkout-storefront/lib/utils";
+import { MessageDescriptor } from "react-intl";
+import { checkoutFormMessages } from "./messages";
+import { useCallback, useEffect } from "react";
 
-interface UseCheckoutFormValidation
-  extends Pick<UsePaymentMethods, "isValidProviderSelected">,
-    UseFormReturn<CheckoutFormData> {
+interface UseCheckoutFormValidation extends UseFormReturn<CheckoutFormData> {
   schema: { validateSyncAt: (key: keyof CheckoutFormData, data: CheckoutFormData) => void };
 }
 
 export const useCheckoutFormValidation = ({
-  isValidProviderSelected,
   setValue,
   getValues,
   schema,
 }: UseCheckoutFormValidation) => {
   const formatMessage = useFormattedMessages();
-  const { checkout } = useCheckout();
+  const { checkout, loading } = useCheckout();
   const { shippingAddress, billingAddress } = checkout;
   const { showCustomErrors } = useAlerts("checkoutFinalize");
   const { authenticated } = useAuthState();
 
+  useEffect(() => {
+    setValue("updateState.checkoutFetch", loading);
+  }, [setValue, loading]);
+
   const {
     hasAllRequiredFields: shippingHasAllRequiredFields,
     getMissingFieldsFromAddress: getMissingFieldsFromShipping,
+    getFieldLabel: getShippingFieldLabel,
   } = useAddressFormUtils(shippingAddress?.country?.code as CountryCode);
 
   const {
     hasAllRequiredFields: billingHasAllRequiredFields,
     getMissingFieldsFromAddress: getMissingFieldsFromBilling,
+    getFieldLabel: getBillingFieldLabel,
   } = useAddressFormUtils(billingAddress?.country?.code as CountryCode);
 
-  const getShippingMissingFieldsErrorMessage = () =>
-    getAddressMissingFieldsErrorMessage(
-      "missingFieldsInShippingAddress",
-      getMissingFieldsFromShipping(shippingAddress)
-    );
+  const getAddressMissingFieldsErrorMessage = useCallback(
+    (
+      message: MessageDescriptor,
+      getFieldLabel: (field: AddressField) => string,
+      fields: AddressField[]
+    ) => `${formatMessage(message)}: ${fields.map((field) => getFieldLabel(field)).join(", ")}`,
+    [formatMessage]
+  );
 
-  const getBillingMissingFieldsErrorMessage = () =>
-    getAddressMissingFieldsErrorMessage(
-      "missingFieldsInBillingAddress",
-      getMissingFieldsFromBilling(billingAddress)
-    );
+  const getShippingMissingFieldsErrorMessage = useCallback(
+    () =>
+      getAddressMissingFieldsErrorMessage(
+        checkoutFormMessages.missingFieldsInShippingAddress,
+        getShippingFieldLabel,
+        getMissingFieldsFromShipping(shippingAddress)
+      ),
+    [
+      getAddressMissingFieldsErrorMessage,
+      getMissingFieldsFromShipping,
+      getShippingFieldLabel,
+      shippingAddress,
+    ]
+  );
 
-  const getAddressMissingFieldsErrorMessage = (messageKey: MessageKey, fields: AddressField[]) =>
-    `${formatMessage(messageKey)}: ${fields
-      .map((field) => formatMessage(field as MessageKey))
-      .join(", ")}`;
+  const getBillingMissingFieldsErrorMessage = useCallback(
+    () =>
+      getAddressMissingFieldsErrorMessage(
+        checkoutFormMessages.missingFieldsInBillingAddress,
+        getBillingFieldLabel,
+        getMissingFieldsFromBilling(billingAddress)
+      ),
+    [
+      billingAddress,
+      getAddressMissingFieldsErrorMessage,
+      getBillingFieldLabel,
+      getMissingFieldsFromBilling,
+    ]
+  );
 
-  const ensureValidCheckout = (): boolean => {
+  const ensureValidCheckout = useCallback((): boolean => {
     let isValid = true;
     setValue("validating", true);
     const formData = getValues();
@@ -89,7 +115,7 @@ export const useCheckoutFormValidation = ({
       }
     }
 
-    if (!checkout.shippingAddress) {
+    if (checkout.isShippingRequired && !checkout.shippingAddress) {
       showCustomErrors([{ field: "shippingAddress", code: "required" }]);
     }
 
@@ -97,7 +123,6 @@ export const useCheckoutFormValidation = ({
       showCustomErrors([
         {
           message: getShippingMissingFieldsErrorMessage(),
-          code: "invalid",
         },
       ]);
       isValid = false;
@@ -115,14 +140,8 @@ export const useCheckoutFormValidation = ({
       showCustomErrors([
         {
           message: getBillingMissingFieldsErrorMessage(),
-          code: "invalid",
         },
       ]);
-      isValid = false;
-    }
-
-    if (!isValidProviderSelected) {
-      showCustomErrors([{ field: "paymentProvider", code: "required" }]);
       isValid = false;
     }
 
@@ -131,7 +150,21 @@ export const useCheckoutFormValidation = ({
     });
 
     return isValid;
-  };
+  }, [
+    authenticated,
+    billingHasAllRequiredFields,
+    checkout.billingAddress,
+    checkout?.email,
+    checkout.isShippingRequired,
+    checkout.shippingAddress,
+    getBillingMissingFieldsErrorMessage,
+    getShippingMissingFieldsErrorMessage,
+    getValues,
+    schema,
+    setValue,
+    shippingHasAllRequiredFields,
+    showCustomErrors,
+  ]);
 
   return ensureValidCheckout;
 };

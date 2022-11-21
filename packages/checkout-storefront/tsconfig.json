@@ -3,6 +3,7 @@
   "include": ["src", "types.d.ts"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
+    "resolveJsonModule": true,
     "types": ["node", "jest"],
     "baseUrl": ".",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -11,9 +12,6 @@
       "@/checkout-storefront/images": ["./src/assets/images"],
       "@/checkout-storefront/*": ["./src/*"]
     },
-    "declaration": true,
-    "declarationMap": false,
-    "declarationDir": "types",
     "outDir": "dist",
     "composite": false,
     "allowJs": true,

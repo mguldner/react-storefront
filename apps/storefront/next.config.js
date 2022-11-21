@@ -8,6 +8,8 @@ const allowedImageDomains = process.env.NEXT_PUBLIC_ALLOWED_IMAGE_DOMAINS
   ? process.env.NEXT_PUBLIC_ALLOWED_IMAGE_DOMAINS.split(",")
   : [];
 
+const checkoutEmbededInStorefrontPath = "/saleor-app-checkout";
+
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   swcMinify: true,
@@ -42,6 +44,11 @@ module.exports = withBundleAnalyzer({
           },
         ],
       },
+
+      {
+        source: "/checkout/(.*)",
+        headers: [{ key: "x-frame-options", value: "ALLOWALL" }],
+      },
     ];
   },
   async rewrites() {
@@ -49,16 +56,29 @@ module.exports = withBundleAnalyzer({
 
     return [
       {
-        source: "/checkout",
-        destination: `${process.env.NEXT_PUBLIC_CHECKOUT_URL}`,
+        source: "/checkout/",
+        destination: `${process.env.NEXT_PUBLIC_CHECKOUT_URL}/`,
       },
       {
-        source: "/saleor-app-checkout",
-        destination: `${process.env.NEXT_PUBLIC_CHECKOUT_APP_URL}`,
+        source: `${checkoutEmbededInStorefrontPath}/`,
+        destination: `${process.env.NEXT_PUBLIC_CHECKOUT_APP_URL}/`,
       },
       {
-        source: "/saleor-app-checkout/:path*",
+        source: `${checkoutEmbededInStorefrontPath}/:path*/`,
+        destination: `${process.env.NEXT_PUBLIC_CHECKOUT_APP_URL}/:path*/`,
+      },
+      {
+        source: `${checkoutEmbededInStorefrontPath}/:path*`,
         destination: `${process.env.NEXT_PUBLIC_CHECKOUT_APP_URL}/:path*`,
+      },
+
+      {
+        source: "/api/manifest",
+        destination: `${process.env.NEXT_PUBLIC_CHECKOUT_APP_URL}/api/manifest`,
+      },
+      {
+        source: "/api/install",
+        destination: `${process.env.NEXT_PUBLIC_CHECKOUT_APP_URL}/api/install`,
       },
       ...(cloudDeploymentUrl
         ? [
@@ -96,6 +116,15 @@ module.exports = withBundleAnalyzer({
             },
           ]
         : []),
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: "/:channel/:locale/account/",
+        destination: "/[channel]/[locale]/account/preferences",
+        permanent: true,
+      },
     ];
   },
   experimental: {},

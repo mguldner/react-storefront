@@ -1,11 +1,12 @@
 import { Suspense } from "react";
 
-import PageHeader from "@/checkout-storefront/sections/PageHeader";
+import { PageHeader } from "@/checkout-storefront/sections/PageHeader";
 import { Summary, SummarySkeleton } from "@/checkout-storefront/sections/Summary";
 import { OrderInfo } from "@/checkout-storefront/sections/OrderInfo";
 import { Text } from "@saleor/ui-kit";
 import { useFormattedMessages } from "@/checkout-storefront/hooks";
 import { useOrder } from "@/checkout-storefront/hooks";
+import { orderInfoMessages } from "@/checkout-storefront/sections/OrderInfo/messages";
 
 export const OrderConfirmation = ({ orderId }: { orderId: string }) => {
   const { order } = useOrder(orderId);
@@ -15,12 +16,12 @@ export const OrderConfirmation = ({ orderId }: { orderId: string }) => {
     <div className="page">
       <header>
         <PageHeader />
-        <Text size="lg" weight="bold" className="mb-2">
-          {formatMessage("orderConfirmationTitle", { number: order.number })}
+        <Text size="lg" weight="bold" className="mb-2" data-testid="orderConfrmationTitle">
+          {formatMessage(orderInfoMessages.orderConfirmTitle, { number: order.number })}
         </Text>
         <Text size="md">
-          {formatMessage("orderConfirmationSubtitle", {
-            email: order.userEmail!,
+          {formatMessage(orderInfoMessages.orderConfirmSubtitle, {
+            email: order.userEmail || "",
           })}
         </Text>
       </header>

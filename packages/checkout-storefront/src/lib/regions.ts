@@ -1,11 +1,7 @@
-export const regions = {
-  "en-US": "United States",
-  "pl-PL": "Polska",
-  "fr-FR": "France",
-};
+export const locales = ["en-US", "pl-PL"] as const;
 
-const DEFAULT_REGION = "en-US";
+export const DEFAULT_LOCALE = "en-US";
 
-export const getCurrentRegion = (): keyof typeof regions => DEFAULT_REGION;
+export const DEFAULT_CHANNEL = "default-channel";
 
-export type Region = keyof typeof regions;
+export type Locale = typeof locales[number];

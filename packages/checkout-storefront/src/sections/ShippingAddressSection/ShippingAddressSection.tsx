@@ -10,7 +10,7 @@ import { useCheckoutUpdateStateTrigger } from "@/checkout-storefront/hooks/useCh
 import { useErrors, UseErrors } from "@/checkout-storefront/hooks/useErrors";
 import { useFormattedMessages } from "@/checkout-storefront/hooks/useFormattedMessages";
 import { CommonSectionProps } from "@/checkout-storefront/lib/globalTypes";
-import { extractMutationErrors } from "@/checkout-storefront/lib/utils";
+import { extractMutationErrors, localeToLanguageCode } from "@/checkout-storefront/lib/utils";
 import { useAuthState } from "@saleor/sdk";
 import React, { useCallback } from "react";
 import { GuestAddressSection } from "../GuestAddressSection/GuestAddressSection";
@@ -20,9 +20,12 @@ import {
   getAddressInputData,
   getAddressVlidationRulesVariables,
 } from "@/checkout-storefront/lib/utils";
+import { shippingMessages } from "./messages";
+import { useLocale } from "@/checkout-storefront/hooks/useLocale";
 
 export const ShippingAddressSection: React.FC<CommonSectionProps> = ({ collapsed }) => {
   const formatMessage = useFormattedMessages();
+  const { locale } = useLocale();
   const { user: authUser } = useAuthState();
   const { checkout } = useCheckout();
   const [{ data }] = useUserQuery({
@@ -42,6 +45,7 @@ export const ShippingAddressSection: React.FC<CommonSectionProps> = ({ collapsed
   const updateShippingAddress = useCallback(
     async ({ autoSave, ...address }: AddressFormData) => {
       const result = await checkoutShippingAddressUpdate({
+        languageCode: localeToLanguageCode(locale),
         checkoutId: checkout.id,
         shippingAddress: getAddressInputData(address),
         validationRules: getAddressVlidationRulesVariables(autoSave),
@@ -52,7 +56,7 @@ export const ShippingAddressSection: React.FC<CommonSectionProps> = ({ collapsed
         setApiErrors(errors);
       }
     },
-    [checkout?.id, setApiErrors, showErrors, checkoutShippingAddressUpdate]
+    [checkoutShippingAddressUpdate, locale, checkout.id, showErrors, setApiErrors]
   );
 
   if (collapsed) {
@@ -62,11 +66,11 @@ export const ShippingAddressSection: React.FC<CommonSectionProps> = ({ collapsed
   return (
     <>
       <Divider />
-      <div className="section">
+      <div className="section" data-testid="shippingAddressSection">
         {authUser ? (
           <UserAddressSection
             {...(errorProps as UseErrors<UserAddressFormData>)}
-            title={formatMessage("shippingAddress")}
+            title={formatMessage(shippingMessages.shippingAddress)}
             type="SHIPPING"
             onAddressSelect={(formData: AddressFormData) => {
               void updateShippingAddress(formData);
@@ -78,7 +82,7 @@ export const ShippingAddressSection: React.FC<CommonSectionProps> = ({ collapsed
           <GuestAddressSection
             checkAddressAvailability={true}
             defaultAddress={checkout.shippingAddress}
-            title={formatMessage("shippingAddress")}
+            title={formatMessage(shippingMessages.shippingAddress)}
             onSubmit={updateShippingAddress}
             {...errorProps}
           />

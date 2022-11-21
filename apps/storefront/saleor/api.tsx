@@ -1,4 +1,5 @@
 // THIS FILE IS GENERATED WITH `pnpm generate`
+import "graphql/language/ast";
 import * as Scalar from "../scalars";
 import { gql } from "@apollo/client";
 import * as Apollo from "@apollo/client";
@@ -418,6 +419,17 @@ export type Allocation = Node & {
    */
   warehouse: Warehouse;
 };
+
+/**
+ * Determine the allocation strategy for the channel.
+ *
+ *     PRIORITIZE_SORTING_ORDER - allocate stocks according to the warehouses' order
+ *     within the channel
+ *
+ *     PRIORITIZE_HIGH_STOCK - allocate stock in a warehouse with the most stock
+ *
+ */
+export type AllocationStrategyEnum = "PRIORITIZE_HIGH_STOCK" | "PRIORITIZE_SORTING_ORDER";
 
 /** Represents app data. */
 export type App = Node &
@@ -2324,6 +2336,16 @@ export type Channel = Node & {
   /** Slug of the channel. */
   slug: Scalars["String"];
   /**
+   * Define the stock setting for this channel.
+   *
+   * Added in Saleor 3.7.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   *
+   * Requires one of the following permissions: AUTHENTICATED_APP, AUTHENTICATED_STAFF_USER.
+   */
+  stockSettings: StockSettings;
+  /**
    * List of warehouses assigned to this channel.
    *
    * Added in Saleor 3.5.
@@ -2394,6 +2416,14 @@ export type ChannelCreateInput = {
   name: Scalars["String"];
   /** Slug of the channel. */
   slug: Scalars["String"];
+  /**
+   * The channel stock settings.
+   *
+   * Added in Saleor 3.7.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   */
+  stockSettings?: InputMaybe<StockSettingsInput>;
 };
 
 /**
@@ -2497,6 +2527,22 @@ export type ChannelErrorCode =
   | "UNIQUE";
 
 /**
+ * Reorder the warehouses of a channel.
+ *
+ * Added in Saleor 3.7.
+ *
+ * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+ *
+ * Requires one of the following permissions: MANAGE_CHANNELS.
+ */
+export type ChannelReorderWarehouses = {
+  __typename?: "ChannelReorderWarehouses";
+  /** Channel within the warehouses are reordered. */
+  channel?: Maybe<Channel>;
+  errors: Array<ChannelError>;
+};
+
+/**
  * Event sent when channel status has changed.
  *
  * Added in Saleor 3.2.
@@ -2563,6 +2609,14 @@ export type ChannelUpdateInput = {
   removeWarehouses?: InputMaybe<Array<Scalars["ID"]>>;
   /** Slug of the channel. */
   slug?: InputMaybe<Scalars["String"]>;
+  /**
+   * The channel stock settings.
+   *
+   * Added in Saleor 3.7.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   */
+  stockSettings?: InputMaybe<StockSettingsInput>;
 };
 
 /**
@@ -5355,6 +5409,29 @@ export type FulfillmentApprove = {
   order?: Maybe<Order>;
   /** @deprecated This field will be removed in Saleor 4.0. Use `errors` field instead. */
   orderErrors: Array<OrderError>;
+};
+
+/**
+ * Event sent when fulfillment is approved.
+ *
+ * Added in Saleor 3.7.
+ *
+ * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+ */
+export type FulfillmentApproved = Event & {
+  __typename?: "FulfillmentApproved";
+  /** The fulfillment the event relates to. */
+  fulfillment?: Maybe<Fulfillment>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars["DateTime"]>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The order the fulfillment belongs to. */
+  order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars["String"]>;
 };
 
 /**
@@ -8469,6 +8546,16 @@ export type Mutation = {
    */
   channelDelete?: Maybe<ChannelDelete>;
   /**
+   * Reorder the warehouses of a channel.
+   *
+   * Added in Saleor 3.7.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   *
+   * Requires one of the following permissions: MANAGE_CHANNELS.
+   */
+  channelReorderWarehouses?: Maybe<ChannelReorderWarehouses>;
+  /**
    * Update a channel.
    *
    * Requires one of the following permissions: MANAGE_CHANNELS.
@@ -9998,6 +10085,11 @@ export type MutationChannelDeactivateArgs = {
 export type MutationChannelDeleteArgs = {
   id: Scalars["ID"];
   input?: InputMaybe<ChannelDeleteInput>;
+};
+
+export type MutationChannelReorderWarehousesArgs = {
+  channelId: Scalars["ID"];
+  moves: Array<ReorderInput>;
 };
 
 export type MutationChannelUpdateArgs = {
@@ -13596,7 +13688,7 @@ export type PaymentError = {
   field?: Maybe<Scalars["String"]>;
   /** The error message. */
   message?: Maybe<Scalars["String"]>;
-  /** List of varint IDs which causes the error. */
+  /** List of variant IDs which causes the error. */
   variants?: Maybe<Array<Scalars["ID"]>>;
 };
 
@@ -15628,6 +15720,8 @@ export type ProductVariantBulkCreateInput = {
   attributes: Array<BulkAttributeValueInput>;
   /** List of prices assigned to channels. */
   channelListings?: InputMaybe<Array<ProductVariantChannelListingAddInput>>;
+  /** Variant name. */
+  name?: InputMaybe<Scalars["String"]>;
   /**
    * Determines if variant is in preorder.
    *
@@ -15756,6 +15850,8 @@ export type ProductVariantCreate = {
 export type ProductVariantCreateInput = {
   /** List of attributes specific to this variant. */
   attributes: Array<AttributeValueInput>;
+  /** Variant name. */
+  name?: InputMaybe<Scalars["String"]>;
   /**
    * Determines if variant is in preorder.
    *
@@ -15872,6 +15968,8 @@ export type ProductVariantFilterInput = {
 export type ProductVariantInput = {
   /** List of attributes specific to this variant. */
   attributes?: InputMaybe<Array<AttributeValueInput>>;
+  /** Variant name. */
+  name?: InputMaybe<Scalars["String"]>;
   /**
    * Determines if variant is in preorder.
    *
@@ -19196,6 +19294,24 @@ export type StockInput = {
   warehouse: Scalars["ID"];
 };
 
+/**
+ * Represents the channel stock settings.
+ *
+ * Added in Saleor 3.7.
+ *
+ * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+ */
+export type StockSettings = {
+  __typename?: "StockSettings";
+  /** Allocation strategy defines the preference of warehouses for allocations and reservations. */
+  allocationStrategy: AllocationStrategyEnum;
+};
+
+export type StockSettingsInput = {
+  /** Allocation strategy options. Strategy defines the preference of warehouses for allocations and reservations. */
+  allocationStrategy: AllocationStrategyEnum;
+};
+
 /** Enum representing the type of a payment storage in a gateway. */
 export type StorePaymentMethodEnum =
   /** Storage is disabled. The payment is not stored. */
@@ -20816,7 +20932,11 @@ export type WarehouseCreateInput = {
   email?: InputMaybe<Scalars["String"]>;
   /** Warehouse name. */
   name: Scalars["String"];
-  /** Shipping zones supported by the warehouse. */
+  /**
+   * Shipping zones supported by the warehouse.
+   *
+   * DEPRECATED: this field will be removed in Saleor 4.0. Providing the zone ids will raise a ValidationError.
+   */
   shippingZones?: InputMaybe<Array<Scalars["ID"]>>;
   /** Warehouse slug. */
   slug?: InputMaybe<Scalars["String"]>;
@@ -20885,6 +21005,8 @@ export type WarehouseError = {
   field?: Maybe<Scalars["String"]>;
   /** The error message. */
   message?: Maybe<Scalars["String"]>;
+  /** List of shipping zones IDs which causes the error. */
+  shippingZones?: Maybe<Array<Scalars["ID"]>>;
 };
 
 /** An enumeration. */
@@ -21209,6 +21331,8 @@ export type WebhookEventTypeAsyncEnum =
   | "DRAFT_ORDER_DELETED"
   /** A draft order is updated. */
   | "DRAFT_ORDER_UPDATED"
+  /** A fulfillment is approved. */
+  | "FULFILLMENT_APPROVED"
   /** A fulfillment is cancelled. */
   | "FULFILLMENT_CANCELED"
   /** A new fulfillment is created. */
@@ -21410,6 +21534,8 @@ export type WebhookEventTypeEnum =
   | "DRAFT_ORDER_DELETED"
   /** A draft order is updated. */
   | "DRAFT_ORDER_UPDATED"
+  /** A fulfillment is approved. */
+  | "FULFILLMENT_APPROVED"
   /** A fulfillment is cancelled. */
   | "FULFILLMENT_CANCELED"
   /** A new fulfillment is created. */
@@ -21633,6 +21759,7 @@ export type WebhookSampleEventTypeEnum =
   | "DRAFT_ORDER_CREATED"
   | "DRAFT_ORDER_DELETED"
   | "DRAFT_ORDER_UPDATED"
+  | "FULFILLMENT_APPROVED"
   | "FULFILLMENT_CANCELED"
   | "FULFILLMENT_CREATED"
   | "GIFT_CARD_CREATED"
@@ -28484,6 +28611,7 @@ export type ChannelKeySpecifier = (
   | "isActive"
   | "name"
   | "slug"
+  | "stockSettings"
   | "warehouses"
   | ChannelKeySpecifier
 )[];
@@ -28497,6 +28625,7 @@ export type ChannelFieldPolicy = {
   isActive?: FieldPolicy<any> | FieldReadFunction<any>;
   name?: FieldPolicy<any> | FieldReadFunction<any>;
   slug?: FieldPolicy<any> | FieldReadFunction<any>;
+  stockSettings?: FieldPolicy<any> | FieldReadFunction<any>;
   warehouses?: FieldPolicy<any> | FieldReadFunction<any>;
 };
 export type ChannelActivateKeySpecifier = (
@@ -28587,6 +28716,15 @@ export type ChannelErrorFieldPolicy = {
   message?: FieldPolicy<any> | FieldReadFunction<any>;
   shippingZones?: FieldPolicy<any> | FieldReadFunction<any>;
   warehouses?: FieldPolicy<any> | FieldReadFunction<any>;
+};
+export type ChannelReorderWarehousesKeySpecifier = (
+  | "channel"
+  | "errors"
+  | ChannelReorderWarehousesKeySpecifier
+)[];
+export type ChannelReorderWarehousesFieldPolicy = {
+  channel?: FieldPolicy<any> | FieldReadFunction<any>;
+  errors?: FieldPolicy<any> | FieldReadFunction<any>;
 };
 export type ChannelStatusChangedKeySpecifier = (
   | "channel"
@@ -30131,6 +30269,23 @@ export type FulfillmentApproveFieldPolicy = {
   order?: FieldPolicy<any> | FieldReadFunction<any>;
   orderErrors?: FieldPolicy<any> | FieldReadFunction<any>;
 };
+export type FulfillmentApprovedKeySpecifier = (
+  | "fulfillment"
+  | "issuedAt"
+  | "issuingPrincipal"
+  | "order"
+  | "recipient"
+  | "version"
+  | FulfillmentApprovedKeySpecifier
+)[];
+export type FulfillmentApprovedFieldPolicy = {
+  fulfillment?: FieldPolicy<any> | FieldReadFunction<any>;
+  issuedAt?: FieldPolicy<any> | FieldReadFunction<any>;
+  issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>;
+  order?: FieldPolicy<any> | FieldReadFunction<any>;
+  recipient?: FieldPolicy<any> | FieldReadFunction<any>;
+  version?: FieldPolicy<any> | FieldReadFunction<any>;
+};
 export type FulfillmentCancelKeySpecifier = (
   | "errors"
   | "fulfillment"
@@ -31252,6 +31407,7 @@ export type MutationKeySpecifier = (
   | "channelCreate"
   | "channelDeactivate"
   | "channelDelete"
+  | "channelReorderWarehouses"
   | "channelUpdate"
   | "checkoutAddPromoCode"
   | "checkoutBillingAddressUpdate"
@@ -31532,6 +31688,7 @@ export type MutationFieldPolicy = {
   channelCreate?: FieldPolicy<any> | FieldReadFunction<any>;
   channelDeactivate?: FieldPolicy<any> | FieldReadFunction<any>;
   channelDelete?: FieldPolicy<any> | FieldReadFunction<any>;
+  channelReorderWarehouses?: FieldPolicy<any> | FieldReadFunction<any>;
   channelUpdate?: FieldPolicy<any> | FieldReadFunction<any>;
   checkoutAddPromoCode?: FieldPolicy<any> | FieldReadFunction<any>;
   checkoutBillingAddressUpdate?: FieldPolicy<any> | FieldReadFunction<any>;
@@ -35655,6 +35812,10 @@ export type StockErrorFieldPolicy = {
   field?: FieldPolicy<any> | FieldReadFunction<any>;
   message?: FieldPolicy<any> | FieldReadFunction<any>;
 };
+export type StockSettingsKeySpecifier = ("allocationStrategy" | StockSettingsKeySpecifier)[];
+export type StockSettingsFieldPolicy = {
+  allocationStrategy?: FieldPolicy<any> | FieldReadFunction<any>;
+};
 export type SubscriptionKeySpecifier = ("event" | SubscriptionKeySpecifier)[];
 export type SubscriptionFieldPolicy = {
   event?: FieldPolicy<any> | FieldReadFunction<any>;
@@ -36500,12 +36661,14 @@ export type WarehouseErrorKeySpecifier = (
   | "code"
   | "field"
   | "message"
+  | "shippingZones"
   | WarehouseErrorKeySpecifier
 )[];
 export type WarehouseErrorFieldPolicy = {
   code?: FieldPolicy<any> | FieldReadFunction<any>;
   field?: FieldPolicy<any> | FieldReadFunction<any>;
   message?: FieldPolicy<any> | FieldReadFunction<any>;
+  shippingZones?: FieldPolicy<any> | FieldReadFunction<any>;
 };
 export type WarehouseShippingZoneAssignKeySpecifier = (
   | "errors"
@@ -37220,6 +37383,13 @@ export type StrictTypedTypePolicies = {
     keyFields?: false | ChannelErrorKeySpecifier | (() => undefined | ChannelErrorKeySpecifier);
     fields?: ChannelErrorFieldPolicy;
   };
+  ChannelReorderWarehouses?: Omit<TypePolicy, "fields" | "keyFields"> & {
+    keyFields?:
+      | false
+      | ChannelReorderWarehousesKeySpecifier
+      | (() => undefined | ChannelReorderWarehousesKeySpecifier);
+    fields?: ChannelReorderWarehousesFieldPolicy;
+  };
   ChannelStatusChanged?: Omit<TypePolicy, "fields" | "keyFields"> & {
     keyFields?:
       | false
@@ -37917,6 +38087,13 @@ export type StrictTypedTypePolicies = {
       | FulfillmentApproveKeySpecifier
       | (() => undefined | FulfillmentApproveKeySpecifier);
     fields?: FulfillmentApproveFieldPolicy;
+  };
+  FulfillmentApproved?: Omit<TypePolicy, "fields" | "keyFields"> & {
+    keyFields?:
+      | false
+      | FulfillmentApprovedKeySpecifier
+      | (() => undefined | FulfillmentApprovedKeySpecifier);
+    fields?: FulfillmentApprovedFieldPolicy;
   };
   FulfillmentCancel?: Omit<TypePolicy, "fields" | "keyFields"> & {
     keyFields?:
@@ -39883,6 +40060,10 @@ export type StrictTypedTypePolicies = {
   StockError?: Omit<TypePolicy, "fields" | "keyFields"> & {
     keyFields?: false | StockErrorKeySpecifier | (() => undefined | StockErrorKeySpecifier);
     fields?: StockErrorFieldPolicy;
+  };
+  StockSettings?: Omit<TypePolicy, "fields" | "keyFields"> & {
+    keyFields?: false | StockSettingsKeySpecifier | (() => undefined | StockSettingsKeySpecifier);
+    fields?: StockSettingsFieldPolicy;
   };
   Subscription?: Omit<TypePolicy, "fields" | "keyFields"> & {
     keyFields?: false | SubscriptionKeySpecifier | (() => undefined | SubscriptionKeySpecifier);

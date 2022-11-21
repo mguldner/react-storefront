@@ -2,6 +2,7 @@ import { PermissionEnum } from "@/saleor-app-checkout/graphql";
 import { decode, JwtPayload, verify } from "jsonwebtoken";
 import JwksClient from "jwks-rsa";
 import { NextApiRequest } from "next";
+import invariant from "ts-invariant";
 
 export class JwtVerifier {
   private static instance: JwtVerifier;
@@ -67,16 +68,30 @@ export const getTokenDataFromRequest = (req: NextApiRequest) => {
   return tokenData;
 };
 
+export const getSaleorApiUrlFromRequest = (req: NextApiRequest) => {
+  const saleorApiUrl = req.query.saleorApiUrl;
+
+  invariant(saleorApiUrl && typeof saleorApiUrl === "string", "saleorApiUrl is required");
+
+  return saleorApiUrl;
+};
+
 export const isAuthenticated = async (req: NextApiRequest) => {
   const token = getTokenFromRequest(req);
-
   const tokenData = getTokenData(token);
+  const saleorApiUrl = getSaleorApiUrlFromRequest(req);
 
-  if (!token || !tokenData?.["iss"]) {
+  // @todo
+  // if (!token || !tokenData?.["iss"]) {
+  //   return false;
+  // }
+
+  if (!token || !tokenData) {
     return false;
   }
 
-  const jwtVerifier = JwtVerifier.getInstance(tokenData["iss"]);
+  const domain = new URL(saleorApiUrl).hostname;
+  const jwtVerifier = JwtVerifier.getInstance(domain);
 
   return jwtVerifier.verify(token);
 };

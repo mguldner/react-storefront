@@ -2439,6 +2439,29 @@
         "possibleTypes": null
       },
       {
+        "kind": "ENUM",
+        "name": "AllocationStrategyEnum",
+        "description": "Determine the allocation strategy for the channel.\n\n    PRIORITIZE_SORTING_ORDER - allocate stocks according to the warehouses' order\n    within the channel\n\n    PRIORITIZE_HIGH_STOCK - allocate stock in a warehouse with the most stock\n    ",
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "PRIORITIZE_HIGH_STOCK",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "PRIORITIZE_SORTING_ORDER",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
         "kind": "OBJECT",
         "name": "App",
         "description": "Represents app data.",
@@ -12130,6 +12153,22 @@
             "deprecationReason": null
           },
           {
+            "name": "stockSettings",
+            "description": "Define the stock setting for this channel.\n\nAdded in Saleor 3.7.\n\nNote: this API is currently in Feature Preview and can be subject to changes at later point.\n\nRequires one of the following permissions: AUTHENTICATED_APP, AUTHENTICATED_STAFF_USER.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "StockSettings",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "warehouses",
             "description": "List of warehouses assigned to this channel.\n\nAdded in Saleor 3.5.\n\nNote: this API is currently in Feature Preview and can be subject to changes at later point.\n\nRequires one of the following permissions: AUTHENTICATED_APP, AUTHENTICATED_STAFF_USER.",
             "args": [],
@@ -12424,6 +12463,18 @@
                 "name": "String",
                 "ofType": null
               }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "stockSettings",
+            "description": "The channel stock settings.\n\nAdded in Saleor 3.7.\n\nNote: this API is currently in Feature Preview and can be subject to changes at later point.",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StockSettingsInput",
+              "ofType": null
             },
             "defaultValue": null,
             "isDeprecated": false,
@@ -12915,6 +12966,53 @@
       },
       {
         "kind": "OBJECT",
+        "name": "ChannelReorderWarehouses",
+        "description": "Reorder the warehouses of a channel.\n\nAdded in Saleor 3.7.\n\nNote: this API is currently in Feature Preview and can be subject to changes at later point. \n\nRequires one of the following permissions: MANAGE_CHANNELS.",
+        "fields": [
+          {
+            "name": "channel",
+            "description": "Channel within the warehouses are reordered.",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Channel",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "errors",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "ChannelError",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
         "name": "ChannelStatusChanged",
         "description": "Event sent when channel status has changed.\n\nAdded in Saleor 3.2.\n\nNote: this API is currently in Feature Preview and can be subject to changes at later point.",
         "fields": [
@@ -13189,6 +13287,18 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "stockSettings",
+            "description": "The channel stock settings.\n\nAdded in Saleor 3.7.\n\nNote: this API is currently in Feature Preview and can be subject to changes at later point.",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StockSettingsInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -25040,6 +25150,11 @@
           },
           {
             "kind": "OBJECT",
+            "name": "FulfillmentApproved",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
             "name": "FulfillmentCanceled",
             "ofType": null
           },
@@ -28397,6 +28512,95 @@
         ],
         "inputFields": null,
         "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "FulfillmentApproved",
+        "description": "Event sent when fulfillment is approved.\n\nAdded in Saleor 3.7.\n\nNote: this API is currently in Feature Preview and can be subject to changes at later point.",
+        "fields": [
+          {
+            "name": "fulfillment",
+            "description": "The fulfillment the event relates to.",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Fulfillment",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "issuedAt",
+            "description": "Time of the event.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "issuingPrincipal",
+            "description": "The user or application that triggered the event.",
+            "args": [],
+            "type": {
+              "kind": "UNION",
+              "name": "IssuingPrincipal",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "order",
+            "description": "The order the fulfillment belongs to.",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Order",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "recipient",
+            "description": "The application receiving the webhook.",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "App",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "version",
+            "description": "Saleor version that triggered the event.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "Event",
+            "ofType": null
+          }
+        ],
         "enumValues": null,
         "possibleTypes": null
       },
@@ -44311,6 +44515,59 @@
             "deprecationReason": null
           },
           {
+            "name": "channelReorderWarehouses",
+            "description": "Reorder the warehouses of a channel.\n\nAdded in Saleor 3.7.\n\nNote: this API is currently in Feature Preview and can be subject to changes at later point. \n\nRequires one of the following permissions: MANAGE_CHANNELS.",
+            "args": [
+              {
+                "name": "channelId",
+                "description": "ID of a channel.",
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "ID",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "moves",
+                "description": "The list of reordering operations for the given channel warehouses.",
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "INPUT_OBJECT",
+                        "name": "ReorderInput",
+                        "ofType": null
+                      }
+                    }
+                  }
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "ChannelReorderWarehouses",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "channelUpdate",
             "description": "Update a channel. \n\nRequires one of the following permissions: MANAGE_CHANNELS.",
             "args": [
@@ -44629,7 +44886,7 @@
               },
               {
                 "name": "customerId",
-                "description": "ID of customer to attach to checkout. Can be used to attach customer to checkout by staff or app. Requires IMPERSONATE_USER permission.",
+                "description": "ID of customer to attach to checkout. Requires IMPERSONATE_USER permission when customerId is different than the logged-in user.",
                 "type": {
                   "kind": "SCALAR",
                   "name": "ID",
@@ -66951,7 +67208,7 @@
           },
           {
             "name": "variants",
-            "description": "List of varint IDs which causes the error.",
+            "description": "List of variant IDs which causes the error.",
             "args": [],
             "type": {
               "kind": "LIST",
@@ -76943,6 +77200,18 @@
             "deprecationReason": null
           },
           {
+            "name": "name",
+            "description": "Variant name.",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "preorder",
             "description": "Determines if variant is in preorder.\n\nAdded in Saleor 3.1.\n\nNote: this API is currently in Feature Preview and can be subject to changes at later point.",
             "type": {
@@ -77545,6 +77814,18 @@
             "deprecationReason": null
           },
           {
+            "name": "name",
+            "description": "Variant name.",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "preorder",
             "description": "Determines if variant is in preorder.\n\nAdded in Saleor 3.1.\n\nNote: this API is currently in Feature Preview and can be subject to changes at later point.",
             "type": {
@@ -78004,6 +78285,18 @@
                   "ofType": null
                 }
               }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "name",
+            "description": "Variant name.",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
             },
             "defaultValue": null,
             "isDeprecated": false,
@@ -93715,6 +94008,60 @@
         "possibleTypes": null
       },
       {
+        "kind": "OBJECT",
+        "name": "StockSettings",
+        "description": "Represents the channel stock settings.\n\nAdded in Saleor 3.7.\n\nNote: this API is currently in Feature Preview and can be subject to changes at later point.",
+        "fields": [
+          {
+            "name": "allocationStrategy",
+            "description": "Allocation strategy defines the preference of warehouses for allocations and reservations.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "AllocationStrategyEnum",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "StockSettingsInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "allocationStrategy",
+            "description": "Allocation strategy options. Strategy defines the preference of warehouses for allocations and reservations.",
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "ENUM",
+                "name": "AllocationStrategyEnum",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
         "kind": "ENUM",
         "name": "StorePaymentMethodEnum",
         "description": "Enum representing the type of a payment storage in a gateway.",
@@ -101758,7 +102105,7 @@
           },
           {
             "name": "shippingZones",
-            "description": "Shipping zones supported by the warehouse.",
+            "description": "Shipping zones supported by the warehouse.\n\nDEPRECATED: this field will be removed in Saleor 4.0. Providing the zone ids will raise a ValidationError.",
             "type": {
               "kind": "LIST",
               "name": null,
@@ -102059,6 +102406,26 @@
               "kind": "SCALAR",
               "name": "String",
               "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "shippingZones",
+            "description": "List of shipping zones IDs which causes the error.",
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                }
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -103621,6 +103988,12 @@
             "deprecationReason": null
           },
           {
+            "name": "FULFILLMENT_APPROVED",
+            "description": "A fulfillment is approved.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "FULFILLMENT_CANCELED",
             "description": "A fulfillment is cancelled.",
             "isDeprecated": false,
@@ -104204,6 +104577,12 @@
           {
             "name": "DRAFT_ORDER_UPDATED",
             "description": "A draft order is updated.",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "FULFILLMENT_APPROVED",
+            "description": "A fulfillment is approved.",
             "isDeprecated": false,
             "deprecationReason": null
           },
@@ -104915,6 +105294,12 @@
           },
           {
             "name": "DRAFT_ORDER_UPDATED",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "FULFILLMENT_APPROVED",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null

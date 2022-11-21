@@ -7,7 +7,7 @@ import pay from "@/saleor-app-checkout/pages/api/pay";
 import { mockRequest } from "@/saleor-app-checkout/test-utils";
 
 import { createMolliePayment } from "@/saleor-app-checkout/backend/payments/providers/mollie";
-import { createAdyenPayment } from "@/saleor-app-checkout/backend/payments/providers/adyen";
+import { createAdyenCheckoutPaymentLinks } from "@/saleor-app-checkout/backend/payments/providers/adyen";
 import { createOrder } from "@/saleor-app-checkout/backend/payments/createOrder";
 import { updatePaymentMetafield } from "@/saleor-app-checkout/backend/payments/updatePaymentMetafield";
 import {
@@ -32,7 +32,7 @@ jest.mock("urql");
 
 const mockedCreateOrder = <jest.Mock>createOrder;
 const mockedCreateMolliePayment = <jest.Mock>createMolliePayment;
-const mockedCreateAdyenPayment = <jest.Mock>createAdyenPayment;
+const mockedCreateAdyenPayment = <jest.Mock>createAdyenCheckoutPaymentLinks;
 const mockedUpdatePaymentMetafield = <jest.Mock>updatePaymentMetafield;
 const mockedVerifyAdyenSession = <jest.Mock>verifyAdyenSession;
 const mockReuseExistingAdyenSession = <jest.Mock>reuseExistingAdyenSession;
@@ -101,7 +101,11 @@ describe("/api/pay", () => {
 
     await pay(req, res);
 
-    expect(mockedCreateOrder).toHaveBeenCalledWith("id", 100);
+    expect(mockedCreateOrder).toHaveBeenCalledWith({
+      checkoutId: "id",
+      saleorApiUrl: process.env.NEXT_PUBLIC_SALEOR_API_URL,
+      totalAmount: 100,
+    });
     expect(mockedCreateOrder).toHaveBeenCalledTimes(1);
 
     expect(mockedCreateMolliePayment).toHaveBeenCalledWith({
@@ -109,6 +113,7 @@ describe("/api/pay", () => {
       method: "creditCard",
       redirectUrl: "example.com",
       appUrl: "http://app.com",
+      saleorApiUrl: process.env.NEXT_PUBLIC_SALEOR_API_URL,
     });
     expect(mockedCreateMolliePayment).toHaveBeenCalledTimes(1);
 
@@ -156,7 +161,11 @@ describe("/api/pay", () => {
 
     await pay(req, res);
 
-    expect(mockedCreateOrder).toHaveBeenCalledWith("id", 100);
+    expect(mockedCreateOrder).toHaveBeenCalledWith({
+      checkoutId: "id",
+      saleorApiUrl: process.env.NEXT_PUBLIC_SALEOR_API_URL,
+      totalAmount: 100,
+    });
     expect(mockedCreateOrder).toHaveBeenCalledTimes(1);
     expect(mockedCreateMolliePayment).not.toHaveBeenCalled();
     expect(mockedUpdatePaymentMetafield).not.toHaveBeenCalled();
@@ -197,7 +206,11 @@ describe("/api/pay", () => {
 
     await pay(req, res);
 
-    expect(mockedCreateOrder).toHaveBeenCalledWith("id", 100);
+    expect(mockedCreateOrder).toHaveBeenCalledWith({
+      checkoutId: "id",
+      saleorApiUrl: process.env.NEXT_PUBLIC_SALEOR_API_URL,
+      totalAmount: 100,
+    });
     expect(mockedCreateOrder).toHaveBeenCalledTimes(1);
 
     expect(mockedCreateAdyenPayment).toHaveBeenCalledWith({
@@ -207,6 +220,7 @@ describe("/api/pay", () => {
         privateMetafield: '{"provider":"adyen","session":"session-id-2","method":"creditCard"}',
       },
       redirectUrl: "example.com",
+      saleorApiUrl: process.env.NEXT_PUBLIC_SALEOR_API_URL,
     });
     expect(mockedCreateAdyenPayment).toHaveBeenCalledTimes(1);
 
@@ -253,7 +267,11 @@ describe("/api/pay", () => {
 
     await pay(req, res);
 
-    expect(mockedCreateOrder).toHaveBeenCalledWith("id", 100);
+    expect(mockedCreateOrder).toHaveBeenCalledWith({
+      checkoutId: "id",
+      saleorApiUrl: process.env.NEXT_PUBLIC_SALEOR_API_URL,
+      totalAmount: 100,
+    });
     expect(mockedCreateOrder).toHaveBeenCalledTimes(1);
     expect(mockedCreateAdyenPayment).not.toHaveBeenCalled();
     expect(mockedUpdatePaymentMetafield).not.toHaveBeenCalled();

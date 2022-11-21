@@ -2,7 +2,7 @@
 
 @layer components {
   .app {
-    @apply bg-background-primary px-4 lg:px-0;
+    @apply min-h-screen bg-background-primary px-4 lg:px-0;
   }
 
   .page-horizontal-spacing {
@@ -13,19 +13,11 @@
     @apply min-h-screen mx-auto flex flex-col  pt-8 md:pt-10 max-w-220 pb-20;
   }
 
-  .page-header {
-    @apply mb-6 md:mb-12;
-  }
-
-  .logo {
-    @apply h-10;
-  }
-
   .page-content {
     @apply flex flex-col-reverse lg:items-start lg:flex-row w-full box-border;
   }
 
   .page-divider {
-    @apply h-6 w-full lg:h-full lg:w-10;
+    @apply h-6 w-full lg:h-full lg:w-5;
   }
 }

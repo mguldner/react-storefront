@@ -2,7 +2,7 @@ import { Button } from "@/checkout-storefront/components/Button";
 import { PasswordInput } from "@/checkout-storefront/components/PasswordInput";
 import { Text } from "@saleor/ui-kit";
 import { useFormattedMessages } from "@/checkout-storefront/hooks/useFormattedMessages";
-import { useAuth } from "@saleor/sdk";
+import { useAuth, useAuthState } from "@saleor/sdk";
 import React from "react";
 import { SignInFormContainer, SignInFormContainerProps } from "./SignInFormContainer";
 import {
@@ -19,21 +19,31 @@ import { useErrorMessages } from "@/checkout-storefront/hooks/useErrorMessages";
 import { useEffect } from "react";
 import { TextInput } from "@/checkout-storefront/components/TextInput";
 import { useAlerts } from "@/checkout-storefront/hooks/useAlerts";
+import { contactLabels, contactMessages } from "./messages";
+import { commonMessages } from "@/checkout-storefront/lib/commonMessages";
+import { ApiError, useCheckout, useGetParsedApiErrors } from "@/checkout-storefront/hooks";
+import { setFormErrors } from "@/checkout-storefront/hooks/useSetFormErrors/utils";
+import { AccountErrorCode } from "@/checkout-storefront/graphql";
 
-type SignInFormProps = Pick<SignInFormContainerProps, "onSectionChange">;
+interface SignInFormProps extends Pick<SignInFormContainerProps, "onSectionChange"> {
+  onSignInSuccess: () => void;
+}
 
 interface FormData {
   email: string;
   password: string;
 }
 
-export const SignInForm: React.FC<SignInFormProps> = ({ onSectionChange }) => {
+export const SignInForm: React.FC<SignInFormProps> = ({ onSectionChange, onSignInSuccess }) => {
   const formatMessage = useFormattedMessages();
+  const { checkout } = useCheckout();
   const { showErrors } = useAlerts();
   const { errorMessages } = useErrorMessages();
   const [passwordResetSent, setPasswordResetSent] = useState(false);
   const { login, requestPasswordReset } = useAuth();
+  const { authenticating } = useAuthState();
   const { getValues: getContextValues, setValue: setContextValue } = useFormContext();
+  const { getFormErrorsFromApiErrors } = useGetParsedApiErrors<FormData>();
 
   const schema = object({
     password: string().required(errorMessages.required),
@@ -42,22 +52,35 @@ export const SignInForm: React.FC<SignInFormProps> = ({ onSectionChange }) => {
 
   const resolver = useValidationResolver(schema);
 
-  const { handleSubmit, getValues, watch, setError, clearErrors, ...rest } = useForm<FormData>({
+  const formProps = useForm<FormData>({
     resolver,
-    mode: "onBlur",
-    defaultValues: { email: getContextValues("email") },
+    mode: "onTouched",
+    defaultValues: { email: getContextValues("email"), password: "" },
   });
 
-  const getInputProps = useGetInputProps(rest);
+  const { handleSubmit, getValues, watch, setError, clearErrors } = formProps;
+
+  const getInputProps = useGetInputProps(formProps);
 
   const onSubmit = async (formData: FormData) => {
     const result = await login(formData);
-    const [hasErrors, errors] = extractMutationErrors(result);
+    const [hasErrors, errors] = extractMutationErrors<FormData>(result);
 
     if (hasErrors) {
+      // api will attribute invalid credentials error to email but we'd
+      // rather highlight both fields
+      const fieldsErrors = errors.some(
+        ({ code }) => (code as AccountErrorCode) === "INVALID_CREDENTIALS"
+      )
+        ? [...errors, { code: "", message: "", field: "password" } as ApiError<FormData>]
+        : errors;
+
+      setFormErrors<FormData>({ errors: getFormErrorsFromApiErrors(fieldsErrors), setError });
       showErrors(errors, "login");
       return;
     }
+
+    onSignInSuccess();
   };
 
   const onPasswordReset = async () => {
@@ -70,6 +93,7 @@ export const SignInForm: React.FC<SignInFormProps> = ({ onSectionChange }) => {
 
       const result = await requestPasswordReset({
         email,
+        channel: checkout.channel.slug,
         redirectUrl: getCurrentHref(),
       });
 
@@ -86,41 +110,57 @@ export const SignInForm: React.FC<SignInFormProps> = ({ onSectionChange }) => {
     } catch (error) {
       const { path, type, message } = extractValidationError(error as ValidationError);
 
+      console.log({ path, type, message });
       setError(path, { type, message });
     }
   };
 
   const emailValue = watch("email");
 
+  useEffect(() => {
+    setPasswordResetSent(false);
+  }, [emailValue]);
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => setContextValue("email", emailValue), [emailValue]);
 
   return (
     <SignInFormContainer
-      title={formatMessage("signIn")}
-      redirectSubtitle={formatMessage("newCustomer")}
-      redirectButtonLabel={formatMessage("guestCheckout")}
+      title={formatMessage(contactMessages.signIn)}
+      redirectSubtitle={formatMessage(contactMessages.newCustomer)}
+      redirectButtonLabel={formatMessage(contactMessages.guestCheckout)}
       onSectionChange={onSectionChange}
     >
-      <TextInput label={formatMessage("emailLabel")} {...getInputProps("email")} />
-      <PasswordInput label={formatMessage("passwordLabel")} {...getInputProps("password")} />
-      <div className="actions">
-        {passwordResetSent && (
-          <Text>{formatMessage("linkSent", { email: getValues().email })}</Text>
-        )}
-        <Button
-          ariaLabel={formatMessage("sendPasswordLabel")}
-          variant="tertiary"
-          label={formatMessage(passwordResetSent ? "resend" : "forgotPassword")}
-          className="ml-1 mr-4"
-          onClick={onPasswordReset}
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <TextInput label={formatMessage(contactMessages.email)} {...getInputProps("email")} />
+        <PasswordInput
+          label={formatMessage(contactMessages.password)}
+          {...getInputProps("password")}
         />
-        <Button
-          ariaLabel={formatMessage("signInLabel")}
-          onClick={handleSubmit(onSubmit)}
-          label={formatMessage("signIn")}
-        />
-      </div>
+        <div className="actions">
+          {passwordResetSent && (
+            <Text>{formatMessage(contactMessages.linkSent, { email: getValues().email })}</Text>
+          )}
+          <Button
+            disabled={authenticating}
+            ariaLabel={formatMessage(contactLabels.sendResetLink)}
+            variant="tertiary"
+            label={formatMessage(
+              passwordResetSent ? contactMessages.resend : contactMessages.forgotPassword
+            )}
+            className="ml-1 mr-4"
+            onClick={onPasswordReset}
+          />
+          <Button
+            disabled={authenticating}
+            ariaLabel={formatMessage(contactLabels.signIn)}
+            onClick={handleSubmit(onSubmit)}
+            label={formatMessage(
+              authenticating ? commonMessages.processing : contactMessages.signIn
+            )}
+          />
+        </div>
+      </form>
     </SignInFormContainer>
   );
 };

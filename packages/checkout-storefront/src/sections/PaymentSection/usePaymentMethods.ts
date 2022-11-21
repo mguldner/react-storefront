@@ -42,11 +42,12 @@ const getAllPaymentMethods = (
 export const usePaymentMethods = (channelId?: string) => {
   const {
     env: { checkoutApiUrl },
+    saleorApiUrl,
   } = useAppConfig();
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<PaymentMethodID | undefined>();
 
   const [{ data: allPaymentMethods, loading }] = useFetch(getPaymentMethods, {
-    args: { channelId, checkoutApiUrl },
+    args: { channelId, checkoutApiUrl, saleorApiUrl },
     skip: !channelId,
   });
 
@@ -56,7 +57,7 @@ export const usePaymentMethods = (channelId?: string) => {
     if (!loading && allPaymentMethods && !availablePaymentMethods.length) {
       throw new Error("No available payment providers");
     }
-  }, [loading]);
+  }, [loading, allPaymentMethods, availablePaymentMethods.length]);
 
   const selectedPaymentProvider =
     selectedPaymentMethod && allPaymentMethods?.[selectedPaymentMethod];

@@ -1,4 +1,5 @@
 // THIS FILE IS GENERATED WITH `pnpm generate`
+import "graphql/language/ast";
 import gql from "graphql-tag";
 import * as Urql from "urql";
 export type Maybe<T> = T | null;
@@ -416,6 +417,17 @@ export type Allocation = Node & {
    */
   warehouse: Warehouse;
 };
+
+/**
+ * Determine the allocation strategy for the channel.
+ *
+ *     PRIORITIZE_SORTING_ORDER - allocate stocks according to the warehouses' order
+ *     within the channel
+ *
+ *     PRIORITIZE_HIGH_STOCK - allocate stock in a warehouse with the most stock
+ *
+ */
+export type AllocationStrategyEnum = "PRIORITIZE_HIGH_STOCK" | "PRIORITIZE_SORTING_ORDER";
 
 /** Represents app data. */
 export type App = Node &
@@ -2136,8 +2148,20 @@ export type CategoryInput = {
    * Rich text format. For reference see https://editorjs.io/
    */
   description?: InputMaybe<Scalars["JSONString"]>;
+  /**
+   * Fields required to update the category metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  metadata?: InputMaybe<Array<MetadataInput>>;
   /** Category name. */
   name?: InputMaybe<Scalars["String"]>;
+  /**
+   * Fields required to update the category private metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** Search engine optimization fields. */
   seo?: InputMaybe<SeoInput>;
   /** Category slug. */
@@ -2322,6 +2346,16 @@ export type Channel = Node & {
   /** Slug of the channel. */
   slug: Scalars["String"];
   /**
+   * Define the stock setting for this channel.
+   *
+   * Added in Saleor 3.7.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   *
+   * Requires one of the following permissions: AUTHENTICATED_APP, AUTHENTICATED_STAFF_USER.
+   */
+  stockSettings: StockSettings;
+  /**
    * List of warehouses assigned to this channel.
    *
    * Added in Saleor 3.5.
@@ -2392,6 +2426,14 @@ export type ChannelCreateInput = {
   name: Scalars["String"];
   /** Slug of the channel. */
   slug: Scalars["String"];
+  /**
+   * The channel stock settings.
+   *
+   * Added in Saleor 3.7.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   */
+  stockSettings?: InputMaybe<StockSettingsInput>;
 };
 
 /**
@@ -2495,6 +2537,22 @@ export type ChannelErrorCode =
   | "UNIQUE";
 
 /**
+ * Reorder the warehouses of a channel.
+ *
+ * Added in Saleor 3.7.
+ *
+ * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+ *
+ * Requires one of the following permissions: MANAGE_CHANNELS.
+ */
+export type ChannelReorderWarehouses = {
+  __typename?: "ChannelReorderWarehouses";
+  /** Channel within the warehouses are reordered. */
+  channel?: Maybe<Channel>;
+  errors: Array<ChannelError>;
+};
+
+/**
  * Event sent when channel status has changed.
  *
  * Added in Saleor 3.2.
@@ -2561,6 +2619,14 @@ export type ChannelUpdateInput = {
   removeWarehouses?: InputMaybe<Array<Scalars["ID"]>>;
   /** Slug of the channel. */
   slug?: InputMaybe<Scalars["String"]>;
+  /**
+   * The channel stock settings.
+   *
+   * Added in Saleor 3.7.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   */
+  stockSettings?: InputMaybe<StockSettingsInput>;
 };
 
 /**
@@ -3504,8 +3570,20 @@ export type CollectionCreateInput = {
   description?: InputMaybe<Scalars["JSONString"]>;
   /** Informs whether a collection is published. */
   isPublished?: InputMaybe<Scalars["Boolean"]>;
+  /**
+   * Fields required to update the collection metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  metadata?: InputMaybe<Array<MetadataInput>>;
   /** Name of the collection. */
   name?: InputMaybe<Scalars["String"]>;
+  /**
+   * Fields required to update the collection private metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** List of products to be added to the collection. */
   products?: InputMaybe<Array<Scalars["ID"]>>;
   /**
@@ -3645,8 +3723,20 @@ export type CollectionInput = {
   description?: InputMaybe<Scalars["JSONString"]>;
   /** Informs whether a collection is published. */
   isPublished?: InputMaybe<Scalars["Boolean"]>;
+  /**
+   * Fields required to update the collection metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  metadata?: InputMaybe<Array<MetadataInput>>;
   /** Name of the collection. */
   name?: InputMaybe<Scalars["String"]>;
+  /**
+   * Fields required to update the collection private metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Publication date. ISO 8601 standard.
    *
@@ -4529,6 +4619,18 @@ export type DigitalContentInput = {
   automaticFulfillment?: InputMaybe<Scalars["Boolean"]>;
   /** Determines how many times a download link can be accessed by a customer. */
   maxDownloads?: InputMaybe<Scalars["Int"]>;
+  /**
+   * Fields required to update the digital content metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  metadata?: InputMaybe<Array<MetadataInput>>;
+  /**
+   * Fields required to update the digital content private metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** Determines for how many days a download link is active since it was generated. */
   urlValidDays?: InputMaybe<Scalars["Int"]>;
   /** Use default digital content settings for this product. */
@@ -4556,6 +4658,18 @@ export type DigitalContentUploadInput = {
   contentFile: Scalars["Upload"];
   /** Determines how many times a download link can be accessed by a customer. */
   maxDownloads?: InputMaybe<Scalars["Int"]>;
+  /**
+   * Fields required to update the digital content metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  metadata?: InputMaybe<Array<MetadataInput>>;
+  /**
+   * Fields required to update the digital content private metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** Determines for how many days a download link is active since it was generated. */
   urlValidDays?: InputMaybe<Scalars["Int"]>;
   /** Use default digital content settings for this product. */
@@ -5353,6 +5467,29 @@ export type FulfillmentApprove = {
   order?: Maybe<Order>;
   /** @deprecated This field will be removed in Saleor 4.0. Use `errors` field instead. */
   orderErrors: Array<OrderError>;
+};
+
+/**
+ * Event sent when fulfillment is approved.
+ *
+ * Added in Saleor 3.7.
+ *
+ * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+ */
+export type FulfillmentApproved = Event & {
+  __typename?: "FulfillmentApproved";
+  /** The fulfillment the event relates to. */
+  fulfillment?: Maybe<Fulfillment>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars["DateTime"]>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The order the fulfillment belongs to. */
+  order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars["String"]>;
 };
 
 /**
@@ -7425,6 +7562,14 @@ export type Manifest = {
   about?: Maybe<Scalars["String"]>;
   appUrl?: Maybe<Scalars["String"]>;
   /**
+   * The audience that will be included in all JWT tokens for the app.
+   *
+   * Added in Saleor 3.8.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   */
+  audience?: Maybe<Scalars["String"]>;
+  /**
    * URL to iframe with the configuration for the app.
    * @deprecated This field will be removed in Saleor 4.0. Use `appUrl` instead.
    */
@@ -8466,6 +8611,16 @@ export type Mutation = {
    * Requires one of the following permissions: MANAGE_CHANNELS.
    */
   channelDelete?: Maybe<ChannelDelete>;
+  /**
+   * Reorder the warehouses of a channel.
+   *
+   * Added in Saleor 3.7.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   *
+   * Requires one of the following permissions: MANAGE_CHANNELS.
+   */
+  channelReorderWarehouses?: Maybe<ChannelReorderWarehouses>;
   /**
    * Update a channel.
    *
@@ -9998,6 +10153,11 @@ export type MutationChannelDeleteArgs = {
   input?: InputMaybe<ChannelDeleteInput>;
 };
 
+export type MutationChannelReorderWarehousesArgs = {
+  channelId: Scalars["ID"];
+  moves: Array<ReorderInput>;
+};
+
 export type MutationChannelUpdateArgs = {
   id: Scalars["ID"];
   input: ChannelUpdateInput;
@@ -10758,12 +10918,14 @@ export type MutationProductVariantBulkCreateArgs = {
 };
 
 export type MutationProductVariantBulkDeleteArgs = {
-  ids: Array<Scalars["ID"]>;
+  ids?: InputMaybe<Array<Scalars["ID"]>>;
+  skus?: InputMaybe<Array<Scalars["String"]>>;
 };
 
 export type MutationProductVariantChannelListingUpdateArgs = {
-  id: Scalars["ID"];
+  id?: InputMaybe<Scalars["ID"]>;
   input: Array<ProductVariantChannelListingAddInput>;
+  sku?: InputMaybe<Scalars["String"]>;
 };
 
 export type MutationProductVariantCreateArgs = {
@@ -10771,7 +10933,8 @@ export type MutationProductVariantCreateArgs = {
 };
 
 export type MutationProductVariantDeleteArgs = {
-  id: Scalars["ID"];
+  id?: InputMaybe<Scalars["ID"]>;
+  sku?: InputMaybe<Scalars["String"]>;
 };
 
 export type MutationProductVariantPreorderDeactivateArgs = {
@@ -10800,13 +10963,15 @@ export type MutationProductVariantStocksCreateArgs = {
 };
 
 export type MutationProductVariantStocksDeleteArgs = {
-  variantId: Scalars["ID"];
+  sku?: InputMaybe<Scalars["String"]>;
+  variantId?: InputMaybe<Scalars["ID"]>;
   warehouseIds?: InputMaybe<Array<Scalars["ID"]>>;
 };
 
 export type MutationProductVariantStocksUpdateArgs = {
+  sku?: InputMaybe<Scalars["String"]>;
   stocks: Array<StockInput>;
-  variantId: Scalars["ID"];
+  variantId?: InputMaybe<Scalars["ID"]>;
 };
 
 export type MutationProductVariantTranslateArgs = {
@@ -10816,8 +10981,9 @@ export type MutationProductVariantTranslateArgs = {
 };
 
 export type MutationProductVariantUpdateArgs = {
-  id: Scalars["ID"];
+  id?: InputMaybe<Scalars["ID"]>;
   input: ProductVariantInput;
+  sku?: InputMaybe<Scalars["String"]>;
 };
 
 export type MutationRequestEmailChangeArgs = {
@@ -10980,6 +11146,7 @@ export type MutationStaffUpdateArgs = {
 };
 
 export type MutationTokenCreateArgs = {
+  audience?: InputMaybe<Scalars["String"]>;
   email: Scalars["String"];
   password: Scalars["String"];
 };
@@ -13594,7 +13761,7 @@ export type PaymentError = {
   field?: Maybe<Scalars["String"]>;
   /** The error message. */
   message?: Maybe<Scalars["String"]>;
-  /** List of varint IDs which causes the error. */
+  /** List of variant IDs which causes the error. */
   variants?: Maybe<Array<Scalars["ID"]>>;
 };
 
@@ -14588,8 +14755,20 @@ export type ProductCreateInput = {
    * Rich text format. For reference see https://editorjs.io/
    */
   description?: InputMaybe<Scalars["JSONString"]>;
+  /**
+   * Fields required to update the product metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  metadata?: InputMaybe<Array<MetadataInput>>;
   /** Product name. */
   name?: InputMaybe<Scalars["String"]>;
+  /**
+   * Fields required to update the product private metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** ID of the type that product belongs to. */
   productType: Scalars["ID"];
   /** Defines the product rating value. */
@@ -14737,6 +14916,12 @@ export type ProductFieldEnum =
 
 export type ProductFilterInput = {
   attributes?: InputMaybe<Array<AttributeInput>>;
+  /**
+   * Filter by the date of availability for purchase.
+   *
+   * Added in Saleor 3.8.
+   */
+  availableFrom?: InputMaybe<Scalars["DateTime"]>;
   categories?: InputMaybe<Array<Scalars["ID"]>>;
   /**
    * Specifies the channel by which the data should be filtered.
@@ -14750,12 +14935,30 @@ export type ProductFilterInput = {
   hasCategory?: InputMaybe<Scalars["Boolean"]>;
   hasPreorderedVariants?: InputMaybe<Scalars["Boolean"]>;
   ids?: InputMaybe<Array<Scalars["ID"]>>;
+  /**
+   * Filter by availability for purchase.
+   *
+   * Added in Saleor 3.8.
+   */
+  isAvailable?: InputMaybe<Scalars["Boolean"]>;
   isPublished?: InputMaybe<Scalars["Boolean"]>;
+  /**
+   * Filter by visibility in product listings.
+   *
+   * Added in Saleor 3.8.
+   */
+  isVisibleInListing?: InputMaybe<Scalars["Boolean"]>;
   metadata?: InputMaybe<Array<MetadataFilter>>;
   /** Filter by the lowest variant price after discounts. */
   minimalPrice?: InputMaybe<PriceRangeInput>;
   price?: InputMaybe<PriceRangeInput>;
   productTypes?: InputMaybe<Array<Scalars["ID"]>>;
+  /**
+   * Filter by the publication date.
+   *
+   * Added in Saleor 3.8.
+   */
+  publishedFrom?: InputMaybe<Scalars["DateTime"]>;
   search?: InputMaybe<Scalars["String"]>;
   /** Filter by variants having specific stock status. */
   stockAvailability?: InputMaybe<StockAvailability>;
@@ -14797,8 +15000,20 @@ export type ProductInput = {
    * Rich text format. For reference see https://editorjs.io/
    */
   description?: InputMaybe<Scalars["JSONString"]>;
+  /**
+   * Fields required to update the product metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  metadata?: InputMaybe<Array<MetadataInput>>;
   /** Product name. */
   name?: InputMaybe<Scalars["String"]>;
+  /**
+   * Fields required to update the product private metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** Defines the product rating value. */
   rating?: InputMaybe<Scalars["Float"]>;
   /** Search engine optimization fields. */
@@ -14942,6 +15157,12 @@ export type ProductOrderField =
    * This option requires a channel filter to work as the values can vary between channels.
    */
   | "COLLECTION"
+  /**
+   * Sort products by creation date.
+   *
+   * Added in Saleor 3.8.
+   */
+  | "CREATED_AT"
   /** Sort products by update date. */
   | "DATE"
   /** Sort products by update date. */
@@ -15626,6 +15847,12 @@ export type ProductVariantBulkCreateInput = {
   attributes: Array<BulkAttributeValueInput>;
   /** List of prices assigned to channels. */
   channelListings?: InputMaybe<Array<ProductVariantChannelListingAddInput>>;
+  /**
+   * Fields required to update the product variant metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  metadata?: InputMaybe<Array<MetadataInput>>;
   /** Variant name. */
   name?: InputMaybe<Scalars["String"]>;
   /**
@@ -15636,6 +15863,12 @@ export type ProductVariantBulkCreateInput = {
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   preorder?: InputMaybe<PreorderSettingsInput>;
+  /**
+   * Fields required to update the product variant private metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Determines maximum quantity of `ProductVariant`,that can be bought in a single checkout.
    *
@@ -15756,6 +15989,12 @@ export type ProductVariantCreate = {
 export type ProductVariantCreateInput = {
   /** List of attributes specific to this variant. */
   attributes: Array<AttributeValueInput>;
+  /**
+   * Fields required to update the product variant metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  metadata?: InputMaybe<Array<MetadataInput>>;
   /** Variant name. */
   name?: InputMaybe<Scalars["String"]>;
   /**
@@ -15766,6 +16005,12 @@ export type ProductVariantCreateInput = {
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   preorder?: InputMaybe<PreorderSettingsInput>;
+  /**
+   * Fields required to update the product variant private metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /** Product ID of which type is the variant. */
   product: Scalars["ID"];
   /**
@@ -15874,6 +16119,12 @@ export type ProductVariantFilterInput = {
 export type ProductVariantInput = {
   /** List of attributes specific to this variant. */
   attributes?: InputMaybe<Array<AttributeValueInput>>;
+  /**
+   * Fields required to update the product variant metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  metadata?: InputMaybe<Array<MetadataInput>>;
   /** Variant name. */
   name?: InputMaybe<Scalars["String"]>;
   /**
@@ -15884,6 +16135,12 @@ export type ProductVariantInput = {
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   preorder?: InputMaybe<PreorderSettingsInput>;
+  /**
+   * Fields required to update the product variant private metadata.
+   *
+   * Added in Saleor 3.8.
+   */
+  privateMetadata?: InputMaybe<Array<MetadataInput>>;
   /**
    * Determines maximum quantity of `ProductVariant`,that can be bought in a single checkout.
    *
@@ -19200,6 +19457,24 @@ export type StockInput = {
   warehouse: Scalars["ID"];
 };
 
+/**
+ * Represents the channel stock settings.
+ *
+ * Added in Saleor 3.7.
+ *
+ * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+ */
+export type StockSettings = {
+  __typename?: "StockSettings";
+  /** Allocation strategy defines the preference of warehouses for allocations and reservations. */
+  allocationStrategy: AllocationStrategyEnum;
+};
+
+export type StockSettingsInput = {
+  /** Allocation strategy options. Strategy defines the preference of warehouses for allocations and reservations. */
+  allocationStrategy: AllocationStrategyEnum;
+};
+
 /** Enum representing the type of a payment storage in a gateway. */
 export type StorePaymentMethodEnum =
   /** Storage is disabled. The payment is not stored. */
@@ -19825,6 +20100,12 @@ export type User = Node &
      * @deprecated This field will be removed in Saleor 4.0. Use `checkoutIds` instead.
      */
     checkoutTokens?: Maybe<Array<Scalars["UUID"]>>;
+    /**
+     * Returns checkouts assigned to this user.
+     *
+     * Added in Saleor 3.8.
+     */
+    checkouts?: Maybe<CheckoutCountableConnection>;
     dateJoined: Scalars["DateTime"];
     defaultBillingAddress?: Maybe<Address>;
     defaultShippingAddress?: Maybe<Address>;
@@ -19918,6 +20199,15 @@ export type UserCheckoutIdsArgs = {
 /** Represents user data. */
 export type UserCheckoutTokensArgs = {
   channel?: InputMaybe<Scalars["String"]>;
+};
+
+/** Represents user data. */
+export type UserCheckoutsArgs = {
+  after?: InputMaybe<Scalars["String"]>;
+  before?: InputMaybe<Scalars["String"]>;
+  channel?: InputMaybe<Scalars["String"]>;
+  first?: InputMaybe<Scalars["Int"]>;
+  last?: InputMaybe<Scalars["Int"]>;
 };
 
 /** Represents user data. */
@@ -20820,7 +21110,11 @@ export type WarehouseCreateInput = {
   email?: InputMaybe<Scalars["String"]>;
   /** Warehouse name. */
   name: Scalars["String"];
-  /** Shipping zones supported by the warehouse. */
+  /**
+   * Shipping zones supported by the warehouse.
+   *
+   * DEPRECATED: this field will be removed in Saleor 4.0. Providing the zone ids will raise a ValidationError.
+   */
   shippingZones?: InputMaybe<Array<Scalars["ID"]>>;
   /** Warehouse slug. */
   slug?: InputMaybe<Scalars["String"]>;
@@ -20889,6 +21183,8 @@ export type WarehouseError = {
   field?: Maybe<Scalars["String"]>;
   /** The error message. */
   message?: Maybe<Scalars["String"]>;
+  /** List of shipping zones IDs which causes the error. */
+  shippingZones?: Maybe<Array<Scalars["ID"]>>;
 };
 
 /** An enumeration. */
@@ -21213,6 +21509,8 @@ export type WebhookEventTypeAsyncEnum =
   | "DRAFT_ORDER_DELETED"
   /** A draft order is updated. */
   | "DRAFT_ORDER_UPDATED"
+  /** A fulfillment is approved. */
+  | "FULFILLMENT_APPROVED"
   /** A fulfillment is cancelled. */
   | "FULFILLMENT_CANCELED"
   /** A new fulfillment is created. */
@@ -21414,6 +21712,8 @@ export type WebhookEventTypeEnum =
   | "DRAFT_ORDER_DELETED"
   /** A draft order is updated. */
   | "DRAFT_ORDER_UPDATED"
+  /** A fulfillment is approved. */
+  | "FULFILLMENT_APPROVED"
   /** A fulfillment is cancelled. */
   | "FULFILLMENT_CANCELED"
   /** A new fulfillment is created. */
@@ -21637,6 +21937,7 @@ export type WebhookSampleEventTypeEnum =
   | "DRAFT_ORDER_CREATED"
   | "DRAFT_ORDER_DELETED"
   | "DRAFT_ORDER_UPDATED"
+  | "FULFILLMENT_APPROVED"
   | "FULFILLMENT_CANCELED"
   | "FULFILLMENT_CREATED"
   | "GIFT_CARD_CREATED"
@@ -21831,7 +22132,7 @@ export type CheckoutFragment = {
     id: string;
     currentBalance: { __typename?: "Money"; currency: string; amount: number };
   }>;
-  channel: { __typename?: "Channel"; id: string };
+  channel: { __typename?: "Channel"; id: string; slug: string };
   shippingAddress?: {
     __typename?: "Address";
     id: string;
@@ -21908,11 +22209,24 @@ export type CheckoutFragment = {
       name: string;
       attributes: Array<{
         __typename?: "SelectedAttribute";
-        values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+        values: Array<{
+          __typename?: "AttributeValue";
+          name?: string | null;
+          dateTime?: string | null;
+          boolean?: boolean | null;
+          translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+        }>;
       }>;
+      translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
       product: {
         __typename?: "Product";
         name: string;
+        translation?: {
+          __typename?: "ProductTranslation";
+          id: string;
+          name?: string | null;
+          language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+        } | null;
         media?: Array<{
           __typename?: "ProductMedia";
           alt: string;
@@ -21949,11 +22263,24 @@ export type CheckoutLineFragment = {
     name: string;
     attributes: Array<{
       __typename?: "SelectedAttribute";
-      values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+      values: Array<{
+        __typename?: "AttributeValue";
+        name?: string | null;
+        dateTime?: string | null;
+        boolean?: boolean | null;
+        translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+      }>;
     }>;
+    translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
     product: {
       __typename?: "Product";
       name: string;
+      translation?: {
+        __typename?: "ProductTranslation";
+        id: string;
+        name?: string | null;
+        language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+      } | null;
       media?: Array<{
         __typename?: "ProductMedia";
         alt: string;
@@ -21988,6 +22315,7 @@ export type AddressFragment = {
 
 export type CheckoutQueryVariables = Exact<{
   id: Scalars["ID"];
+  languageCode: LanguageCodeEnum;
 }>;
 
 export type CheckoutQuery = {
@@ -22007,7 +22335,7 @@ export type CheckoutQuery = {
       id: string;
       currentBalance: { __typename?: "Money"; currency: string; amount: number };
     }>;
-    channel: { __typename?: "Channel"; id: string };
+    channel: { __typename?: "Channel"; id: string; slug: string };
     shippingAddress?: {
       __typename?: "Address";
       id: string;
@@ -22084,11 +22412,24 @@ export type CheckoutQuery = {
         name: string;
         attributes: Array<{
           __typename?: "SelectedAttribute";
-          values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+          values: Array<{
+            __typename?: "AttributeValue";
+            name?: string | null;
+            dateTime?: string | null;
+            boolean?: boolean | null;
+            translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+          }>;
         }>;
+        translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
         product: {
           __typename?: "Product";
           name: string;
+          translation?: {
+            __typename?: "ProductTranslation";
+            id: string;
+            name?: string | null;
+            language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+          } | null;
           media?: Array<{
             __typename?: "ProductMedia";
             alt: string;
@@ -22177,6 +22518,7 @@ export type ChannelQuery = {
 export type CheckoutLinesUpdateMutationVariables = Exact<{
   checkoutId: Scalars["ID"];
   lines: Array<CheckoutLineUpdateInput> | CheckoutLineUpdateInput;
+  languageCode: LanguageCodeEnum;
 }>;
 
 export type CheckoutLinesUpdateMutation = {
@@ -22204,7 +22546,7 @@ export type CheckoutLinesUpdateMutation = {
         id: string;
         currentBalance: { __typename?: "Money"; currency: string; amount: number };
       }>;
-      channel: { __typename?: "Channel"; id: string };
+      channel: { __typename?: "Channel"; id: string; slug: string };
       shippingAddress?: {
         __typename?: "Address";
         id: string;
@@ -22281,11 +22623,24 @@ export type CheckoutLinesUpdateMutation = {
           name: string;
           attributes: Array<{
             __typename?: "SelectedAttribute";
-            values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+            values: Array<{
+              __typename?: "AttributeValue";
+              name?: string | null;
+              dateTime?: string | null;
+              boolean?: boolean | null;
+              translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+            }>;
           }>;
+          translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
           product: {
             __typename?: "Product";
             name: string;
+            translation?: {
+              __typename?: "ProductTranslation";
+              id: string;
+              name?: string | null;
+              language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+            } | null;
             media?: Array<{
               __typename?: "ProductMedia";
               alt: string;
@@ -22308,6 +22663,7 @@ export type CheckoutLinesUpdateMutation = {
 export type CheckoutLineDeleteMutationVariables = Exact<{
   checkoutId: Scalars["ID"];
   lineId?: InputMaybe<Scalars["ID"]>;
+  languageCode: LanguageCodeEnum;
 }>;
 
 export type CheckoutLineDeleteMutation = {
@@ -22335,7 +22691,7 @@ export type CheckoutLineDeleteMutation = {
         id: string;
         currentBalance: { __typename?: "Money"; currency: string; amount: number };
       }>;
-      channel: { __typename?: "Channel"; id: string };
+      channel: { __typename?: "Channel"; id: string; slug: string };
       shippingAddress?: {
         __typename?: "Address";
         id: string;
@@ -22412,11 +22768,24 @@ export type CheckoutLineDeleteMutation = {
           name: string;
           attributes: Array<{
             __typename?: "SelectedAttribute";
-            values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+            values: Array<{
+              __typename?: "AttributeValue";
+              name?: string | null;
+              dateTime?: string | null;
+              boolean?: boolean | null;
+              translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+            }>;
           }>;
+          translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
           product: {
             __typename?: "Product";
             name: string;
+            translation?: {
+              __typename?: "ProductTranslation";
+              id: string;
+              name?: string | null;
+              language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+            } | null;
             media?: Array<{
               __typename?: "ProductMedia";
               alt: string;
@@ -22439,6 +22808,7 @@ export type CheckoutLineDeleteMutation = {
 export type CheckoutEmailUpdateMutationVariables = Exact<{
   email: Scalars["String"];
   checkoutId: Scalars["ID"];
+  languageCode: LanguageCodeEnum;
 }>;
 
 export type CheckoutEmailUpdateMutation = {
@@ -22466,7 +22836,7 @@ export type CheckoutEmailUpdateMutation = {
         id: string;
         currentBalance: { __typename?: "Money"; currency: string; amount: number };
       }>;
-      channel: { __typename?: "Channel"; id: string };
+      channel: { __typename?: "Channel"; id: string; slug: string };
       shippingAddress?: {
         __typename?: "Address";
         id: string;
@@ -22543,11 +22913,24 @@ export type CheckoutEmailUpdateMutation = {
           name: string;
           attributes: Array<{
             __typename?: "SelectedAttribute";
-            values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+            values: Array<{
+              __typename?: "AttributeValue";
+              name?: string | null;
+              dateTime?: string | null;
+              boolean?: boolean | null;
+              translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+            }>;
           }>;
+          translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
           product: {
             __typename?: "Product";
             name: string;
+            translation?: {
+              __typename?: "ProductTranslation";
+              id: string;
+              name?: string | null;
+              language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+            } | null;
             media?: Array<{
               __typename?: "ProductMedia";
               alt: string;
@@ -22569,6 +22952,7 @@ export type CheckoutEmailUpdateMutation = {
 
 export type CheckoutCustomerAttachMutationVariables = Exact<{
   checkoutId: Scalars["ID"];
+  languageCode: LanguageCodeEnum;
 }>;
 
 export type CheckoutCustomerAttachMutation = {
@@ -22596,7 +22980,7 @@ export type CheckoutCustomerAttachMutation = {
         id: string;
         currentBalance: { __typename?: "Money"; currency: string; amount: number };
       }>;
-      channel: { __typename?: "Channel"; id: string };
+      channel: { __typename?: "Channel"; id: string; slug: string };
       shippingAddress?: {
         __typename?: "Address";
         id: string;
@@ -22673,11 +23057,24 @@ export type CheckoutCustomerAttachMutation = {
           name: string;
           attributes: Array<{
             __typename?: "SelectedAttribute";
-            values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+            values: Array<{
+              __typename?: "AttributeValue";
+              name?: string | null;
+              dateTime?: string | null;
+              boolean?: boolean | null;
+              translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+            }>;
           }>;
+          translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
           product: {
             __typename?: "Product";
             name: string;
+            translation?: {
+              __typename?: "ProductTranslation";
+              id: string;
+              name?: string | null;
+              language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+            } | null;
             media?: Array<{
               __typename?: "ProductMedia";
               alt: string;
@@ -22699,6 +23096,7 @@ export type CheckoutCustomerAttachMutation = {
 
 export type CheckoutCustomerDetachMutationVariables = Exact<{
   checkoutId: Scalars["ID"];
+  languageCode: LanguageCodeEnum;
 }>;
 
 export type CheckoutCustomerDetachMutation = {
@@ -22726,7 +23124,7 @@ export type CheckoutCustomerDetachMutation = {
         id: string;
         currentBalance: { __typename?: "Money"; currency: string; amount: number };
       }>;
-      channel: { __typename?: "Channel"; id: string };
+      channel: { __typename?: "Channel"; id: string; slug: string };
       shippingAddress?: {
         __typename?: "Address";
         id: string;
@@ -22803,11 +23201,24 @@ export type CheckoutCustomerDetachMutation = {
           name: string;
           attributes: Array<{
             __typename?: "SelectedAttribute";
-            values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+            values: Array<{
+              __typename?: "AttributeValue";
+              name?: string | null;
+              dateTime?: string | null;
+              boolean?: boolean | null;
+              translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+            }>;
           }>;
+          translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
           product: {
             __typename?: "Product";
             name: string;
+            translation?: {
+              __typename?: "ProductTranslation";
+              id: string;
+              name?: string | null;
+              language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+            } | null;
             media?: Array<{
               __typename?: "ProductMedia";
               alt: string;
@@ -22929,6 +23340,7 @@ export type CheckoutShippingAddressUpdateMutationVariables = Exact<{
   checkoutId: Scalars["ID"];
   shippingAddress: AddressInput;
   validationRules?: InputMaybe<CheckoutAddressValidationRules>;
+  languageCode: LanguageCodeEnum;
 }>;
 
 export type CheckoutShippingAddressUpdateMutation = {
@@ -22956,7 +23368,7 @@ export type CheckoutShippingAddressUpdateMutation = {
         id: string;
         currentBalance: { __typename?: "Money"; currency: string; amount: number };
       }>;
-      channel: { __typename?: "Channel"; id: string };
+      channel: { __typename?: "Channel"; id: string; slug: string };
       shippingAddress?: {
         __typename?: "Address";
         id: string;
@@ -23033,11 +23445,24 @@ export type CheckoutShippingAddressUpdateMutation = {
           name: string;
           attributes: Array<{
             __typename?: "SelectedAttribute";
-            values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+            values: Array<{
+              __typename?: "AttributeValue";
+              name?: string | null;
+              dateTime?: string | null;
+              boolean?: boolean | null;
+              translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+            }>;
           }>;
+          translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
           product: {
             __typename?: "Product";
             name: string;
+            translation?: {
+              __typename?: "ProductTranslation";
+              id: string;
+              name?: string | null;
+              language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+            } | null;
             media?: Array<{
               __typename?: "ProductMedia";
               alt: string;
@@ -23061,6 +23486,7 @@ export type CheckoutBillingAddressUpdateMutationVariables = Exact<{
   checkoutId: Scalars["ID"];
   billingAddress: AddressInput;
   validationRules?: InputMaybe<CheckoutAddressValidationRules>;
+  languageCode: LanguageCodeEnum;
 }>;
 
 export type CheckoutBillingAddressUpdateMutation = {
@@ -23088,7 +23514,7 @@ export type CheckoutBillingAddressUpdateMutation = {
         id: string;
         currentBalance: { __typename?: "Money"; currency: string; amount: number };
       }>;
-      channel: { __typename?: "Channel"; id: string };
+      channel: { __typename?: "Channel"; id: string; slug: string };
       shippingAddress?: {
         __typename?: "Address";
         id: string;
@@ -23165,11 +23591,24 @@ export type CheckoutBillingAddressUpdateMutation = {
           name: string;
           attributes: Array<{
             __typename?: "SelectedAttribute";
-            values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+            values: Array<{
+              __typename?: "AttributeValue";
+              name?: string | null;
+              dateTime?: string | null;
+              boolean?: boolean | null;
+              translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+            }>;
           }>;
+          translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
           product: {
             __typename?: "Product";
             name: string;
+            translation?: {
+              __typename?: "ProductTranslation";
+              id: string;
+              name?: string | null;
+              language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+            } | null;
             media?: Array<{
               __typename?: "ProductMedia";
               alt: string;
@@ -23192,6 +23631,7 @@ export type CheckoutBillingAddressUpdateMutation = {
 export type CheckoutDeliveryMethodUpdateMutationVariables = Exact<{
   checkoutId: Scalars["ID"];
   deliveryMethodId: Scalars["ID"];
+  languageCode: LanguageCodeEnum;
 }>;
 
 export type CheckoutDeliveryMethodUpdateMutation = {
@@ -23219,7 +23659,7 @@ export type CheckoutDeliveryMethodUpdateMutation = {
         id: string;
         currentBalance: { __typename?: "Money"; currency: string; amount: number };
       }>;
-      channel: { __typename?: "Channel"; id: string };
+      channel: { __typename?: "Channel"; id: string; slug: string };
       shippingAddress?: {
         __typename?: "Address";
         id: string;
@@ -23296,11 +23736,24 @@ export type CheckoutDeliveryMethodUpdateMutation = {
           name: string;
           attributes: Array<{
             __typename?: "SelectedAttribute";
-            values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+            values: Array<{
+              __typename?: "AttributeValue";
+              name?: string | null;
+              dateTime?: string | null;
+              boolean?: boolean | null;
+              translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+            }>;
           }>;
+          translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
           product: {
             __typename?: "Product";
             name: string;
+            translation?: {
+              __typename?: "ProductTranslation";
+              id: string;
+              name?: string | null;
+              language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+            } | null;
             media?: Array<{
               __typename?: "ProductMedia";
               alt: string;
@@ -23345,6 +23798,7 @@ export type AddressValidationRulesQuery = {
 export type CheckoutAddPromoCodeMutationVariables = Exact<{
   checkoutId?: InputMaybe<Scalars["ID"]>;
   promoCode: Scalars["String"];
+  languageCode: LanguageCodeEnum;
 }>;
 
 export type CheckoutAddPromoCodeMutation = {
@@ -23372,7 +23826,7 @@ export type CheckoutAddPromoCodeMutation = {
         id: string;
         currentBalance: { __typename?: "Money"; currency: string; amount: number };
       }>;
-      channel: { __typename?: "Channel"; id: string };
+      channel: { __typename?: "Channel"; id: string; slug: string };
       shippingAddress?: {
         __typename?: "Address";
         id: string;
@@ -23449,11 +23903,24 @@ export type CheckoutAddPromoCodeMutation = {
           name: string;
           attributes: Array<{
             __typename?: "SelectedAttribute";
-            values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+            values: Array<{
+              __typename?: "AttributeValue";
+              name?: string | null;
+              dateTime?: string | null;
+              boolean?: boolean | null;
+              translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+            }>;
           }>;
+          translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
           product: {
             __typename?: "Product";
             name: string;
+            translation?: {
+              __typename?: "ProductTranslation";
+              id: string;
+              name?: string | null;
+              language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+            } | null;
             media?: Array<{
               __typename?: "ProductMedia";
               alt: string;
@@ -23477,6 +23944,7 @@ export type CheckoutRemovePromoCodeMutationVariables = Exact<{
   checkoutId?: InputMaybe<Scalars["ID"]>;
   promoCode?: InputMaybe<Scalars["String"]>;
   promoCodeId?: InputMaybe<Scalars["ID"]>;
+  languageCode: LanguageCodeEnum;
 }>;
 
 export type CheckoutRemovePromoCodeMutation = {
@@ -23504,7 +23972,7 @@ export type CheckoutRemovePromoCodeMutation = {
         id: string;
         currentBalance: { __typename?: "Money"; currency: string; amount: number };
       }>;
-      channel: { __typename?: "Channel"; id: string };
+      channel: { __typename?: "Channel"; id: string; slug: string };
       shippingAddress?: {
         __typename?: "Address";
         id: string;
@@ -23581,11 +24049,24 @@ export type CheckoutRemovePromoCodeMutation = {
           name: string;
           attributes: Array<{
             __typename?: "SelectedAttribute";
-            values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+            values: Array<{
+              __typename?: "AttributeValue";
+              name?: string | null;
+              dateTime?: string | null;
+              boolean?: boolean | null;
+              translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+            }>;
           }>;
+          translation?: { __typename?: "ProductVariantTranslation"; name: string } | null;
           product: {
             __typename?: "Product";
             name: string;
+            translation?: {
+              __typename?: "ProductTranslation";
+              id: string;
+              name?: string | null;
+              language: { __typename?: "LanguageDisplay"; code: LanguageCodeEnum };
+            } | null;
             media?: Array<{
               __typename?: "ProductMedia";
               alt: string;
@@ -23618,7 +24099,13 @@ export type OrderLineFragment = {
     name: string;
     attributes: Array<{
       __typename?: "SelectedAttribute";
-      values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+      values: Array<{
+        __typename?: "AttributeValue";
+        name?: string | null;
+        dateTime?: string | null;
+        boolean?: boolean | null;
+        translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+      }>;
     }>;
   } | null;
   totalPrice: {
@@ -23648,6 +24135,7 @@ export type OrderFragment = {
   id: string;
   number: string;
   userEmail?: string | null;
+  isPaid: boolean;
   discounts: Array<{
     __typename?: "OrderDiscount";
     type: OrderDiscountType;
@@ -23718,7 +24206,13 @@ export type OrderFragment = {
       name: string;
       attributes: Array<{
         __typename?: "SelectedAttribute";
-        values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+        values: Array<{
+          __typename?: "AttributeValue";
+          name?: string | null;
+          dateTime?: string | null;
+          boolean?: boolean | null;
+          translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+        }>;
       }>;
     } | null;
     totalPrice: {
@@ -23735,10 +24229,13 @@ export type OrderFragment = {
     };
     thumbnail?: { __typename?: "Image"; alt?: string | null; url: string } | null;
   }>;
+  totalBalance: { __typename?: "Money"; currency: string; amount: number };
+  totalCaptured: { __typename?: "Money"; currency: string; amount: number };
 };
 
 export type OrderQueryVariables = Exact<{
   id: Scalars["ID"];
+  languageCode: LanguageCodeEnum;
 }>;
 
 export type OrderQuery = {
@@ -23748,6 +24245,7 @@ export type OrderQuery = {
     id: string;
     number: string;
     userEmail?: string | null;
+    isPaid: boolean;
     discounts: Array<{
       __typename?: "OrderDiscount";
       type: OrderDiscountType;
@@ -23818,7 +24316,13 @@ export type OrderQuery = {
         name: string;
         attributes: Array<{
           __typename?: "SelectedAttribute";
-          values: Array<{ __typename?: "AttributeValue"; name?: string | null }>;
+          values: Array<{
+            __typename?: "AttributeValue";
+            name?: string | null;
+            dateTime?: string | null;
+            boolean?: boolean | null;
+            translation?: { __typename?: "AttributeValueTranslation"; name: string } | null;
+          }>;
         }>;
       } | null;
       totalPrice: {
@@ -23835,6 +24339,8 @@ export type OrderQuery = {
       };
       thumbnail?: { __typename?: "Image"; alt?: string | null; url: string } | null;
     }>;
+    totalBalance: { __typename?: "Money"; currency: string; amount: number };
+    totalCaptured: { __typename?: "Money"; currency: string; amount: number };
   } | null;
 };
 
@@ -23923,12 +24429,27 @@ export const CheckoutLineFragmentDoc = gql`
       attributes(variantSelection: ALL) {
         values {
           name
+          dateTime
+          boolean
+          translation(languageCode: $languageCode) {
+            name
+          }
         }
       }
       id
       name
+      translation(languageCode: $languageCode) {
+        name
+      }
       product {
         name
+        translation(languageCode: $languageCode) {
+          language {
+            code
+          }
+          id
+          name
+        }
         media {
           alt
           type
@@ -23959,6 +24480,7 @@ export const CheckoutFragmentDoc = gql`
     }
     channel {
       id
+      slug
     }
     shippingAddress {
       ...AddressFragment
@@ -24059,6 +24581,11 @@ export const OrderLineFragmentDoc = gql`
       attributes(variantSelection: ALL) {
         values {
           name
+          dateTime
+          boolean
+          translation(languageCode: $languageCode) {
+            name
+          }
         }
       }
     }
@@ -24091,6 +24618,7 @@ export const OrderFragmentDoc = gql`
     id
     number
     userEmail
+    isPaid
     discounts {
       type
       name
@@ -24131,6 +24659,12 @@ export const OrderFragmentDoc = gql`
     lines {
       ...OrderLineFragment
     }
+    totalBalance {
+      ...Money
+    }
+    totalCaptured {
+      ...Money
+    }
   }
   ${MoneyFragmentDoc}
   ${AddressFragmentDoc}
@@ -24138,7 +24672,7 @@ export const OrderFragmentDoc = gql`
   ${OrderLineFragmentDoc}
 `;
 export const CheckoutDocument = gql`
-  query checkout($id: ID!) {
+  query checkout($id: ID!, $languageCode: LanguageCodeEnum!) {
     checkout(id: $id) {
       ...CheckoutFragment
     }
@@ -24189,7 +24723,11 @@ export function useChannelQuery(options: Omit<Urql.UseQueryArgs<ChannelQueryVari
   return Urql.useQuery<ChannelQuery, ChannelQueryVariables>({ query: ChannelDocument, ...options });
 }
 export const CheckoutLinesUpdateDocument = gql`
-  mutation checkoutLinesUpdate($checkoutId: ID!, $lines: [CheckoutLineUpdateInput!]!) {
+  mutation checkoutLinesUpdate(
+    $checkoutId: ID!
+    $lines: [CheckoutLineUpdateInput!]!
+    $languageCode: LanguageCodeEnum!
+  ) {
     checkoutLinesUpdate(id: $checkoutId, lines: $lines) {
       errors {
         ...CheckoutErrorFragment
@@ -24209,7 +24747,7 @@ export function useCheckoutLinesUpdateMutation() {
   );
 }
 export const CheckoutLineDeleteDocument = gql`
-  mutation checkoutLineDelete($checkoutId: ID!, $lineId: ID) {
+  mutation checkoutLineDelete($checkoutId: ID!, $lineId: ID, $languageCode: LanguageCodeEnum!) {
     checkoutLineDelete(id: $checkoutId, lineId: $lineId) {
       errors {
         ...CheckoutErrorFragment
@@ -24229,7 +24767,11 @@ export function useCheckoutLineDeleteMutation() {
   );
 }
 export const CheckoutEmailUpdateDocument = gql`
-  mutation checkoutEmailUpdate($email: String!, $checkoutId: ID!) {
+  mutation checkoutEmailUpdate(
+    $email: String!
+    $checkoutId: ID!
+    $languageCode: LanguageCodeEnum!
+  ) {
     checkoutEmailUpdate(email: $email, id: $checkoutId) {
       errors {
         ...CheckoutErrorFragment
@@ -24249,7 +24791,7 @@ export function useCheckoutEmailUpdateMutation() {
   );
 }
 export const CheckoutCustomerAttachDocument = gql`
-  mutation checkoutCustomerAttach($checkoutId: ID!) {
+  mutation checkoutCustomerAttach($checkoutId: ID!, $languageCode: LanguageCodeEnum!) {
     checkoutCustomerAttach(id: $checkoutId) {
       errors {
         ...CheckoutErrorFragment
@@ -24269,7 +24811,7 @@ export function useCheckoutCustomerAttachMutation() {
   );
 }
 export const CheckoutCustomerDetachDocument = gql`
-  mutation checkoutCustomerDetach($checkoutId: ID!) {
+  mutation checkoutCustomerDetach($checkoutId: ID!, $languageCode: LanguageCodeEnum!) {
     checkoutCustomerDetach(id: $checkoutId) {
       errors {
         ...CheckoutErrorFragment
@@ -24353,6 +24895,7 @@ export const CheckoutShippingAddressUpdateDocument = gql`
     $checkoutId: ID!
     $shippingAddress: AddressInput!
     $validationRules: CheckoutAddressValidationRules
+    $languageCode: LanguageCodeEnum!
   ) {
     checkoutShippingAddressUpdate(
       id: $checkoutId
@@ -24382,6 +24925,7 @@ export const CheckoutBillingAddressUpdateDocument = gql`
     $checkoutId: ID!
     $billingAddress: AddressInput!
     $validationRules: CheckoutAddressValidationRules
+    $languageCode: LanguageCodeEnum!
   ) {
     checkoutBillingAddressUpdate(
       id: $checkoutId
@@ -24407,7 +24951,11 @@ export function useCheckoutBillingAddressUpdateMutation() {
   >(CheckoutBillingAddressUpdateDocument);
 }
 export const CheckoutDeliveryMethodUpdateDocument = gql`
-  mutation checkoutDeliveryMethodUpdate($checkoutId: ID!, $deliveryMethodId: ID!) {
+  mutation checkoutDeliveryMethodUpdate(
+    $checkoutId: ID!
+    $deliveryMethodId: ID!
+    $languageCode: LanguageCodeEnum!
+  ) {
     checkoutDeliveryMethodUpdate(id: $checkoutId, deliveryMethodId: $deliveryMethodId) {
       errors {
         ...CheckoutErrorFragment
@@ -24445,7 +24993,11 @@ export function useAddressValidationRulesQuery(
   });
 }
 export const CheckoutAddPromoCodeDocument = gql`
-  mutation checkoutAddPromoCode($checkoutId: ID, $promoCode: String!) {
+  mutation checkoutAddPromoCode(
+    $checkoutId: ID
+    $promoCode: String!
+    $languageCode: LanguageCodeEnum!
+  ) {
     checkoutAddPromoCode(checkoutId: $checkoutId, promoCode: $promoCode) {
       errors {
         ...CheckoutErrorFragment
@@ -24465,7 +25017,12 @@ export function useCheckoutAddPromoCodeMutation() {
   );
 }
 export const CheckoutRemovePromoCodeDocument = gql`
-  mutation checkoutRemovePromoCode($checkoutId: ID, $promoCode: String, $promoCodeId: ID) {
+  mutation checkoutRemovePromoCode(
+    $checkoutId: ID
+    $promoCode: String
+    $promoCodeId: ID
+    $languageCode: LanguageCodeEnum!
+  ) {
     checkoutRemovePromoCode(
       checkoutId: $checkoutId
       promoCode: $promoCode
@@ -24490,7 +25047,7 @@ export function useCheckoutRemovePromoCodeMutation() {
   >(CheckoutRemovePromoCodeDocument);
 }
 export const OrderDocument = gql`
-  query order($id: ID!) {
+  query order($id: ID!, $languageCode: LanguageCodeEnum!) {
     order(id: $id) {
       ...Order
     }

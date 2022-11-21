@@ -6,19 +6,26 @@ import { useCheckout } from "@/checkout-storefront/hooks/useCheckout";
 import { useErrors } from "@/checkout-storefront/hooks/useErrors";
 import { useFormattedMessages } from "@/checkout-storefront/hooks/useFormattedMessages";
 import { useGetInputProps } from "@/checkout-storefront/hooks/useGetInputProps";
-import { useSetFormErrors } from "@/checkout-storefront/hooks/useSetFormErrors";
+import { useSetFormErrors } from "@/checkout-storefront/hooks/useSetFormErrors/useSetFormErrors";
 import { Classes } from "@/checkout-storefront/lib/globalTypes";
-import { extractMutationErrors, useValidationResolver } from "@/checkout-storefront/lib/utils";
+import {
+  extractMutationErrors,
+  localeToLanguageCode,
+  useValidationResolver,
+} from "@/checkout-storefront/lib/utils";
+import { summaryLabels, summaryMessages } from "./messages";
 import clsx from "clsx";
 import React, { FC } from "react";
 import { useForm } from "react-hook-form";
 import { object, string } from "yup";
+import { useLocale } from "@/checkout-storefront/hooks/useLocale";
 
 interface FormData {
   promoCode: string;
 }
 
 export const PromoCodeAdd: FC<Classes> = ({ className }) => {
+  const { locale } = useLocale();
   const { checkout } = useCheckout();
   const formatMessage = useFormattedMessages();
   const { setApiErrors, errors } = useErrors<FormData>();
@@ -38,7 +45,11 @@ export const PromoCodeAdd: FC<Classes> = ({ className }) => {
   const showApplyButton = !!watch("promoCode");
 
   const onSubmit = async ({ promoCode }: FormData) => {
-    const result = await checkoutAddPromoCode({ promoCode, checkoutId: checkout.id });
+    const result = await checkoutAddPromoCode({
+      languageCode: localeToLanguageCode(locale),
+      promoCode,
+      checkoutId: checkout.id,
+    });
     const [hasErrors, apiErrors] = extractMutationErrors(result);
 
     if (hasErrors) {
@@ -57,13 +68,17 @@ export const PromoCodeAdd: FC<Classes> = ({ className }) => {
 
   return (
     <div className={clsx("relative px-4 pt-4", className)}>
-      <TextInput label={formatMessage("addDiscount")} {...getInputProps("promoCode")} optional />
+      <TextInput
+        label={formatMessage(summaryMessages.addDiscount)}
+        {...getInputProps("promoCode")}
+        optional
+      />
       {showApplyButton && (
         <Button
           className="absolute right-7 top-7"
           variant="tertiary"
-          ariaLabel={formatMessage("applyButtonLabel")}
-          label={formatMessage("apply")}
+          ariaLabel={formatMessage(summaryLabels.apply)}
+          label={formatMessage(summaryMessages.apply)}
           onClick={handleSubmit(onSubmit)}
         />
       )}

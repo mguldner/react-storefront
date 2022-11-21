@@ -1,7 +1,6 @@
 import type { PaymentMethodID, PaymentProviderID } from "./payments";
 
 type BaseBody = {
-  checkoutApiUrl: string;
   provider: PaymentProviderID;
   method: PaymentMethodID;
   redirectUrl: string;
@@ -27,3 +26,18 @@ export type PaymentStatusResponse = {
 export type ChannelActivePaymentProvidersByChannel = {
   [P in PaymentMethodID]: PaymentProviderID | "";
 };
+
+export type DummyPayRequestBody = {
+  checkoutApiUrl: string;
+  saleorApiUrl: string;
+  amountCharged: {
+    amount: number;
+    currency: string;
+  };
+} & Pick<OrderBody, "orderId">;
+
+export type DummyPayRequestResult =
+  | {
+      ok: true;
+    }
+  | { ok: false; error: string };

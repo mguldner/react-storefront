@@ -2,12 +2,10 @@ import { Errors, useCheckout, useErrorMessages } from "@/checkout-storefront/hoo
 import { useValidationResolver } from "@/checkout-storefront/lib/utils";
 import { object, string } from "yup";
 import { useForm } from "react-hook-form";
-import { useSetFormErrors } from "@/checkout-storefront/hooks/useSetFormErrors";
-import { usePaymentMethods } from "@/checkout-storefront/sections/PaymentSection";
-import { PaymentMethodID, PaymentProviderID } from "checkout-common";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useCheckoutFormValidation } from "@/checkout-storefront/sections/CheckoutForm/useCheckoutFormValidation";
 import { CheckoutFormData } from "@/checkout-storefront/sections/CheckoutForm/types";
+import { useSetFormErrors } from "@/checkout-storefront/hooks/useSetFormErrors/useSetFormErrors";
 
 const defaultUpdateState = {
   checkoutShippingUpdate: false,
@@ -27,17 +25,18 @@ export type UseCheckoutFormProps = {
 export const useCheckoutForm = ({ userRegisterErrors, checkoutFinalize }: UseCheckoutFormProps) => {
   const { errorMessages } = useErrorMessages();
   const { checkout, loading: loadingCheckout } = useCheckout();
-  const usePaymentProvidersProps = usePaymentMethods(checkout?.channel?.id);
-  const { isValidProviderSelected, selectedPaymentProvider, selectedPaymentMethod } =
-    usePaymentProvidersProps;
 
   const [isProcessingApiChanges, setIsProcessingApiChanges] = useState(false);
   const [submitInProgress, setSubmitInProgress] = useState(false);
 
-  const schema = object({
-    password: string().required(errorMessages.required),
-    email: string().email(errorMessages.invalid).required(errorMessages.required),
-  });
+  const schema = useMemo(
+    () =>
+      object({
+        password: string().required(errorMessages.required),
+        email: string().email(errorMessages.invalid).required(errorMessages.required),
+      }),
+    [errorMessages.invalid, errorMessages.required]
+  );
 
   const resolver = useValidationResolver(schema);
   // will be used for e.g. account creation at checkout finalization
@@ -61,15 +60,8 @@ export const useCheckoutForm = ({ userRegisterErrors, checkoutFinalize }: UseChe
   const { getValues } = methods;
 
   const ensureValidCheckout = useCheckoutFormValidation({
-    isValidProviderSelected,
     ...methods,
     schema,
-  });
-
-  const getFormData = (): CheckoutFormData => ({
-    ...getValues(),
-    paymentProviderId: selectedPaymentProvider as PaymentProviderID,
-    paymentMethodId: selectedPaymentMethod as PaymentMethodID,
   });
 
   const hasFinishedApiChanges =
@@ -77,7 +69,7 @@ export const useCheckoutForm = ({ userRegisterErrors, checkoutFinalize }: UseChe
 
   // not using form handleSubmit because it wouldn't allow us to have
   // a flow with steps and errors in between
-  const handleSubmit = () => {
+  const handleSubmit = useCallback(() => {
     if (!hasFinishedApiChanges) {
       setIsProcessingApiChanges(true);
       setSubmitInProgress(true);
@@ -89,8 +81,8 @@ export const useCheckoutForm = ({ userRegisterErrors, checkoutFinalize }: UseChe
       return;
     }
 
-    checkoutFinalize(getFormData());
-  };
+    checkoutFinalize(getValues());
+  }, [checkoutFinalize, ensureValidCheckout, getValues, hasFinishedApiChanges]);
 
   useEffect(() => {
     if (!hasFinishedApiChanges) {
@@ -102,7 +94,7 @@ export const useCheckoutForm = ({ userRegisterErrors, checkoutFinalize }: UseChe
     if (submitInProgress) {
       handleSubmit();
     }
-  }, [hasFinishedApiChanges]);
+  }, [hasFinishedApiChanges, handleSubmit, submitInProgress]);
 
-  return { methods, usePaymentProvidersProps, handleSubmit, isProcessingApiChanges };
+  return { methods, handleSubmit, isProcessingApiChanges };
 };

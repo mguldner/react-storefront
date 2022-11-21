@@ -3,8 +3,9 @@ import React, { PropsWithChildren } from "react";
 import { Text } from "@saleor/ui-kit";
 import { PhotoIcon } from "@/checkout-storefront/icons";
 import { useFormattedMessages } from "@/checkout-storefront/hooks/useFormattedMessages";
-import { getSummaryLineAttributesText, getSummaryLineProps } from "./utils";
+import { useSummaryLineLineAttributesText, getSummaryLineProps } from "./utils";
 import { getSvgSrc } from "@/checkout-storefront/lib/svgSrc";
+import { summaryLabels } from "./messages";
 
 export type SummaryLine = CheckoutLineFragment | OrderLineFragment;
 
@@ -17,7 +18,7 @@ export const SummaryItem: React.FC<PropsWithChildren<LineItemProps>> = ({ line, 
 
   const formatMessage = useFormattedMessages();
 
-  const attributesText = getSummaryLineAttributesText(line);
+  const attributesText = useSummaryLineLineAttributesText(line);
 
   return (
     <li className="summary-item">
@@ -36,10 +37,18 @@ export const SummaryItem: React.FC<PropsWithChildren<LineItemProps>> = ({ line, 
       </div>
       <div className="summary-row w-full items-start">
         <div className="flex flex-col">
-          <Text weight="bold" aria-label={formatMessage("itemNameLabel")} className="mb-3">
+          <Text
+            weight="bold"
+            aria-label={formatMessage(summaryLabels.summaryItemName)}
+            className="mb-3"
+          >
             {productName}
           </Text>
-          <Text size="xs" aria-label={formatMessage("variantNameLabel")} className="max-w-38">
+          <Text
+            size="xs"
+            aria-label={formatMessage(summaryLabels.variantName)}
+            className="max-w-38"
+          >
             {attributesText}
           </Text>
         </div>

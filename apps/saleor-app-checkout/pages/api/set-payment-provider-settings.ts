@@ -1,5 +1,4 @@
-import { withSentry } from "@sentry/nextjs";
-import { getTokenDataFromRequest } from "@/saleor-app-checkout/backend/auth";
+import * as Sentry from "@sentry/nextjs";
 import {
   getPrivateSettings,
   setPrivateSettings,
@@ -7,17 +6,22 @@ import {
 import { allowCors, requireAuthorization } from "@/saleor-app-checkout/backend/utils";
 import { merge } from "lodash-es";
 import { NextApiHandler } from "next";
+import { getSaleorApiUrlFromRequest } from "@/saleor-app-checkout/backend/auth";
+import { unpackThrowable } from "@/saleor-app-checkout/utils/unpackErrors";
 
 const handler: NextApiHandler = async (req, res) => {
-  const tokenData = getTokenDataFromRequest(req);
+  // const tokenData = getTokenDataFromRequest(req);
+  // const tokenDomain = tokenData?.["iss"];
+  // if (!tokenDomain) {
+  //   return res.status(500).json({ error: "Token iss is not correct" });
+  // }
 
-  const tokenDomain = tokenData?.["iss"];
+  const [saleorApiUrlError, saleorApiUrl] = unpackThrowable(() => getSaleorApiUrlFromRequest(req));
 
-  if (!tokenDomain) {
-    return res.status(500).json({ error: "Token iss is not correct" });
+  if (saleorApiUrlError) {
+    res.status(400).json({ message: saleorApiUrlError.message });
+    return;
   }
-
-  const apiUrl = `https://${tokenDomain}/graphql/`;
 
   const data = req.body as string;
 
@@ -30,11 +34,11 @@ const handler: NextApiHandler = async (req, res) => {
   }
 
   try {
-    const settings = await getPrivateSettings(apiUrl, false);
+    const settings = await getPrivateSettings({ saleorApiUrl, obfuscateEncryptedData: false });
 
     const newSettings = JSON.parse(data);
 
-    const updatedSettings = await setPrivateSettings(apiUrl, {
+    const updatedSettings = await setPrivateSettings(saleorApiUrl, {
       ...settings,
       paymentProviders: merge(settings.paymentProviders, newSettings),
     });
@@ -43,7 +47,9 @@ const handler: NextApiHandler = async (req, res) => {
       data: updatedSettings.paymentProviders,
     });
   } catch (error) {
+    console.error(error);
+    Sentry.captureException(error);
     return res.status(500).json({ error });
   }
 };
-export default withSentry(allowCors(requireAuthorization(handler, ["HANDLE_PAYMENTS"])));
+export default allowCors(requireAuthorization(handler, ["HANDLE_PAYMENTS"]));

@@ -1,25 +1,29 @@
 import { TransactionActionPayloadFragment } from "@/saleor-app-checkout/graphql";
 import { TransactionReversal } from "@/saleor-app-checkout/types/refunds";
-import { unpackPromise } from "@/saleor-app-checkout/utils/promises";
+import { unpackPromise } from "@/saleor-app-checkout/utils/unpackErrors";
 import invariant from "ts-invariant";
 import { updateTransaction } from "../../updateTransaction";
 import { getActionsAfterRefund, getIntegerAmountFromSaleor } from "../../utils";
 import { getAdyenClient } from "./utils";
 
-export async function handleAdyenRefund(
-  refund: TransactionReversal,
-  transaction: TransactionActionPayloadFragment["transaction"]
-) {
+export async function handleAdyenRefund({
+  saleorApiUrl,
+  refund,
+  transaction,
+}: {
+  saleorApiUrl: string;
+  refund: TransactionReversal;
+  transaction: TransactionActionPayloadFragment["transaction"];
+}) {
   const { id, amount, currency } = refund;
-  const { modification, config } = await getAdyenClient();
+  const { checkout, config } = await getAdyenClient(saleorApiUrl);
 
-  invariant(config.merchantAccount, "Missing merchant account configuration");
   invariant(transaction?.id, "Transaction id is missing");
 
   const transactionActions = getActionsAfterRefund(transaction, amount);
 
   const [refundError, refundResult] = await unpackPromise(
-    modification.refunds(id, {
+    checkout.refunds(id, {
       amount: {
         currency,
         value: getIntegerAmountFromSaleor(amount),
@@ -28,7 +32,7 @@ export async function handleAdyenRefund(
     })
   );
 
-  const updateSucceeded = await updateTransaction({
+  const updateSucceeded = await updateTransaction(saleorApiUrl, {
     id: transaction.id,
     transaction: {
       availableActions: transactionActions,
