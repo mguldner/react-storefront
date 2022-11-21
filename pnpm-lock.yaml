@@ -139,6 +139,7 @@ importers:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@adyen/adyen-web': registry.npmjs.org/@adyen/adyen-web/5.28.2
       '@adyen/api-library': registry.npmjs.org/@adyen/api-library/12.0.0
       '@material-ui/core': registry.npmjs.org/@material-ui/core/4.12.4_yyloj25vv7zmuk3uh3z5jonzqq
@@ -150,6 +151,10 @@ importers:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       '@adyen/adyen-web': 5.28.2
       '@adyen/api-library': 12.0.0
       '@material-ui/core': 4.12.4_yyloj25vv7zmuk3uh3z5jonzqq
@@ -157,6 +162,7 @@ importers:
       '@material-ui/lab': 4.0.0-alpha.61_l4woruyscjh25lcwxfwsoghpdm
       '@material-ui/styles': 4.11.5_yyloj25vv7zmuk3uh3z5jonzqq
       '@mollie/api-client': 3.6.0
+<<<<<<< HEAD
       '@saleor/app-sdk': 0.23.0_r5sq4deac3rmm2d5onhwvomqve
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
       '@saleor/checkout-storefront': link:../../packages/checkout-storefront
@@ -245,12 +251,16 @@ importers:
       '@material-ui/styles': registry.npmjs.org/@material-ui/styles/4.11.5_yyloj25vv7zmuk3uh3z5jonzqq
       '@mollie/api-client': registry.npmjs.org/@mollie/api-client/3.6.0
       '@saleor/app-sdk': registry.npmjs.org/@saleor/app-sdk/0.23.0_dcors23iqtgxrhrwosgnnc4xji
+=======
+      '@saleor/app-sdk': 0.23.0_dcors23iqtgxrhrwosgnnc4xji
+>>>>>>> 078d4047 (Add slider main page)
       '@saleor/checkout-storefront': link:../../packages/checkout-storefront
-      '@saleor/macaw-ui': registry.npmjs.org/@saleor/macaw-ui/0.6.7_vdvb7n236vx4s4shxyxtl27fte
-      '@sentry/nextjs': registry.npmjs.org/@sentry/nextjs/7.16.0_next@13.0.4+react@18.2.0
-      '@urql/exchange-auth': registry.npmjs.org/@urql/exchange-auth/1.0.0_graphql@16.6.0
-      '@urql/exchange-multipart-fetch': registry.npmjs.org/@urql/exchange-multipart-fetch/1.0.1_graphql@16.6.0
+      '@saleor/macaw-ui': 0.6.7_vdvb7n236vx4s4shxyxtl27fte
+      '@sentry/nextjs': 7.16.0_next@13.0.4+react@18.2.0
+      '@urql/exchange-auth': 1.0.0_graphql@16.6.0
+      '@urql/exchange-multipart-fetch': 1.0.1_graphql@16.6.0
       checkout-common: link:../../packages/checkout-common
+<<<<<<< HEAD
       clsx: registry.npmjs.org/clsx/1.2.1
       content-type: registry.npmjs.org/content-type/1.0.4
       crypto-js: registry.npmjs.org/crypto-js/4.1.1
@@ -274,6 +284,30 @@ importers:
       urql: registry.npmjs.org/urql/3.0.3_onqnqwb3ubg5opvemcqf7c2qhy
       yup: registry.npmjs.org/yup/1.0.0-beta.7
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+      clsx: 1.2.1
+      content-type: 1.0.4
+      crypto-js: 4.1.1
+      currency.js: 2.0.4
+      graphql: 16.6.0
+      graphql-tag: 2.12.6_graphql@16.6.0
+      jose: 4.10.3
+      jsonwebtoken: 8.5.1
+      jwks-rsa: 2.1.5
+      next: 13.0.4_mqvh5p7ejg4taogoj6tpk3gd5a
+      raw-body: 2.5.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-hook-form: 7.38.0_react@18.2.0
+      react-intl: 6.2.1_uz2ogxeagc4rbieizlfzyaazee
+      react-is: 18.2.0
+      retes: 0.34.0
+      stripe: 10.15.0
+      ts-invariant: 0.10.3
+      url-join: 4.0.1
+      urql: 3.0.3_onqnqwb3ubg5opvemcqf7c2qhy
+      yup: 1.0.0-beta.7
+>>>>>>> 078d4047 (Add slider main page)
     devDependencies:
       '@formatjs/cli': 5.1.3
       '@graphql-codegen/add': 3.2.1_graphql@16.6.0
@@ -305,6 +339,7 @@ importers:
       eslint-config-checkout: link:../../packages/eslint-config-checkout
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       eslint-plugin-formatjs: registry.npmjs.org/eslint-plugin-formatjs/4.3.4_6rmyu42touxztjed5utf3elvba
       fast-check: registry.npmjs.org/fast-check/3.3.0
       headers-polyfill: registry.npmjs.org/headers-polyfill/3.1.2
@@ -320,21 +355,33 @@ importers:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       eslint-plugin-formatjs: 4.3.4_6rmyu42touxztjed5utf3elvba
       fast-check: 3.3.0
       headers-polyfill: 3.1.2
       jest: 27.5.1_ts-node@10.9.1
       json-easy-strip: 1.0.6
       msw: 0.47.4_typescript@4.8.4
+<<<<<<< HEAD
       next-test-api-route-handler: 3.1.7_next@13.0.0
       next-transpile-modules: 9.1.0
+=======
+      next-test-api-route-handler: 3.1.7_next@13.0.4
+      next-transpile-modules: 10.0.0
+>>>>>>> 078d4047 (Add slider main page)
       node-mocks-http: 1.11.0
       omit-deep-lodash: 1.1.7
       setup-polly-jest: 0.11.0_@pollyjs+core@6.0.5
       ts-jest: 27.1.4_culikcwpsr2vhvwhflr4pjhbty
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 =======
       eslint-plugin-formatjs: registry.npmjs.org/eslint-plugin-formatjs/4.3.4_6rmyu42touxztjed5utf3elvba
       fast-check: registry.npmjs.org/fast-check/3.3.0
@@ -349,7 +396,12 @@ importers:
       setup-polly-jest: registry.npmjs.org/setup-polly-jest/0.11.0_@pollyjs+core@6.0.5
       ts-jest: registry.npmjs.org/ts-jest/27.1.4_4df3za6fzeww3wm3xdkeajgiqe
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       tsconfig: link:../../packages/tsconfig
       typescript: registry.npmjs.org/typescript/4.8.4
 
@@ -370,6 +422,7 @@ importers:
       '@next/bundle-analyzer': 13.0.0
       '@saleor/sdk': 0.4.4
       '@saleor/ui-kit': workspace:*
+      '@splidejs/react-splide': ^0.7.12
       '@stripe/react-stripe-js': 1.14.0
       '@stripe/stripe-js': 1.42.0
       '@svgr/webpack': 6.5.0
@@ -422,6 +475,7 @@ importers:
       url-join: 4.0.1
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@apollo/client': registry.npmjs.org/@apollo/client/3.7.1_gdcq4dv6opitr3wbfwyjmanyra
       '@formatjs/swc-plugin': registry.npmjs.org/@formatjs/swc-plugin/1.4.14
       '@graphql-codegen/typescript-apollo-client-helpers': registry.npmjs.org/@graphql-codegen/typescript-apollo-client-helpers/2.2.5_graphql@16.6.0
@@ -429,6 +483,11 @@ importers:
       '@heroicons/react': registry.npmjs.org/@heroicons/react/1.0.6_react@18.2.0
       '@saleor/sdk': registry.npmjs.org/@saleor/sdk/0.4.4_ydvm26ae5yhbju2x3rkxrdfexu
 =======
+=======
+=======
+      '@apollo/client': 3.7.1_gdcq4dv6opitr3wbfwyjmanyra
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       '@formatjs/swc-plugin': 1.4.14
       '@graphql-codegen/typescript-apollo-client-helpers': 2.2.5_graphql@16.6.0
       '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
@@ -436,6 +495,7 @@ importers:
       '@saleor/sdk': 0.4.4_ydvm26ae5yhbju2x3rkxrdfexu
 >>>>>>> 65cb590c (Réarrangement de la page de présentation)
       '@saleor/ui-kit': link:../../packages/ui-kit
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -468,6 +528,11 @@ importers:
 >>>>>>> fdc4a712 (Ajout du slider + ajout de la bannière réseaux sociaux)
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+      '@splidejs/react-splide': 0.7.12
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       '@stripe/react-stripe-js': 1.14.0_6nr2xug6y4biiuh7urbys4ixky
       '@stripe/stripe-js': 1.42.0
       '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.2.1
@@ -479,15 +544,24 @@ importers:
       editorjs-blocks-react-renderer: 1.3.0_biqbaboplfbrettd7655fr4n2y
       graphql: 16.6.0
       graphql-tag: 2.12.6_graphql@16.6.0
+<<<<<<< HEAD
       next: 13.0.0_mqvh5p7ejg4taogoj6tpk3gd5a
       next-seo: 5.8.0_r5sq4deac3rmm2d5onhwvomqve
       next-sitemap: 3.1.29_chrqvbflj3yqverqy2l7xvzq2y
       next-usequerystate: 1.7.2_r5sq4deac3rmm2d5onhwvomqve
       nextjs-progressbar: 0.0.16_next@13.0.0+react@18.2.0
+=======
+      next: 13.0.4_mqvh5p7ejg4taogoj6tpk3gd5a
+      next-seo: 5.8.0_dcors23iqtgxrhrwosgnnc4xji
+      next-sitemap: 3.1.29_5onsal3mz77zvmmbchlexi75wu
+      next-usequerystate: 1.7.2_dcors23iqtgxrhrwosgnnc4xji
+      nextjs-progressbar: 0.0.16_next@13.0.4+react@18.2.0
+>>>>>>> 078d4047 (Add slider main page)
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-hook-form: 7.38.0_react@18.2.0
       react-intl: 6.2.1_uz2ogxeagc4rbieizlfzyaazee
+<<<<<<< HEAD
       react-responsive-carousel: 3.2.23
       react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
       tailwind-scrollbar-hide: 1.1.7
@@ -544,7 +618,16 @@ importers:
       '@apollo/server': 4.3.1_graphql@16.6.0
 =======
       '@apollo/server': 4.3.2_graphql@16.6.0
+<<<<<<< HEAD
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+=======
+      react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
+      tailwind-scrollbar-hide: 1.1.7
+      url-join: 4.0.1
+    devDependencies:
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       '@formatjs/cli': 5.1.3
       '@graphql-codegen/add': 3.2.1_graphql@16.6.0
       '@graphql-codegen/cli': 2.13.7_mrtf67frrhpzibu4cfom6brd6i
@@ -825,6 +908,7 @@ importers:
       eslint-config-checkout: link:../eslint-config-checkout
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       eslint-plugin-formatjs: registry.npmjs.org/eslint-plugin-formatjs/4.3.4_bz2ymisszjxjxkv3xrdzdgrbwq
       graphql-tag: registry.npmjs.org/graphql-tag/2.12.6_graphql@15.8.0
       jest: registry.npmjs.org/jest/27.5.1_ts-node@10.9.1
@@ -841,10 +925,18 @@ importers:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       eslint-plugin-formatjs: 4.3.4_bz2ymisszjxjxkv3xrdzdgrbwq
       graphql-tag: 2.12.6_graphql@15.8.0
       jest: 27.5.1_ts-node@10.9.1
       next: 13.0.0_mqvh5p7ejg4taogoj6tpk3gd5a
+=======
+      eslint-plugin-formatjs: 4.3.4_bz2ymisszjxjxkv3xrdzdgrbwq
+      graphql-tag: 2.12.6_graphql@15.8.0
+      jest: 27.5.1_ts-node@10.9.1
+      next: 13.0.4_mqvh5p7ejg4taogoj6tpk3gd5a
+>>>>>>> 078d4047 (Add slider main page)
       postcss: 8.4.18
       postcss-import: 15.0.0_postcss@8.4.18
       prettier: 2.7.1
@@ -855,8 +947,11 @@ importers:
       rollup-plugin-terser: 7.0.2_rollup@3.2.3
       ts-jest: 27.1.5_wri6cnybzkspe3zvb7nve4qk4q
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 =======
       eslint-plugin-formatjs: registry.npmjs.org/eslint-plugin-formatjs/4.3.4_bz2ymisszjxjxkv3xrdzdgrbwq
       graphql-tag: registry.npmjs.org/graphql-tag/2.12.6_graphql@15.8.0
@@ -872,7 +967,12 @@ importers:
       rollup-plugin-terser: registry.npmjs.org/rollup-plugin-terser/7.0.2_rollup@3.2.3
       ts-jest: registry.npmjs.org/ts-jest/27.1.5_jg6tne7owxa2skfjd6y7lyncwi
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       tsconfig: link:../tsconfig
       tslib: registry.npmjs.org/tslib/2.4.0
       typescript: registry.npmjs.org/typescript/4.8.4
@@ -905,6 +1005,7 @@ importers:
     devDependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@typescript-eslint/eslint-plugin': registry.npmjs.org/@typescript-eslint/eslint-plugin/5.41.0_b5xhfrgxhcelhgpcwhcuffyfeu
       '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser/5.41.0_v5bglvupnukcksncywgdzapdrq
       eslint-config-next: registry.npmjs.org/eslint-config-next/13.0.0_v5bglvupnukcksncywgdzapdrq
@@ -915,6 +1016,10 @@ importers:
 =======
 =======
 >>>>>>> c65e5e7e (fix: form submission on password visibility change (#693))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       '@typescript-eslint/eslint-plugin': 5.41.0_tjw2ummbojxf5sntldpoge2ipi
       '@typescript-eslint/parser': 5.41.0_s6zjlrzpskv7oc5fqmwkfkbdxm
       eslint-config-next: 13.0.0_s6zjlrzpskv7oc5fqmwkfkbdxm
@@ -922,8 +1027,11 @@ importers:
       eslint-plugin-formatjs: 4.3.4_eslint@8.26.0
       eslint-plugin-import: 2.26.0_c2flhriocdzler6lrwbyxxyoca
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 =======
       '@typescript-eslint/eslint-plugin': registry.npmjs.org/@typescript-eslint/eslint-plugin/5.41.0_b5xhfrgxhcelhgpcwhcuffyfeu
       '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser/5.41.0_v5bglvupnukcksncywgdzapdrq
@@ -933,7 +1041,13 @@ importers:
       eslint-plugin-import: registry.npmjs.org/eslint-plugin-import/2.26.0_c2flhriocdzler6lrwbyxxyoca
       eslint-plugin-require-form-method: registry.npmjs.org/eslint-plugin-require-form-method/1.0.2
 >>>>>>> b535821f (fix: form submission on password visibility change (#693))
+<<<<<<< HEAD
 >>>>>>> c65e5e7e (fix: form submission on password visibility change (#693))
+=======
+=======
+      eslint-plugin-require-form-method: 1.0.2
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
 
   packages/tsconfig:
     specifiers: {}
@@ -1160,6 +1274,7 @@ packages:
       leven: 3.1.0
     dev: true
 
+<<<<<<< HEAD
   /@apollo/cache-control-types/1.0.2_graphql@16.6.0:
     resolution: {integrity: sha512-Por80co1eUm4ATsvjCOoS/tIR8PHxqVjsA6z76I6Vw0rFn4cgyVElQcmQDIZiYsy41k8e5xkrMRECkM2WR8pNw==}
     peerDependencies:
@@ -1168,6 +1283,8 @@ packages:
       graphql: 16.6.0
     dev: true
 
+=======
+>>>>>>> 078d4047 (Add slider main page)
   /@apollo/client/3.7.1_gdcq4dv6opitr3wbfwyjmanyra:
     resolution: {integrity: sha512-xu5M/l7p9gT9Fx7nF3AQivp0XukjB7TM7tOd5wifIpI8RskYveL4I+rpTijzWrnqCPZabkbzJKH7WEAKdctt9w==}
 >>>>>>> f5629e05 (Add slider main page)
@@ -1226,7 +1343,11 @@ packages:
       response-iterator: 0.2.6
       symbol-observable: 4.0.0
       ts-invariant: 0.10.3
+<<<<<<< HEAD
       tslib: 2.4.0
+=======
+      tslib: 2.4.1
+>>>>>>> 078d4047 (Add slider main page)
       zen-observable-ts: 1.2.5
     dev: false
 
@@ -1292,11 +1413,17 @@ packages:
       zen-observable-ts: 1.2.5
     dev: false
 
+<<<<<<< HEAD
   /@apollo/protobufjs/1.2.7:
     resolution: {integrity: sha512-Lahx5zntHPZia35myYDBRuF58tlwPskwHc5CWBZC/4bMKB6siTBWwtMrkqXcsNwQiFSzSx5hKdRPUmemrEp3Gg==}
+=======
+  /@ardatan/relay-compiler/12.0.0_graphql@15.8.0:
+    resolution: {integrity: sha512-9anThAaj1dQr6IGmzBMcfzOQKTa5artjuPmw8NYK/fiGEMjADbSguBY2FMDykt+QhilR3wc9VA/3yVju7JHg7Q==}
+>>>>>>> 078d4047 (Add slider main page)
     hasBin: true
     requiresBuild: true
     dependencies:
+<<<<<<< HEAD
       '@protobufjs/aspromise': 1.1.2
       '@protobufjs/base64': 1.1.2
       '@protobufjs/codegen': 2.0.4
@@ -1356,11 +1483,32 @@ packages:
       node-fetch: 2.6.7
       uuid: 9.0.0
       whatwg-mimetype: 3.0.0
+=======
+      '@babel/core': 7.20.2
+      '@babel/generator': 7.20.4
+      '@babel/parser': 7.20.3
+      '@babel/runtime': 7.20.1
+      '@babel/traverse': 7.20.1
+      '@babel/types': 7.20.2
+      babel-preset-fbjs: 3.4.0_@babel+core@7.20.2
+      chalk: 4.1.2
+      fb-watchman: 2.0.2
+      fbjs: 3.0.4
+      glob: 7.2.3
+      graphql: 15.8.0
+      immutable: 3.7.6
+      invariant: 2.2.4
+      nullthrows: 1.1.1
+      relay-runtime: 12.0.0
+      signedsource: 1.0.0
+      yargs: 15.4.1
+>>>>>>> 078d4047 (Add slider main page)
     transitivePeerDependencies:
       - encoding
       - supports-color
     dev: true
 
+<<<<<<< HEAD
   /@apollo/usage-reporting-protobuf/4.0.2:
     resolution: {integrity: sha512-GfE8aDqi/lAFut95pjH9IRvH0zGsQ5G/2lYL0ZLZfML7ArX+A4UVHFANQcPCcUYGE6bI6OPhLekg4Vsjf6B1cw==}
     dependencies:
@@ -1583,7 +1731,45 @@ packages:
 >>>>>>> f5629e05 (Add slider main page)
     engines: {node: '>=14'}
     dependencies:
+<<<<<<< HEAD
       node-fetch: registry.npmjs.org/node-fetch/2.6.7
+=======
+=======
+  /@ardatan/relay-compiler/12.0.0_graphql@16.6.0:
+    resolution: {integrity: sha512-9anThAaj1dQr6IGmzBMcfzOQKTa5artjuPmw8NYK/fiGEMjADbSguBY2FMDykt+QhilR3wc9VA/3yVju7JHg7Q==}
+    hasBin: true
+    peerDependencies:
+      graphql: '*'
+    dependencies:
+      '@babel/core': 7.20.2
+      '@babel/generator': 7.20.4
+      '@babel/parser': 7.20.3
+      '@babel/runtime': 7.20.1
+      '@babel/traverse': 7.20.1
+      '@babel/types': 7.20.2
+      babel-preset-fbjs: 3.4.0_@babel+core@7.20.2
+      chalk: 4.1.2
+      fb-watchman: 2.0.2
+      fbjs: 3.0.4
+      glob: 7.2.3
+      graphql: 16.6.0
+      immutable: 3.7.6
+      invariant: 2.2.4
+      nullthrows: 1.1.1
+      relay-runtime: 12.0.0
+      signedsource: 1.0.0
+      yargs: 15.4.1
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+
+  /@ardatan/sync-fetch/0.0.1:
+    resolution: {integrity: sha512-xhlTqH0m31mnsG0tIP4ETgfSB6gXDaYYsUWTrlUV93fFQPI9dd8hE0Ot6MHLCtqgB32hwJAC3YZMWlXZw7AleA==}
+    engines: {node: '>=14'}
+    dependencies:
+>>>>>>> 078d4047 (Add slider main page)
+      node-fetch: 2.6.7
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -8271,6 +8457,7 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@formatjs/icu-messageformat-parser': registry.npmjs.org/@formatjs/icu-messageformat-parser/2.1.10
       '@types/json-stable-stringify': registry.npmjs.org/@types/json-stable-stringify/1.0.34
       '@types/node': registry.npmjs.org/@types/node/17.0.45
@@ -8289,6 +8476,10 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       '@formatjs/icu-messageformat-parser': 2.1.10
       '@types/json-stable-stringify': 1.0.34
       '@types/node': 17.0.45
@@ -8297,6 +8488,7 @@ packages:
       ts-jest: 27.1.4_culikcwpsr2vhvwhflr4pjhbty
       tslib: 2.4.0
       typescript: 4.8.4
+<<<<<<< HEAD
 =======
       '@formatjs/icu-messageformat-parser': registry.npmjs.org/@formatjs/icu-messageformat-parser/2.1.10
       '@types/json-stable-stringify': registry.npmjs.org/@types/json-stable-stringify/1.0.34
@@ -8307,6 +8499,8 @@ packages:
       tslib: registry.npmjs.org/tslib/2.4.0
       typescript: registry.npmjs.org/typescript/4.9.4
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> 078d4047 (Add slider main page)
     dev: true
 
   /@formatjs/ts-transformer/3.11.1_ts-jest@27.1.5:
@@ -8658,11 +8852,15 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@graphql-codegen/plugin-helpers': 2.7.2_graphql@15.8.0
       '@graphql-tools/schema': 9.0.13_graphql@15.8.0
       '@graphql-tools/utils': 8.13.1_graphql@15.8.0
       graphql: 15.8.0
       tslib: 2.4.1
+<<<<<<< HEAD
 =======
       '@graphql-codegen/plugin-helpers': registry.npmjs.org/@graphql-codegen/plugin-helpers/2.7.2_graphql@15.8.0
       '@graphql-tools/schema': registry.npmjs.org/@graphql-tools/schema/9.0.12_graphql@15.8.0
@@ -8670,6 +8868,8 @@ packages:
       graphql: registry.npmjs.org/graphql/15.8.0
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> 078d4047 (Add slider main page)
     dev: true
 
   /@graphql-codegen/core/2.6.2_graphql@16.6.0:
@@ -8845,6 +9045,9 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@graphql-tools/utils': 8.13.1_graphql@15.8.0
       change-case-all: 1.0.14
       common-tags: 1.8.2
@@ -8852,6 +9055,7 @@ packages:
       import-from: 4.0.0
       lodash: 4.17.21
       tslib: 2.4.1
+<<<<<<< HEAD
 =======
       '@graphql-tools/utils': registry.npmjs.org/@graphql-tools/utils/8.13.1_graphql@15.8.0
       change-case-all: registry.npmjs.org/change-case-all/1.0.14
@@ -8861,6 +9065,8 @@ packages:
       lodash: registry.npmjs.org/lodash/4.17.21
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> 078d4047 (Add slider main page)
     dev: true
 
   /@graphql-codegen/plugin-helpers/2.7.2_graphql@16.6.0:
@@ -8904,6 +9110,9 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@graphql-codegen/plugin-helpers': 2.7.2_graphql@16.6.0
       '@graphql-codegen/visitor-plugin-common': 2.13.0_graphql@16.6.0
       auto-bind: 4.0.0
@@ -8911,8 +9120,11 @@ packages:
       graphql: 16.6.0
       tslib: 2.4.1
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 =======
       '@graphql-codegen/plugin-helpers': registry.npmjs.org/@graphql-codegen/plugin-helpers/3.1.1_graphql@15.8.0
       '@graphql-tools/utils': registry.npmjs.org/@graphql-tools/utils/8.13.1_graphql@15.8.0
@@ -8949,7 +9161,12 @@ packages:
       graphql: registry.npmjs.org/graphql/16.6.0
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -9347,6 +9564,9 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@graphql-codegen/plugin-helpers': 2.7.2_graphql@15.8.0
       '@graphql-tools/optimize': 1.3.1_graphql@15.8.0
       '@graphql-tools/relay-operation-optimizer': 6.5.12_graphql@15.8.0
@@ -9358,6 +9578,7 @@ packages:
       graphql-tag: 2.12.6_graphql@15.8.0
       parse-filepath: 1.0.2
       tslib: 2.4.1
+<<<<<<< HEAD
 =======
       '@graphql-codegen/plugin-helpers': registry.npmjs.org/@graphql-codegen/plugin-helpers/3.1.1_graphql@15.8.0
       '@graphql-tools/optimize': registry.npmjs.org/@graphql-tools/optimize/1.3.1_graphql@15.8.0
@@ -9371,6 +9592,8 @@ packages:
       parse-filepath: registry.npmjs.org/parse-filepath/1.0.2
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> 078d4047 (Add slider main page)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -9405,6 +9628,7 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@graphql-codegen/plugin-helpers': registry.npmjs.org/@graphql-codegen/plugin-helpers/3.1.1_graphql@15.8.0
       '@graphql-tools/optimize': registry.npmjs.org/@graphql-tools/optimize/1.3.1_graphql@15.8.0
       '@graphql-tools/relay-operation-optimizer': registry.npmjs.org/@graphql-tools/relay-operation-optimizer/6.5.14_graphql@15.8.0
@@ -9419,11 +9643,16 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       '@ardatan/sync-fetch': 0.0.1
       '@graphql-tools/utils': 9.1.1_graphql@15.8.0
       '@whatwg-node/fetch': 0.5.3
       graphql: 15.8.0
       tslib: 2.4.1
+<<<<<<< HEAD
 =======
       '@ardatan/sync-fetch': registry.npmjs.org/@ardatan/sync-fetch/0.0.1
       '@graphql-tools/utils': registry.npmjs.org/@graphql-tools/utils/9.1.3_graphql@15.8.0
@@ -9431,6 +9660,8 @@ packages:
       graphql: registry.npmjs.org/graphql/15.8.0
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> 078d4047 (Add slider main page)
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -9479,12 +9710,16 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@graphql-tools/graphql-tag-pluck': 7.3.12_graphql@15.8.0
       '@graphql-tools/utils': 9.1.1_graphql@15.8.0
       globby: 11.1.0
       graphql: 15.8.0
       tslib: 2.4.1
       unixify: 1.0.0
+<<<<<<< HEAD
 =======
       '@graphql-tools/graphql-tag-pluck': registry.npmjs.org/@graphql-tools/graphql-tag-pluck/7.4.2_qc5z6knnatyfto37vpk2jbesru
       '@graphql-tools/utils': registry.npmjs.org/@graphql-tools/utils/9.1.3_graphql@15.8.0
@@ -9493,6 +9728,8 @@ packages:
       tslib: registry.npmjs.org/tslib/2.4.1
       unixify: registry.npmjs.org/unixify/1.0.0
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> 078d4047 (Add slider main page)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -9712,6 +9949,9 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@ardatan/sync-fetch': 0.0.1
       '@graphql-tools/graphql-tag-pluck': 7.3.12_graphql@15.8.0
       '@graphql-tools/utils': 9.1.1_graphql@15.8.0
@@ -9723,8 +9963,11 @@ packages:
 =======
       tslib: 2.4.1
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 =======
       '@ardatan/sync-fetch': registry.npmjs.org/@ardatan/sync-fetch/0.0.1
       '@graphql-tools/graphql-tag-pluck': registry.npmjs.org/@graphql-tools/graphql-tag-pluck/7.4.2_qc5z6knnatyfto37vpk2jbesru
@@ -9733,7 +9976,12 @@ packages:
       graphql: registry.npmjs.org/graphql/15.8.0
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -9798,12 +10046,16 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@graphql-tools/import': 6.7.12_graphql@15.8.0
       '@graphql-tools/utils': 9.1.1_graphql@15.8.0
       globby: 11.1.0
       graphql: 15.8.0
       tslib: 2.4.1
       unixify: 1.0.0
+<<<<<<< HEAD
 =======
       '@graphql-tools/import': registry.npmjs.org/@graphql-tools/import/6.7.14_graphql@15.8.0
       '@graphql-tools/utils': registry.npmjs.org/@graphql-tools/utils/9.1.3_graphql@15.8.0
@@ -9812,6 +10064,8 @@ packages:
       tslib: registry.npmjs.org/tslib/2.4.1
       unixify: registry.npmjs.org/unixify/1.0.0
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> 078d4047 (Add slider main page)
     dev: true
 
   /@graphql-tools/graphql-file-loader/7.5.11_graphql@16.6.0:
@@ -9833,6 +10087,9 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@babel/parser': 7.20.3
       '@babel/traverse': 7.20.1
       '@babel/types': 7.20.2
@@ -9844,8 +10101,11 @@ packages:
 =======
       tslib: 2.4.1
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 =======
       '@babel/parser': registry.npmjs.org/@babel/parser/7.20.5
       '@babel/plugin-syntax-import-assertions': registry.npmjs.org/@babel/plugin-syntax-import-assertions/7.20.0_@babel+core@7.20.5
@@ -9855,7 +10115,12 @@ packages:
       graphql: registry.npmjs.org/graphql/15.8.0
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -10476,16 +10741,22 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@graphql-tools/utils': 9.1.1_graphql@15.8.0
       graphql: 15.8.0
       resolve-from: 5.0.0
       tslib: 2.4.1
+<<<<<<< HEAD
 =======
       '@graphql-tools/utils': registry.npmjs.org/@graphql-tools/utils/9.1.3_graphql@15.8.0
       graphql: registry.npmjs.org/graphql/15.8.0
       resolve-from: registry.npmjs.org/resolve-from/5.0.0
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> 078d4047 (Add slider main page)
     dev: true
 
   /@graphql-tools/import/6.7.12_graphql@16.6.0:
@@ -10505,11 +10776,15 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@graphql-tools/utils': 9.1.1_graphql@15.8.0
       globby: 11.1.0
       graphql: 15.8.0
       tslib: 2.4.1
       unixify: 1.0.0
+<<<<<<< HEAD
 =======
       '@graphql-tools/utils': registry.npmjs.org/@graphql-tools/utils/9.1.3_graphql@15.8.0
       globby: registry.npmjs.org/globby/11.1.0
@@ -10517,6 +10792,8 @@ packages:
       tslib: registry.npmjs.org/tslib/2.4.1
       unixify: registry.npmjs.org/unixify/1.0.0
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> 078d4047 (Add slider main page)
     dev: true
 
   /@graphql-tools/json-file-loader/7.4.12_graphql@16.6.0:
@@ -10537,11 +10814,15 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@graphql-tools/schema': 9.0.10_graphql@15.8.0
       '@graphql-tools/utils': 9.1.1_graphql@15.8.0
       graphql: 15.8.0
       p-limit: 3.1.0
       tslib: 2.4.1
+<<<<<<< HEAD
 =======
       '@graphql-tools/schema': registry.npmjs.org/@graphql-tools/schema/9.0.12_graphql@15.8.0
       '@graphql-tools/utils': registry.npmjs.org/@graphql-tools/utils/9.1.3_graphql@15.8.0
@@ -10549,6 +10830,8 @@ packages:
       p-limit: registry.npmjs.org/p-limit/3.1.0
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> 078d4047 (Add slider main page)
     dev: true
 
   /@graphql-tools/load/7.8.6_graphql@16.6.0:
@@ -10690,6 +10973,9 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@graphql-tools/url-loader': 7.16.19_rtehbdkuavwbb77gh2uy7gimii
       '@graphql-tools/utils': 9.1.1_graphql@15.8.0
       '@types/js-yaml': 4.0.5
@@ -10711,8 +10997,11 @@ packages:
       tslib: 2.4.1
       yaml-ast-parser: 0.0.43
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 =======
       '@graphql-tools/url-loader': registry.npmjs.org/@graphql-tools/url-loader/7.16.26_rtehbdkuavwbb77gh2uy7gimii
       '@graphql-tools/utils': registry.npmjs.org/@graphql-tools/utils/9.1.3_graphql@15.8.0
@@ -10735,7 +11024,12 @@ packages:
       tslib: registry.npmjs.org/tslib/2.4.1
       yaml-ast-parser: registry.npmjs.org/yaml-ast-parser/0.0.43
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - '@types/node'
       - bufferutil
@@ -10861,11 +11155,15 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@graphql-tools/merge': 8.3.12_graphql@15.8.0
       '@graphql-tools/utils': 9.1.1_graphql@15.8.0
       graphql: 15.8.0
       tslib: 2.4.1
       value-or-promise: 1.0.11
+<<<<<<< HEAD
 =======
       '@graphql-tools/merge': registry.npmjs.org/@graphql-tools/merge/8.3.14_graphql@15.8.0
       '@graphql-tools/utils': registry.npmjs.org/@graphql-tools/utils/9.1.3_graphql@15.8.0
@@ -10873,6 +11171,8 @@ packages:
       tslib: registry.npmjs.org/tslib/2.4.1
       value-or-promise: registry.npmjs.org/value-or-promise/1.0.11
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> 078d4047 (Add slider main page)
     dev: true
 
   /@graphql-tools/schema/9.0.10_graphql@16.6.0:
@@ -10893,6 +11193,9 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@graphql-tools/merge': 8.3.15_graphql@15.8.0
       '@graphql-tools/utils': 9.1.4_graphql@15.8.0
       graphql: 15.8.0
@@ -10932,8 +11235,11 @@ packages:
       value-or-promise: 1.0.11
       ws: 8.11.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 =======
       '@ardatan/sync-fetch': registry.npmjs.org/@ardatan/sync-fetch/0.0.1
       '@graphql-tools/delegate': registry.npmjs.org/@graphql-tools/delegate/9.0.20_graphql@16.6.0
@@ -10950,7 +11256,12 @@ packages:
       value-or-promise: registry.npmjs.org/value-or-promise/1.0.11
       ws: registry.npmjs.org/ws/8.11.0
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - '@types/node'
       - bufferutil
@@ -10988,6 +11299,9 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 078d4047 (Add slider main page)
       '@ardatan/sync-fetch': 0.0.1
       '@graphql-tools/delegate': 9.0.17_graphql@15.8.0
       '@graphql-tools/executor-graphql-ws': 0.0.3_graphql@15.8.0
@@ -11003,8 +11317,11 @@ packages:
       value-or-promise: 1.0.11
       ws: 8.11.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 =======
       '@ardatan/sync-fetch': registry.npmjs.org/@ardatan/sync-fetch/0.0.1
       '@graphql-tools/delegate': registry.npmjs.org/@graphql-tools/delegate/9.0.20_graphql@15.8.0
@@ -11021,7 +11338,12 @@ packages:
       value-or-promise: registry.npmjs.org/value-or-promise/1.0.11
       ws: registry.npmjs.org/ws/8.11.0
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - '@types/node'
       - bufferutil
@@ -11044,6 +11366,7 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       graphql: registry.npmjs.org/graphql/15.8.0
       tslib: registry.npmjs.org/tslib/2.4.1
 =======
@@ -11051,13 +11374,22 @@ packages:
       tslib: 2.4.1
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       graphql: 15.8.0
       tslib: 2.4.1
 =======
       graphql: registry.npmjs.org/graphql/15.8.0
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+      graphql: 15.8.0
+      tslib: 2.4.1
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
 <<<<<<< HEAD
@@ -11075,6 +11407,7 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       graphql: registry.npmjs.org/graphql/16.6.0
       tslib: registry.npmjs.org/tslib/2.4.1
 =======
@@ -11082,13 +11415,22 @@ packages:
       tslib: 2.4.1
 >>>>>>> 65cb590c (Réarrangement de la page de présentation)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       graphql: 16.6.0
       tslib: 2.4.1
 =======
       graphql: registry.npmjs.org/graphql/16.6.0
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+      graphql: 16.6.0
+      tslib: 2.4.1
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
 
 <<<<<<< HEAD
   registry.npmjs.org/@graphql-tools/utils/9.1.3_graphql@15.8.0:
@@ -11158,12 +11500,17 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       graphql: 15.8.0
       tslib: 2.4.1
 =======
       graphql: registry.npmjs.org/graphql/15.8.0
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+      graphql: 15.8.0
+      tslib: 2.4.1
+>>>>>>> 078d4047 (Add slider main page)
     dev: true
 
   /@graphql-tools/utils/9.1.1_graphql@16.6.0:
@@ -11172,12 +11519,17 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       graphql: 16.6.0
       tslib: 2.4.1
 =======
       graphql: registry.npmjs.org/graphql/16.6.0
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+      graphql: 16.6.0
+      tslib: 2.4.1
+>>>>>>> 078d4047 (Add slider main page)
 
   /@graphql-tools/utils/9.1.4_graphql@15.8.0:
     resolution: {integrity: sha512-hgIeLt95h9nQgQuzbbdhuZmh+8WV7RZ/6GbTj6t3IU4Zd2zs9yYJ2jgW/krO587GMOY8zCwrjNOMzD40u3l7Vg==}
@@ -11396,7 +11748,11 @@ packages:
       slash: registry.npmjs.org/slash/3.0.0
 =======
       '@jest/types': 27.5.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       chalk: 4.1.2
       jest-message-util: 27.5.1
       jest-util: 27.5.1
@@ -11424,7 +11780,11 @@ packages:
       slash: registry.npmjs.org/slash/3.0.0
 =======
       '@jest/types': 28.1.3
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       chalk: 4.1.2
       jest-message-util: 28.1.3
       jest-util: 28.1.3
@@ -11542,7 +11902,11 @@ packages:
     dependencies:
       '@jest/fake-timers': 27.5.1
       '@jest/types': 27.5.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       jest-mock: 27.5.1
     dev: true
 
@@ -11559,7 +11923,11 @@ packages:
     dependencies:
       '@jest/types': 27.5.1
       '@sinonjs/fake-timers': 8.1.0
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       jest-message-util: 27.5.1
       jest-mock: 27.5.1
       jest-util: 27.5.1
@@ -11731,7 +12099,11 @@ packages:
       '@jest/test-result': 27.5.1
       '@jest/transform': 27.5.1
       '@jest/types': 27.5.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       chalk: 4.1.2
       collect-v8-coverage: 1.0.1
       exit: 0.1.2
@@ -11839,7 +12211,11 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       '@types/yargs': 15.0.14
       chalk: 4.1.2
     dev: true
@@ -11850,7 +12226,11 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       '@types/yargs': 16.0.4
       chalk: 4.1.2
     dev: true
@@ -11862,7 +12242,11 @@ packages:
       '@jest/schemas': 28.1.3
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       '@types/yargs': 17.0.13
       chalk: 4.1.2
     dev: true
@@ -11878,12 +12262,17 @@ packages:
       '@jest/schemas': 29.0.0
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       '@types/yargs': 17.0.13
       chalk: 4.1.2
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
     dev: true
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   registry.npmjs.org/@jest/source-map/27.5.1:
@@ -12113,6 +12502,8 @@ packages:
     version: 4.12.4
 =======
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
   /@josephg/resolvable/1.0.1:
     resolution: {integrity: sha512-CtzORUwWTTOTqfVtHaKRJ0I1kNQd1bpn3sUh8I3nJDVY+5/M/Oe1DnEWzPQvqq/xPIIkzzzIP7mfCoAjFRvDhg==}
     dev: true
@@ -12167,6 +12558,57 @@ packages:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
     dev: true
 
+=======
+  /@jridgewell/gen-mapping/0.1.1:
+    resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      '@jridgewell/set-array': 1.1.2
+      '@jridgewell/sourcemap-codec': 1.4.14
+
+  /@jridgewell/gen-mapping/0.3.2:
+    resolution: {integrity: sha512-mh65xKQAzI6iBcFzwv28KVWSmCkdRBWoOh+bYQGW3+6OZvbbN3TqMGo5hqYxQniRcH9F2VZIoJCm4pa3BPDK/A==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      '@jridgewell/set-array': 1.1.2
+      '@jridgewell/sourcemap-codec': 1.4.14
+      '@jridgewell/trace-mapping': 0.3.17
+
+  /@jridgewell/resolve-uri/3.1.0:
+    resolution: {integrity: sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==}
+    engines: {node: '>=6.0.0'}
+
+  /@jridgewell/set-array/1.1.2:
+    resolution: {integrity: sha512-xnkseuNADM0gt2bs+BvhO0p78Mk762YnZdsuzFV018NoG1Sj1SCQvpSqa7XUaTam5vAGasABV9qXASMKnFMwMw==}
+    engines: {node: '>=6.0.0'}
+
+  /@jridgewell/source-map/0.3.2:
+    resolution: {integrity: sha512-m7O9o2uR8k2ObDysZYzdfhb08VuEml5oWGiosa1VdaPZ/A6QyPkAJuwN0Q1lhULOf6B7MtQmHENS743hWtCrgw==}
+    dependencies:
+      '@jridgewell/gen-mapping': 0.3.2
+      '@jridgewell/trace-mapping': 0.3.17
+    dev: true
+
+  /@jridgewell/sourcemap-codec/1.4.14:
+    resolution: {integrity: sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==}
+
+  /@jridgewell/trace-mapping/0.3.17:
+    resolution: {integrity: sha512-MCNzAp77qzKca9+W/+I0+sEpaUnZoeasnghNeVc41VZCEKaCH73Vq3BZZ/SzWIgrqE4H4ceI+p+b6C0mHf9T4g==}
+    dependencies:
+      '@jridgewell/resolve-uri': 3.1.0
+      '@jridgewell/sourcemap-codec': 1.4.14
+
+  /@jridgewell/trace-mapping/0.3.9:
+    resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
+    dependencies:
+      '@jridgewell/resolve-uri': 3.1.0
+      '@jridgewell/sourcemap-codec': 1.4.14
+
+  /@leichtgewicht/ip-codec/2.0.4:
+    resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
+    dev: true
+
+>>>>>>> 078d4047 (Add slider main page)
   /@material-ui/core/4.12.4_sfoxds7t5ydpegc3knd667wn6m:
     resolution: {integrity: sha512-tr7xekNlM9LjA6pagJmL8QCgZXaubWUwkJnoYcMKd4gw/t4XiyvnTkjdGrUVicyB2BsdaAv1tvow45bPM4sSwQ==}
 >>>>>>> f5629e05 (Add slider main page)
@@ -12803,6 +13245,7 @@ packages:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/@next/env/13.0.4:
     resolution: {integrity: sha512-N5Z3bdxBzoxrC5bwykDFITzdWuwDteOdZ+7nxixY+I1XpRX8/iQYbw2wuXMdqdfBGm2NNUpAqg8YF2e4oAC2UQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@next/env/-/env-13.0.4.tgz}
     name: '@next/env'
@@ -12821,6 +13264,8 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> e7f3dedf (Add slider main page)
   /@next/env/13.0.0:
     resolution: {integrity: sha512-65v9BVuah2Mplohm4+efsKEnoEuhmlGm8B2w6vD1geeEP2wXtlSJCvR/cCRJ3fD8wzCQBV41VcMBQeYET6MRkg==}
 =======
@@ -12834,6 +13279,11 @@ packages:
     resolution: {integrity: sha512-N5Z3bdxBzoxrC5bwykDFITzdWuwDteOdZ+7nxixY+I1XpRX8/iQYbw2wuXMdqdfBGm2NNUpAqg8YF2e4oAC2UQ==}
     dev: false
 
+=======
+  /@next/env/13.0.4:
+    resolution: {integrity: sha512-N5Z3bdxBzoxrC5bwykDFITzdWuwDteOdZ+7nxixY+I1XpRX8/iQYbw2wuXMdqdfBGm2NNUpAqg8YF2e4oAC2UQ==}
+
+>>>>>>> 078d4047 (Add slider main page)
   /@next/eslint-plugin-next/13.0.0:
     resolution: {integrity: sha512-z+gnX4Zizatqatc6f4CQrcC9oN8Us3Vrq/OLyc98h7K/eWctrnV91zFZodmJHUjx0cITY8uYM7LXD7IdYkg3kg==}
 >>>>>>> f5629e05 (Add slider main page)
@@ -12842,7 +13292,10 @@ packages:
     dev: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-android-arm-eabi/13.0.0:
     resolution: {integrity: sha512-+DUQkYF93gxFjWY+CYWE1QDX6gTgnUiWf+W4UqZjM1Jcef8U97fS6xYh+i+8rH4MM0AXHm7OSakvfOMzmjU6VA==}
@@ -12855,7 +13308,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-android-arm-eabi/13.0.4:
+    resolution: {integrity: sha512-SD9H+/zuV3L0oHIhsDdFkDqFtg6pIHtqRUPlsrNdOsmWXgMlSzxBmwt2ta4kyrazS62BQu7XRUG++ZyODS7AWg==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [arm]
     os: [android]
@@ -12863,7 +13323,10 @@ packages:
     optional: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-android-arm64/13.0.0:
     resolution: {integrity: sha512-RW9Uy3bMSc0zVGCa11klFuwfP/jdcdkhdruqnrJ7v+7XHm6OFKkSRzX6ee7yGR1rdDZvTnP4GZSRSpzjLv/N0g==}
@@ -12876,7 +13339,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-android-arm64/13.0.4:
+    resolution: {integrity: sha512-F8W5WcBbdn/zBoy32/mQiefs9DNsT12CTSSVCsO8GvQR7GjJU+uduQ4drKcSDoDLuAFULc2jDN06Circq4vuQg==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [android]
@@ -12884,7 +13354,10 @@ packages:
     optional: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-darwin-arm64/13.0.0:
     resolution: {integrity: sha512-APA26nps1j4qyhOIzkclW/OmgotVHj1jBxebSpMCPw2rXfiNvKNY9FA0TcuwPmUCNqaTnm703h6oW4dvp73A4Q==}
@@ -12897,7 +13370,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-darwin-arm64/13.0.4:
+    resolution: {integrity: sha512-/lajev+9GSie+rRTl5z8skW9RJwZ+TwMKLzzM24TbDk8lUjqPTyJZ/cU0NDj8J7VQAZ6EehACSh9rcJeBRtLuA==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
@@ -12905,7 +13385,10 @@ packages:
     optional: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-darwin-x64/13.0.0:
     resolution: {integrity: sha512-qsUhUdoFuRJiaJ7LnvTQ6GZv1QnMDcRXCIjxaN0FNVXwrjkq++U7KjBUaxXkRzLV4C7u0NHLNOp0iZwNNE7ypw==}
@@ -12918,7 +13401,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-darwin-x64/13.0.4:
+    resolution: {integrity: sha512-HK4b2rFiju8d40GTL/jH9U6OQ7BYA2MeEHs7Dm7Rp7kwQtLzP3z6osdQS8er20tIFHDE4b+oVBy03ZUQkHf0Pg==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
@@ -12926,7 +13416,10 @@ packages:
     optional: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-freebsd-x64/13.0.0:
     resolution: {integrity: sha512-sCdyCbboS7CwdnevKH9J6hkJI76LUw1jVWt4eV7kISuLiPba3JmehZSWm80oa4ADChRVAwzhLAo2zJaYRrInbg==}
@@ -12939,7 +13432,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-freebsd-x64/13.0.4:
+    resolution: {integrity: sha512-xBvIGLaGzZtgJfRRJ2DBN82DQCJ/O7jkXyBp8X/vHefPWyVXVqF6C68Rv8ADp11thPpf8WpjkvDDLb9AuWHQUA==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [freebsd]
@@ -12947,7 +13447,10 @@ packages:
     optional: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-linux-arm-gnueabihf/13.0.0:
     resolution: {integrity: sha512-/X/VxfFA41C9jrEv+sUsPLQ5vbDPVIgG0CJrzKvrcc+b+4zIgPgtfsaWq9ockjHFQi3ycvlZK4TALOXO8ovQ6Q==}
@@ -12960,7 +13463,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-linux-arm-gnueabihf/13.0.4:
+    resolution: {integrity: sha512-s13pxNp9deKmmxEGTp1MoL1e4nf4wbEymEaHgFxUlhoR1OD9tK8oTNrQphQePJgVjzcWmRGH/dX7O9mVkHbU/g==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [arm]
     os: [linux]
@@ -12968,7 +13478,10 @@ packages:
     optional: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-linux-arm64-gnu/13.0.0:
     resolution: {integrity: sha512-x6Oxr1GIi0ZtNiT6jbw+JVcbEi3UQgF7mMmkrgfL4mfchOwXtWSHKTSSPnwoJWJfXYa0Vy1n8NElWNTGAqoWFw==}
@@ -12981,7 +13494,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-linux-arm64-gnu/13.0.4:
+    resolution: {integrity: sha512-Lklo65usNzoYwjX51CpDKOepWVZBdwO49/Jz3djxiYUr2lRtpDVnlfwCvzN+47j3BMVMWtC2ndIi8Q4s3J0v4g==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -12989,7 +13509,10 @@ packages:
     optional: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-linux-arm64-musl/13.0.0:
     resolution: {integrity: sha512-SnMH9ngI+ipGh3kqQ8+mDtWunirwmhQnQeZkEq9e/9Xsgjf04OetqrqRHKM1HmJtG2qMUJbyXFJ0F81TPuT+3g==}
@@ -13002,7 +13525,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-linux-arm64-musl/13.0.4:
+    resolution: {integrity: sha512-+3BXtXBwjVhd5lahDe5nKZ7EwD6hE/oLFQkITCvgxymU5qYHGlLFyF52/lyw8qhyxoCr7mMVsUFhlCzVwCfNjg==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -13010,7 +13540,10 @@ packages:
     optional: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-linux-x64-gnu/13.0.0:
     resolution: {integrity: sha512-VSQwTX9EmdbotArtA1J67X8964oQfe0xHb32x4tu+JqTR+wOHyG6wGzPMdXH2oKAp6rdd7BzqxUXXf0J+ypHlw==}
@@ -13023,7 +13556,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-linux-x64-gnu/13.0.4:
+    resolution: {integrity: sha512-QB8qoZrvHhZsz62nUrTKlp5IiZ8I7KZsaa6437H/W/NOZHLGJjCxROnhUjLvKVe/T5P86pjya2SUOUqWAjz4Pg==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -13031,7 +13571,10 @@ packages:
     optional: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-linux-x64-musl/13.0.0:
     resolution: {integrity: sha512-xBCP0nnpO0q4tsytXkvIwWFINtbFRyVY5gxa1zB0vlFtqYR9lNhrOwH3CBrks3kkeaePOXd611+8sjdUtrLnXA==}
@@ -13044,7 +13587,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-linux-x64-musl/13.0.4:
+    resolution: {integrity: sha512-WaahF6DYUQRg1QqIMcuOu2ZsFhS3aC5iWeQyeptMHklP9wb4FfTNmBArKHknX/GXD8P9gI38WTAHJ25cc0zVwg==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -13052,7 +13602,10 @@ packages:
     optional: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-win32-arm64-msvc/13.0.0:
     resolution: {integrity: sha512-NutwDafqhGxqPj/eiUixJq9ImS/0sgx6gqlD7jRndCvQ2Q8AvDdu1+xKcGWGNnhcDsNM/n1avf1e62OG1GaqJg==}
@@ -13065,7 +13618,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-win32-arm64-msvc/13.0.4:
+    resolution: {integrity: sha512-FD+k1j2jeY0aKcqcpzFKfTsv55PPmIZ5GKDyPjjV5AO6XvQ4nALwWl4JwizjH2426TfLXObb+C3MH0bl9Ok1Kw==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
@@ -13073,7 +13633,10 @@ packages:
     optional: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-win32-ia32-msvc/13.0.0:
     resolution: {integrity: sha512-zNaxaO+Kl/xNz02E9QlcVz0pT4MjkXGDLb25qxtAzyJL15aU0+VjjbIZAYWctG59dvggNIUNDWgoBeVTKB9xLg==}
@@ -13086,7 +13649,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-win32-ia32-msvc/13.0.4:
+    resolution: {integrity: sha512-+Q/Q8Ydvz3X3U84CyZdNv1HC7fE43k+xB8C6b3IFmWGa5Tu2tfskQ2FsUNBrYreZjhFC/894J3rVQ6Vj6Auugg==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [ia32]
     os: [win32]
@@ -13094,7 +13664,10 @@ packages:
     optional: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 <<<<<<< HEAD
   /@next/swc-win32-x64-msvc/13.0.0:
     resolution: {integrity: sha512-FFOGGWwTCRMu9W7MF496Urefxtuo2lttxF1vwS+1rIRsKvuLrWhVaVTj3T8sf2EBL6gtJbmh4TYlizS+obnGKA==}
@@ -13107,7 +13680,14 @@ packages:
 <<<<<<< HEAD
 =======
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@next/swc-win32-x64-msvc/13.0.4:
+    resolution: {integrity: sha512-vXtbo9N1FdtZZRcv4BliU28tTYrkb1EnVpUiiFFe88I6kS9aZVTMY9Z/OtDR52rl1JF1hgs9sL/59D/TQqSATQ==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -13835,6 +14415,7 @@ packages:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/@react-types/button/3.6.2_react@18.2.0:
     resolution: {integrity: sha512-qgrYT6yiGVuZSPbzeDT6kTREQVxzJ9p5chV+JX7G5Rpjl2vyUDkEhZ5V/AHLKguBALgFaWJvjtwejHQ7FtycTw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@react-types/button/-/button-3.6.2.tgz}
     id: registry.npmjs.org/@react-types/button/3.6.2
@@ -13854,6 +14435,8 @@ packages:
     version: 3.16.0
 =======
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
   /@protobufjs/aspromise/1.1.2:
     resolution: {integrity: sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==}
     dev: true
@@ -13897,7 +14480,12 @@ packages:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
     dev: true
 
+<<<<<<< HEAD
 >>>>>>> 65cb590c (Réarrangement de la page de présentation)
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
   /@react-types/button/3.6.2_react@18.2.0:
     resolution: {integrity: sha512-qgrYT6yiGVuZSPbzeDT6kTREQVxzJ9p5chV+JX7G5Rpjl2vyUDkEhZ5V/AHLKguBALgFaWJvjtwejHQ7FtycTw==}
     peerDependencies:
@@ -14249,6 +14837,7 @@ packages:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   /@saleor/app-sdk/0.18.0_r5sq4deac3rmm2d5onhwvomqve:
     resolution: {integrity: sha512-kWclPx9738cG7n7bI5P85wrOnCVdkMRuViICygt7xwDlt9IIncMGUwaR07zQ8uCUTvMoesEO96J36d5OGM/QJA==}
 >>>>>>> f5629e05 (Add slider main page)
@@ -14257,6 +14846,8 @@ packages:
     resolution: {integrity: sha512-tlSwuMhK0CsPI+HoEPZny4hnpUWLd2uPtKH1I0B3z6/Smv8VPUV4bSEKVsPseZ97KQG472yDDaqmSzsZyo43nQ==}
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
   /@saleor/app-sdk/0.23.0_r5sq4deac3rmm2d5onhwvomqve:
     resolution: {integrity: sha512-tlSwuMhK0CsPI+HoEPZny4hnpUWLd2uPtKH1I0B3z6/Smv8VPUV4bSEKVsPseZ97KQG472yDDaqmSzsZyo43nQ==}
 =======
@@ -14266,12 +14857,20 @@ packages:
     name: '@saleor/app-sdk'
     version: 0.23.0
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@saleor/app-sdk/0.23.0_dcors23iqtgxrhrwosgnnc4xji:
+    resolution: {integrity: sha512-tlSwuMhK0CsPI+HoEPZny4hnpUWLd2uPtKH1I0B3z6/Smv8VPUV4bSEKVsPseZ97KQG472yDDaqmSzsZyo43nQ==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     peerDependencies:
       next: '>=12'
       react: '>=17'
       react-dom: '>=17'
     dependencies:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       debug: registry.npmjs.org/debug/4.3.4
@@ -14288,11 +14887,19 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       debug: 4.3.4
       fast-glob: 3.2.12
       graphql: 16.6.0
       jose: 4.10.3
+<<<<<<< HEAD
       next: 13.0.0_mqvh5p7ejg4taogoj6tpk3gd5a
+=======
+      next: 13.0.4_mqvh5p7ejg4taogoj6tpk3gd5a
+>>>>>>> 078d4047 (Add slider main page)
       node-fetch: 2.6.7
       raw-body: 2.5.1
       react: 18.2.0
@@ -14300,8 +14907,11 @@ packages:
       retes: 0.33.0
       uuid: 8.3.2
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 =======
       debug: registry.npmjs.org/debug/4.3.4
       fast-glob: registry.npmjs.org/fast-glob/3.2.12
@@ -14315,7 +14925,12 @@ packages:
       retes: registry.npmjs.org/retes/0.33.0
       uuid: registry.npmjs.org/uuid/8.3.2
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -14460,6 +15075,7 @@ packages:
     dev: false
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/@sentry/integrations/7.16.0:
     resolution: {integrity: sha512-PJRmFUHOKMf1APOlwxGB7Z6LHzJP4xL6OLSoiwnruRuHaGvdyILA53fr/A6wRMSPyTxJDJpNkcN36cA56mLxYA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@sentry/integrations/-/integrations-7.16.0.tgz}
     name: '@sentry/integrations'
@@ -14488,6 +15104,9 @@ packages:
     resolution: {integrity: sha512-EqEfcL36TocxQZ820O2q01pF76oEEU4x8MzhRu4HrKByU7seUwU9m6a6YL8DmzcyJdenwL1HJK0Oyhg99pNcuw==}
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+<<<<<<< HEAD
+>>>>>>> e7f3dedf (Add slider main page)
   /@sentry/nextjs/7.16.0_next@13.0.0+react@18.2.0:
     resolution: {integrity: sha512-EqEfcL36TocxQZ820O2q01pF76oEEU4x8MzhRu4HrKByU7seUwU9m6a6YL8DmzcyJdenwL1HJK0Oyhg99pNcuw==}
 =======
@@ -14497,7 +15116,14 @@ packages:
     name: '@sentry/nextjs'
     version: 7.16.0
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /@sentry/nextjs/7.16.0_next@13.0.4+react@18.2.0:
+    resolution: {integrity: sha512-EqEfcL36TocxQZ820O2q01pF76oEEU4x8MzhRu4HrKByU7seUwU9m6a6YL8DmzcyJdenwL1HJK0Oyhg99pNcuw==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>=8'}
     peerDependencies:
       next: ^10.0.8 || ^11.0 || ^12.0
@@ -14507,6 +15133,7 @@ packages:
       webpack:
         optional: true
     dependencies:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       '@rollup/plugin-sucrase': registry.npmjs.org/@rollup/plugin-sucrase/4.0.4_rollup@2.78.0
@@ -14526,6 +15153,10 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       '@rollup/plugin-sucrase': 4.0.4_rollup@2.78.0
       '@sentry/core': 7.16.0
       '@sentry/integrations': 7.16.0
@@ -14536,6 +15167,7 @@ packages:
       '@sentry/utils': 7.16.0
       '@sentry/webpack-plugin': 1.19.0
       chalk: 3.0.0
+<<<<<<< HEAD
       next: 13.0.0_mqvh5p7ejg4taogoj6tpk3gd5a
       react: 18.2.0
       rollup: 2.78.0
@@ -14559,7 +15191,16 @@ packages:
       rollup: registry.npmjs.org/rollup/2.78.0
       tslib: registry.npmjs.org/tslib/1.14.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+      next: 13.0.4_mqvh5p7ejg4taogoj6tpk3gd5a
+      react: 18.2.0
+      rollup: 2.78.0
+      tslib: 1.14.1
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -14741,6 +15382,19 @@ packages:
       '@sinonjs/commons': 1.8.5
     dev: true
 
+<<<<<<< HEAD
+=======
+  /@splidejs/react-splide/0.7.12:
+    resolution: {integrity: sha512-UfXH+j47jsMc4x5HA/aOwuuHPqn6y9+ZTNYPWDRD8iLKvIVMZlzq2unjUEvyDAU+TTVPZOXkG2Ojeoz0P4AkZw==}
+    dependencies:
+      '@splidejs/splide': 4.1.4
+    dev: false
+
+  /@splidejs/splide/4.1.4:
+    resolution: {integrity: sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==}
+    dev: false
+
+>>>>>>> 078d4047 (Add slider main page)
   /@storybook/addon-actions/6.5.13_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-3Tji0gIy95havhTpSc6CsFl5lNxGn4O5Y1U9fyji+GRkKqDFOrvVLYAHPtLOpYdEI5tF0bDo+akiqfDouY8+eA==}
 >>>>>>> f5629e05 (Add slider main page)
@@ -17056,6 +17710,7 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       debug: registry.npmjs.org/debug/4.3.4
       endent: registry.npmjs.org/endent/2.1.0
       find-cache-dir: registry.npmjs.org/find-cache-dir/3.3.2
@@ -17068,6 +17723,10 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       debug: 4.3.4
       endent: 2.1.0
       find-cache-dir: 3.3.2
@@ -17078,8 +17737,11 @@ packages:
       typescript: 4.8.4
       webpack: 5.75.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 =======
       debug: registry.npmjs.org/debug/4.3.4
       endent: registry.npmjs.org/endent/2.1.0
@@ -17091,7 +17753,12 @@ packages:
       typescript: registry.npmjs.org/typescript/4.8.4
       webpack: registry.npmjs.org/webpack/5.75.0
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -18818,10 +19485,17 @@ packages:
 >>>>>>> f5629e05 (Add slider main page)
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+      '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
 <<<<<<< HEAD
@@ -18839,8 +19513,15 @@ packages:
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/express-serve-static-core': 4.17.31
+<<<<<<< HEAD
       '@types/node': 18.11.9
+<<<<<<< HEAD
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
 <<<<<<< HEAD
@@ -19017,7 +19698,11 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
     dev: true
 
   /@types/glob/8.0.0:
@@ -19029,8 +19714,15 @@ packages:
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/minimatch': 5.1.2
+<<<<<<< HEAD
       '@types/node': 18.11.9
+<<<<<<< HEAD
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
   registry.npmjs.org/@types/glob/8.0.0:
@@ -19059,10 +19751,17 @@ packages:
 >>>>>>> f5629e05 (Add slider main page)
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+      '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
 <<<<<<< HEAD
@@ -19133,10 +19832,17 @@ packages:
 >>>>>>> f5629e05 (Add slider main page)
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+      '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
 <<<<<<< HEAD
@@ -19327,10 +20033,13 @@ packages:
     resolution: {integrity: sha512-kb9/98N6X8gyME9Cf7YaqIMvYGnBSWqEci6tiettE6iJWH1XdJz/PO8LB0GtLCG7x8dU3KWhZT+lA1a35127tA==}
     dev: true
 
+<<<<<<< HEAD
   /@types/long/4.0.2:
     resolution: {integrity: sha512-MqTGEo5bj5t157U6fA/BiDynNkn0YknVdh48CMPkTSpFTVmvao5UQmm7uEF6xBEo7qIMAlY/JSleYaE6VOdpaA==}
     dev: true
 
+=======
+>>>>>>> 078d4047 (Add slider main page)
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
 >>>>>>> f5629e05 (Add slider main page)
@@ -19599,10 +20308,17 @@ packages:
 >>>>>>> f5629e05 (Add slider main page)
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+      '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
 <<<<<<< HEAD
@@ -19683,10 +20399,17 @@ packages:
 >>>>>>> f5629e05 (Add slider main page)
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+      '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
 <<<<<<< HEAD
@@ -19735,10 +20458,17 @@ packages:
 >>>>>>> f5629e05 (Add slider main page)
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+      '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
 <<<<<<< HEAD
@@ -19849,11 +20579,17 @@ packages:
 >>>>>>> f5629e05 (Add slider main page)
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
       '@types/source-list-map': registry.npmjs.org/@types/source-list-map/0.1.2
       source-map: registry.npmjs.org/source-map/0.7.4
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       '@types/source-list-map': 0.1.2
       source-map: 0.7.4
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
@@ -19881,7 +20617,11 @@ packages:
   /@types/webpack/4.41.33:
     resolution: {integrity: sha512-PPajH64Ft2vWevkerISMtnZ8rTs4YmRbs+23c402J0INmxDKCrhZNvwZYtzx96gY2wAtXdrK1BS2fiC8MlLr3g==}
     dependencies:
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       '@types/tapable': 1.0.8
       '@types/uglify-js': 3.17.1
       '@types/webpack-sources': 3.2.0
@@ -19894,10 +20634,17 @@ packages:
 >>>>>>> f5629e05 (Add slider main page)
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+      '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
 <<<<<<< HEAD
@@ -19957,6 +20704,7 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/14.18.34
     dev: true
     optional: true
@@ -19971,6 +20719,12 @@ packages:
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+      '@types/node': 18.11.9
+=======
+      '@types/node': 14.18.33
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
     optional: true
 
@@ -22437,16 +23191,25 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       tslib: registry.npmjs.org/tslib/2.4.1
 =======
       tslib: 2.4.1
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       tslib: 2.4.1
 =======
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+      tslib: 2.4.1
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
 <<<<<<< HEAD
@@ -22462,16 +23225,25 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       tslib: registry.npmjs.org/tslib/2.4.1
 =======
       tslib: 2.4.1
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       tslib: 2.4.1
 =======
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+      tslib: 2.4.1
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
 <<<<<<< HEAD
@@ -26478,6 +27250,7 @@ packages:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       icss-utils: registry.npmjs.org/icss-utils/5.1.0_postcss@8.4.20
       loader-utils: registry.npmjs.org/loader-utils/2.0.4
       postcss: registry.npmjs.org/postcss/8.4.20
@@ -26501,6 +27274,10 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       icss-utils: 5.1.0_postcss@8.4.19
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
       loader-utils: 2.0.4
@@ -26513,6 +27290,7 @@ packages:
       schema-utils: 3.1.1
       semver: 7.3.8
       webpack: 5.75.0
+<<<<<<< HEAD
 =======
       icss-utils: registry.npmjs.org/icss-utils/5.1.0_postcss@8.4.20
       loader-utils: registry.npmjs.org/loader-utils/2.0.4
@@ -26526,6 +27304,8 @@ packages:
       semver: registry.npmjs.org/semver/7.3.8
       webpack: registry.npmjs.org/webpack/5.75.0
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> 078d4047 (Add slider main page)
     dev: true
 
   /css-loader/6.7.1_webpack@5.75.0:
@@ -30022,6 +30802,7 @@ packages:
     dev: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   /eslint-plugin-testing-library/5.9.1_wyqvi574yv7oiwfeinomdzmc3m:
     resolution: {integrity: sha512-6BQp3tmb79jLLasPHJmy8DnxREe+2Pgf7L+7o09TSWPfdqqtQfRZmZNetr5mOs3yqZk/MRNxpN3RUpJe0wB4LQ==}
 <<<<<<< HEAD
@@ -30032,18 +30813,30 @@ packages:
     resolution: {integrity: sha512-cdHE+LTMAMwwHo4Rk8ZP/of7t3bekT65wuBmm37Is+if0PzADDN1x6ctPX7k2Xam2XDQdaWvzv6Dg3oJfMZxnA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/eslint-plugin-require-form-method/-/eslint-plugin-require-form-method-1.0.2.tgz}
     name: eslint-plugin-require-form-method
     version: 1.0.2
+=======
+  /eslint-plugin-require-form-method/1.0.2:
+    resolution: {integrity: sha512-cdHE+LTMAMwwHo4Rk8ZP/of7t3bekT65wuBmm37Is+if0PzADDN1x6ctPX7k2Xam2XDQdaWvzv6Dg3oJfMZxnA==}
+>>>>>>> 078d4047 (Add slider main page)
     engines: {node: '>=0.10.0'}
     dependencies:
-      requireindex: registry.npmjs.org/requireindex/1.1.0
+      requireindex: 1.1.0
     dev: true
 
+<<<<<<< HEAD
   registry.npmjs.org/eslint-plugin-testing-library/5.9.1_wyqvi574yv7oiwfeinomdzmc3m:
     resolution: {integrity: sha512-6BQp3tmb79jLLasPHJmy8DnxREe+2Pgf7L+7o09TSWPfdqqtQfRZmZNetr5mOs3yqZk/MRNxpN3RUpJe0wB4LQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/eslint-plugin-testing-library/-/eslint-plugin-testing-library-5.9.1.tgz}
     id: registry.npmjs.org/eslint-plugin-testing-library/5.9.1
     name: eslint-plugin-testing-library
     version: 5.9.1
 >>>>>>> b535821f (fix: form submission on password visibility change (#693))
+<<<<<<< HEAD
 >>>>>>> c65e5e7e (fix: form submission on password visibility change (#693))
+=======
+=======
+  /eslint-plugin-testing-library/5.9.1_wyqvi574yv7oiwfeinomdzmc3m:
+    resolution: {integrity: sha512-6BQp3tmb79jLLasPHJmy8DnxREe+2Pgf7L+7o09TSWPfdqqtQfRZmZNetr5mOs3yqZk/MRNxpN3RUpJe0wB4LQ==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0, npm: '>=6'}
     peerDependencies:
       eslint: ^7.5.0 || ^8.0.0
@@ -32723,6 +33516,7 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@graphql-tools/graphql-file-loader': registry.npmjs.org/@graphql-tools/graphql-file-loader/7.5.13_graphql@15.8.0
       '@graphql-tools/json-file-loader': registry.npmjs.org/@graphql-tools/json-file-loader/7.4.14_graphql@15.8.0
       '@graphql-tools/load': registry.npmjs.org/@graphql-tools/load/7.8.8_graphql@15.8.0
@@ -32740,6 +33534,10 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
       '@graphql-tools/graphql-file-loader': 7.5.11_graphql@15.8.0
       '@graphql-tools/json-file-loader': 7.4.12_graphql@15.8.0
       '@graphql-tools/load': 7.8.6_graphql@15.8.0
@@ -32759,8 +33557,11 @@ packages:
 =======
       tslib: 2.4.1
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
 =======
       '@graphql-tools/graphql-file-loader': registry.npmjs.org/@graphql-tools/graphql-file-loader/7.5.13_graphql@15.8.0
       '@graphql-tools/json-file-loader': registry.npmjs.org/@graphql-tools/json-file-loader/7.4.14_graphql@15.8.0
@@ -32777,7 +33578,12 @@ packages:
       ts-node: registry.npmjs.org/ts-node/10.9.1_ae6deb2ok7ai3afhw3pcftnhky
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -35901,7 +36707,11 @@ packages:
       '@jest/environment': 27.5.1
       '@jest/test-result': 27.5.1
       '@jest/types': 27.5.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       chalk: 4.1.2
       co: 4.6.0
       dedent: 0.7.0
@@ -36212,7 +37022,11 @@ packages:
       '@jest/environment': 27.5.1
       '@jest/fake-timers': 27.5.1
       '@jest/types': 27.5.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       jest-mock: 27.5.1
       jest-util: 27.5.1
       jsdom: 16.7.0
@@ -36244,7 +37058,11 @@ packages:
       '@jest/environment': 27.5.1
       '@jest/fake-timers': 27.5.1
       '@jest/types': 27.5.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       jest-mock: 27.5.1
       jest-util: 27.5.1
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
@@ -36369,7 +37187,11 @@ packages:
     dependencies:
       '@jest/types': 26.6.2
       '@types/graceful-fs': 4.1.5
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.10
@@ -36413,7 +37235,11 @@ packages:
     dependencies:
       '@jest/types': 27.5.1
       '@types/graceful-fs': 4.1.5
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.10
@@ -36462,7 +37288,11 @@ packages:
       '@jest/source-map': 27.5.1
       '@jest/test-result': 27.5.1
       '@jest/types': 27.5.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       chalk: 4.1.2
       co: 4.6.0
       expect: 27.5.1
@@ -36646,8 +37476,15 @@ packages:
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@jest/types': 27.5.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+<<<<<<< HEAD
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     dev: true
 
 <<<<<<< HEAD
@@ -36797,7 +37634,11 @@ packages:
       '@jest/test-result': 27.5.1
       '@jest/transform': 27.5.1
       '@jest/types': 27.5.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       chalk: 4.1.2
       emittery: 0.8.1
       graceful-fs: 4.2.10
@@ -36870,10 +37711,16 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
       graceful-fs: registry.npmjs.org/graceful-fs/4.2.10
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       graceful-fs: 4.2.10
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
     dev: true
@@ -36890,10 +37737,16 @@ packages:
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
       graceful-fs: registry.npmjs.org/graceful-fs/4.2.10
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       graceful-fs: 4.2.10
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
     dev: true
@@ -36979,7 +37832,11 @@ packages:
       micromatch: registry.npmjs.org/micromatch/4.0.5
 =======
       '@jest/types': 26.6.2
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       chalk: 4.1.2
       graceful-fs: 4.2.10
       is-ci: 2.0.0
@@ -37052,7 +37909,11 @@ packages:
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     dependencies:
       '@jest/types': 28.1.3
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       chalk: 4.1.2
       ci-info: 3.6.1
       graceful-fs: 4.2.10
@@ -37064,7 +37925,11 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/types': 29.3.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       chalk: 4.1.2
       ci-info: 3.6.1
       graceful-fs: 4.2.10
@@ -37130,7 +37995,11 @@ packages:
 =======
       '@jest/test-result': 27.5.1
       '@jest/types': 27.5.1
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       jest-util: 27.5.1
@@ -37161,7 +38030,11 @@ packages:
 =======
       '@jest/test-result': 28.1.3
       '@jest/types': 28.1.3
+<<<<<<< HEAD
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       emittery: 0.10.2
@@ -37202,11 +38075,17 @@ packages:
     engines: {node: '>= 10.13.0'}
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
       merge-stream: registry.npmjs.org/merge-stream/2.0.0
       supports-color: registry.npmjs.org/supports-color/8.1.1
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       merge-stream: 2.0.0
       supports-color: 8.1.1
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
@@ -37224,11 +38103,17 @@ packages:
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
       merge-stream: registry.npmjs.org/merge-stream/2.0.0
       supports-color: registry.npmjs.org/supports-color/8.1.1
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       '@types/node': 18.11.9
+=======
+      '@types/node': 16.11.22
+>>>>>>> 078d4047 (Add slider main page)
       merge-stream: 2.0.0
       supports-color: 8.1.1
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
@@ -38660,14 +39545,22 @@ packages:
     engines: {node: '>= 0.6.0'}
     dev: true
 
+<<<<<<< HEAD
   /long/4.0.0:
     resolution: {integrity: sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==}
     dev: true
 
+<<<<<<< HEAD
   registry.npmjs.org/loose-envify/1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz}
     name: loose-envify
     version: 1.4.0
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+  /loose-envify/1.4.0:
+    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+>>>>>>> e7f3dedf (Add slider main page)
     hasBin: true
     dependencies:
       js-tokens: registry.npmjs.org/js-tokens/4.0.0
@@ -38762,18 +39655,26 @@ packages:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/lru-memoizer/2.1.4:
     resolution: {integrity: sha512-IXAq50s4qwrOBrXJklY+KhgZF+5y98PDaNo0gi/v2KQBFLyWr+JyFvijZXkGKjQj/h9c0OwoE+JZbwUXce76hQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/lru-memoizer/-/lru-memoizer-2.1.4.tgz}
     name: lru-memoizer
     version: 2.1.4
 =======
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
   /lru-cache/7.14.1:
     resolution: {integrity: sha512-ysxwsnTKdAx96aTRdhDOCQfDgbHnt8SK0KY8SEjO0wHinhWOFTESbjVCMPbU1uGXg/ch4lifqx0wfjOawU2+WA==}
     engines: {node: '>=12'}
     dev: true
 
+<<<<<<< HEAD
 >>>>>>> 65cb590c (Réarrangement de la page de présentation)
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
   /lru-memoizer/2.1.4:
     resolution: {integrity: sha512-IXAq50s4qwrOBrXJklY+KhgZF+5y98PDaNo0gi/v2KQBFLyWr+JyFvijZXkGKjQj/h9c0OwoE+JZbwUXce76hQ==}
 >>>>>>> f5629e05 (Add slider main page)
@@ -40028,6 +40929,7 @@ packages:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/next-seo/5.8.0_dcors23iqtgxrhrwosgnnc4xji:
     resolution: {integrity: sha512-V5W/JwqdoX6/0zG4S7m5g8zNajYffytWigkPo2hrbHhLD18yGFBU9607OPhvbI9zX3QjWQFMBSmlUY456xt9cA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/next-seo/-/next-seo-5.8.0.tgz}
     id: registry.npmjs.org/next-seo/5.8.0
@@ -40038,6 +40940,8 @@ packages:
     resolution: {integrity: sha512-V5W/JwqdoX6/0zG4S7m5g8zNajYffytWigkPo2hrbHhLD18yGFBU9607OPhvbI9zX3QjWQFMBSmlUY456xt9cA==}
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
   /next-seo/5.8.0_r5sq4deac3rmm2d5onhwvomqve:
     resolution: {integrity: sha512-V5W/JwqdoX6/0zG4S7m5g8zNajYffytWigkPo2hrbHhLD18yGFBU9607OPhvbI9zX3QjWQFMBSmlUY456xt9cA==}
 =======
@@ -40047,12 +40951,20 @@ packages:
     name: next-seo
     version: 5.8.0
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /next-seo/5.8.0_dcors23iqtgxrhrwosgnnc4xji:
+    resolution: {integrity: sha512-V5W/JwqdoX6/0zG4S7m5g8zNajYffytWigkPo2hrbHhLD18yGFBU9607OPhvbI9zX3QjWQFMBSmlUY456xt9cA==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     peerDependencies:
       next: ^8.1.1-canary.54 || >=9.0.0
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       next: registry.npmjs.org/next/13.0.4_672uxklweod7ene3nqtsh262ca
@@ -40068,6 +40980,8 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       next: 13.0.0_mqvh5p7ejg4taogoj6tpk3gd5a
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -40090,13 +41004,26 @@ packages:
     name: next-sitemap
     version: 3.1.29
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+      next: 13.0.4_mqvh5p7ejg4taogoj6tpk3gd5a
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /next-sitemap/3.1.29_5onsal3mz77zvmmbchlexi75wu:
+    resolution: {integrity: sha512-7UQyfpI7obOdB11aCswWYfqRn5CR0YSmWHo1r/uarrFfZD5PyyAWtQlgP6jNqDW0eX1ZJWERBwmJ2dLjl4nT8Q==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>=14.18'}
     hasBin: true
     peerDependencies:
       '@next/env': '*'
       next: '*'
     dependencies:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       '@corex/deepmerge': registry.npmjs.org/@corex/deepmerge/4.0.29
@@ -40113,6 +41040,8 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       '@corex/deepmerge': 4.0.29
       '@next/env': 13.0.4
       minimist: 1.2.7
@@ -40137,11 +41066,25 @@ packages:
     name: next-test-api-route-handler
     version: 3.1.7
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+      '@corex/deepmerge': 4.0.29
+      '@next/env': 13.0.4
+      minimist: 1.2.7
+      next: 13.0.4_mqvh5p7ejg4taogoj6tpk3gd5a
+    dev: false
+
+  /next-test-api-route-handler/3.1.7_next@13.0.4:
+    resolution: {integrity: sha512-ds4VH7TOMRY8iT0vAnOi88uXsIGk9r6Yf/VrZPGHuG1ceRuTHIN3pyzKaPtQO2MisHH4z9ZDXmGrh3NJgq56ag==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>=12'}
     peerDependencies:
       next: '>=9'
     dependencies:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       cookie: registry.npmjs.org/cookie/0.5.0
@@ -40153,6 +41096,8 @@ packages:
       node-fetch: 2.6.7
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       cookie: 0.5.0
       next: 13.0.0_mqvh5p7ejg4taogoj6tpk3gd5a
       node-fetch: 2.6.7
@@ -40161,11 +41106,20 @@ packages:
       next: registry.npmjs.org/next/13.0.4_672uxklweod7ene3nqtsh262ca
       node-fetch: registry.npmjs.org/node-fetch/2.6.7
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+      cookie: 0.5.0
+      next: 13.0.4_mqvh5p7ejg4taogoj6tpk3gd5a
+      node-fetch: 2.6.7
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - encoding
     dev: true
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   registry.npmjs.org/next-transpile-modules/10.0.0:
@@ -40175,6 +41129,8 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> e7f3dedf (Add slider main page)
   /next-transpile-modules/9.1.0:
     resolution: {integrity: sha512-yzJji65xDqcIqjvx5vPJcs1M+MYQTzLM1pXH/qf8Q88ohx+bwVGDc1AeV+HKr1NwvMCNTpwVPSFI7cA5WdyeWA==}
 <<<<<<< HEAD
@@ -40203,22 +41159,36 @@ packages:
     resolution: {integrity: sha512-FyeJ++Lm2Fq31gbThiRCrJlYpIY9QaI7A3TjuhQLzOix8ChQrvn5ny4MhfIthS5cy6+uK1AhDRvxVdW17y3Xdw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/next-transpile-modules/-/next-transpile-modules-10.0.0.tgz}
     name: next-transpile-modules
     version: 10.0.0
+=======
+  /next-transpile-modules/10.0.0:
+    resolution: {integrity: sha512-FyeJ++Lm2Fq31gbThiRCrJlYpIY9QaI7A3TjuhQLzOix8ChQrvn5ny4MhfIthS5cy6+uK1AhDRvxVdW17y3Xdw==}
+    deprecated: All features of next-transpile-modules are now natively built-in Next.js 13.1. Please use Next's transpilePackages option :)
+>>>>>>> 078d4047 (Add slider main page)
     dependencies:
-      enhanced-resolve: registry.npmjs.org/enhanced-resolve/5.12.0
+      enhanced-resolve: 5.10.0
     dev: true
 
+<<<<<<< HEAD
   registry.npmjs.org/next-usequerystate/1.7.2_dcors23iqtgxrhrwosgnnc4xji:
     resolution: {integrity: sha512-5ChbGoG/TGYRuKtpI4fKf1wsePYrO75srXwLcuPR0Nnbm7Tspfbx0L6215PRmUb9ZJCRLoXy6J3CqJRZYCot3w==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/next-usequerystate/-/next-usequerystate-1.7.2.tgz}
     id: registry.npmjs.org/next-usequerystate/1.7.2
     name: next-usequerystate
     version: 1.7.2
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /next-usequerystate/1.7.2_dcors23iqtgxrhrwosgnnc4xji:
+    resolution: {integrity: sha512-5ChbGoG/TGYRuKtpI4fKf1wsePYrO75srXwLcuPR0Nnbm7Tspfbx0L6215PRmUb9ZJCRLoXy6J3CqJRZYCot3w==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     peerDependencies:
       next: '*'
       react: '*'
       react-dom: '*'
     dependencies:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       next: registry.npmjs.org/next/13.0.4_672uxklweod7ene3nqtsh262ca
@@ -40234,6 +41204,8 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       next: 13.0.0_mqvh5p7ejg4taogoj6tpk3gd5a
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -40256,7 +41228,19 @@ packages:
     name: next
     version: 13.0.4
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+      next: 13.0.4_mqvh5p7ejg4taogoj6tpk3gd5a
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /next/13.0.4_mqvh5p7ejg4taogoj6tpk3gd5a:
+    resolution: {integrity: sha512-4P0MvbjPCI1E/UPL1GrTXtYlgFnbBbY3JQ+AMY8jYE2SwyvCWctEJySoRjveznAHjrl6TIjuAJeB8u1c2StYUQ==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     engines: {node: '>=14.6.0'}
     hasBin: true
     peerDependencies:
@@ -40273,6 +41257,7 @@ packages:
       sass:
         optional: true
     dependencies:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       '@next/env': registry.npmjs.org/@next/env/13.0.4
@@ -40300,7 +41285,12 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       '@next/env': 13.0.0
+=======
+      '@next/env': 13.0.4
+>>>>>>> 078d4047 (Add slider main page)
       '@swc/helpers': 0.4.11
       caniuse-lite: 1.0.30001434
       postcss: 8.4.14
@@ -40308,6 +41298,7 @@ packages:
       react-dom: 18.2.0_react@18.2.0
       styled-jsx: 5.1.0_3lzqd2prgnu7gkxqqdmtvzna5u
       use-sync-external-store: 1.2.0_react@18.2.0
+<<<<<<< HEAD
     optionalDependencies:
       '@next/swc-android-arm-eabi': 13.0.0
       '@next/swc-android-arm64': 13.0.0
@@ -40349,11 +41340,31 @@ packages:
       '@next/swc-win32-ia32-msvc': registry.npmjs.org/@next/swc-win32-ia32-msvc/13.0.4
       '@next/swc-win32-x64-msvc': registry.npmjs.org/@next/swc-win32-x64-msvc/13.0.4
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+    optionalDependencies:
+      '@next/swc-android-arm-eabi': 13.0.4
+      '@next/swc-android-arm64': 13.0.4
+      '@next/swc-darwin-arm64': 13.0.4
+      '@next/swc-darwin-x64': 13.0.4
+      '@next/swc-freebsd-x64': 13.0.4
+      '@next/swc-linux-arm-gnueabihf': 13.0.4
+      '@next/swc-linux-arm64-gnu': 13.0.4
+      '@next/swc-linux-arm64-musl': 13.0.4
+      '@next/swc-linux-x64-gnu': 13.0.4
+      '@next/swc-linux-x64-musl': 13.0.4
+      '@next/swc-win32-arm64-msvc': 13.0.4
+      '@next/swc-win32-ia32-msvc': 13.0.4
+      '@next/swc-win32-x64-msvc': 13.0.4
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   registry.npmjs.org/nextjs-progressbar/0.0.16_next@13.0.4+react@18.2.0:
@@ -40366,6 +41377,8 @@ packages:
     resolution: {integrity: sha512-GV0fD38EMD3vSDCmkq+tObmoup6QA91a6a9MxGuhJZuRk/9TNsrHGnIQQQ/sggkMkXuT4fBgF6jRjFwScDT3zA==}
 >>>>>>> f5629e05 (Add slider main page)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
   /nextjs-progressbar/0.0.16_next@13.0.0+react@18.2.0:
     resolution: {integrity: sha512-GV0fD38EMD3vSDCmkq+tObmoup6QA91a6a9MxGuhJZuRk/9TNsrHGnIQQQ/sggkMkXuT4fBgF6jRjFwScDT3zA==}
 =======
@@ -40375,11 +41388,19 @@ packages:
     name: nextjs-progressbar
     version: 0.0.16
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+  /nextjs-progressbar/0.0.16_next@13.0.4+react@18.2.0:
+    resolution: {integrity: sha512-GV0fD38EMD3vSDCmkq+tObmoup6QA91a6a9MxGuhJZuRk/9TNsrHGnIQQQ/sggkMkXuT4fBgF6jRjFwScDT3zA==}
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
     peerDependencies:
       next: '>= 6.0.0'
       react: '>= 16.0.0'
     dependencies:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       '@types/nprogress': registry.npmjs.org/@types/nprogress/0.2.0
@@ -40417,6 +41438,8 @@ packages:
 =======
 =======
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       '@types/nprogress': 0.2.0
       next: 13.0.0_mqvh5p7ejg4taogoj6tpk3gd5a
       nprogress: 0.2.0
@@ -40429,6 +41452,13 @@ packages:
       prop-types: registry.npmjs.org/prop-types/15.8.1
       react: registry.npmjs.org/react/18.2.0
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+=======
+      '@types/nprogress': 0.2.0
+      next: 13.0.4_mqvh5p7ejg4taogoj6tpk3gd5a
+      nprogress: 0.2.0
+      prop-types: 15.8.1
+      react: 18.2.0
+>>>>>>> 078d4047 (Add slider main page)
     dev: false
 
   /nice-try/1.0.5:
@@ -40461,12 +41491,15 @@ packages:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/node-dir/0.1.17:
     resolution: {integrity: sha512-tmPX422rYgofd4epzrNoOXiE8XFZYOcCq1vD7MAXCDO+O+zndlA2ztdKKMa+EeuBG5tHETpr4ml4RGgpqDCCAg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/node-dir/-/node-dir-0.1.17.tgz}
     name: node-dir
     version: 0.1.17
 =======
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
   /node-abort-controller/3.0.1:
     resolution: {integrity: sha512-/ujIVxthRs+7q6hsdjHMaj8hRG9NuWmwrz+JdRwZ14jdFoKSkm+vDsCbF9PLpnSqjaWQJuTmVtcWHNLr+vrOFw==}
     dev: true
@@ -40481,6 +41514,7 @@ packages:
     dev: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/node-domexception/1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/node-domexception/-/node-domexception-1.0.0.tgz}
     name: node-domexception
@@ -40493,6 +41527,17 @@ packages:
     name: node-fetch
     version: 2.6.7
 =======
+=======
+=======
+  /node-dir/0.1.17:
+    resolution: {integrity: sha512-tmPX422rYgofd4epzrNoOXiE8XFZYOcCq1vD7MAXCDO+O+zndlA2ztdKKMa+EeuBG5tHETpr4ml4RGgpqDCCAg==}
+    engines: {node: '>= 0.10.5'}
+    dependencies:
+      minimatch: 3.1.2
+    dev: true
+
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
   /node-domexception/1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
@@ -46179,6 +47224,7 @@ packages:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/react-element-to-jsx-string/14.3.4_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-t4ZwvV6vwNxzujDQ+37bspnLwA4JlgUPWhLjBJWsNIDceAf6ZKUTCjdm08cN6WeZ5pTMKiCJkmAYnpmR4Bm+dg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/react-element-to-jsx-string/-/react-element-to-jsx-string-14.3.4.tgz}
     id: registry.npmjs.org/react-element-to-jsx-string/14.3.4
@@ -46186,6 +47232,8 @@ packages:
     version: 14.3.4
 =======
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
   /react-easy-swipe/0.0.21:
     resolution: {integrity: sha512-OeR2jAxdoqUMHIn/nS9fgreI5hSpgGoL5ezdal4+oO7YSSgJR8ga+PkYGJrSrJ9MKlPcQjMQXnketrD7WNmNsg==}
     engines: {node: '>= 6'}
@@ -46193,7 +47241,12 @@ packages:
       prop-types: 15.8.1
     dev: false
 
+<<<<<<< HEAD
 >>>>>>> fdc4a712 (Ajout du slider + ajout de la bannière réseaux sociaux)
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
   /react-element-to-jsx-string/14.3.4_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-t4ZwvV6vwNxzujDQ+37bspnLwA4JlgUPWhLjBJWsNIDceAf6ZKUTCjdm08cN6WeZ5pTMKiCJkmAYnpmR4Bm+dg==}
 >>>>>>> f5629e05 (Add slider main page)
@@ -46420,6 +47473,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+<<<<<<< HEAD
   /react-responsive-carousel/3.2.23:
     resolution: {integrity: sha512-pqJLsBaKHWJhw/ItODgbVoziR2z4lpcJg+YwmRlSk4rKH32VE633mAtZZ9kDXjy4wFO+pgUZmDKPsPe1fPmHCg==}
     dependencies:
@@ -46428,6 +47482,8 @@ packages:
       react-easy-swipe: 0.0.21
     dev: false
 
+=======
+>>>>>>> 078d4047 (Add slider main page)
   /react-scripts/5.0.1_uqvmreaiyeoclate435itmzle4:
     resolution: {integrity: sha512-8VAmEm/ZAwQzJ+GOMLbBsTdDKOpuZh7RPs0UymvBR2vRk4iZWCskjbFnxqjrzoIvlNNRZ3QJFx6/qDSi6zSnaQ==}
 >>>>>>> f5629e05 (Add slider main page)
@@ -47552,6 +48608,7 @@ packages:
     resolution: {integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   /requires-port/1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
 =======
@@ -47567,6 +48624,15 @@ packages:
     name: requires-port
     version: 1.0.0
 >>>>>>> b535821f (fix: form submission on password visibility change (#693))
+=======
+  /requireindex/1.1.0:
+    resolution: {integrity: sha512-LBnkqsDE7BZKvqylbmn7lTIVdpx4K/QCduRATpO5R+wtPmky/a8pN1bO2D6wXppn1497AJF9mNjqAXr6bdl9jg==}
+    engines: {node: '>=0.10.5'}
+    dev: true
+
+  /requires-port/1.0.0:
+    resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
+>>>>>>> 078d4047 (Add slider main page)
     dev: true
 
   /resize-observer-polyfill/1.5.1:
@@ -48259,16 +49325,25 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       tslib: registry.npmjs.org/tslib/2.4.1
 =======
       tslib: 2.4.1
 >>>>>>> 65cb590c (Réarrangement de la page de présentation)
 =======
+=======
+>>>>>>> e7f3dedf (Add slider main page)
       tslib: 2.4.1
 =======
       tslib: registry.npmjs.org/tslib/2.4.1
 >>>>>>> e99a39d7 (Better Adyen Drop-In (#680))
+<<<<<<< HEAD
 >>>>>>> 996f3751 (Better Adyen Drop-In (#680))
+=======
+=======
+      tslib: 2.4.1
+>>>>>>> 078d4047 (Add slider main page)
+>>>>>>> e7f3dedf (Add slider main page)
 
 <<<<<<< HEAD
   registry.npmjs.org/safe-buffer/5.1.1:
@@ -53095,6 +54170,7 @@ packages:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
 
+<<<<<<< HEAD
   /uuid/9.0.0:
     resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
     hasBin: true
@@ -53103,6 +54179,11 @@ packages:
   /v8-compile-cache-lib/3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
 
+=======
+  /v8-compile-cache-lib/3.0.1:
+    resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
+
+>>>>>>> 078d4047 (Add slider main page)
   /v8-to-istanbul/8.1.1:
     resolution: {integrity: sha512-FGtKtv3xIpR6BYhvgH8MI/y78oT7d8Au3ww4QIxymrCtZEh5b8gCw2siywE+puhEmuWKDtmfrvF5UlB298ut3w==}
     engines: {node: '>=10.12.0'}
@@ -53582,11 +54663,14 @@ packages:
     resolution: {integrity: sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g==}
     dev: true
 
+<<<<<<< HEAD
   /whatwg-mimetype/3.0.0:
     resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}
     engines: {node: '>=12'}
     dev: true
 
+=======
+>>>>>>> 078d4047 (Add slider main page)
   /whatwg-url/5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
     dependencies:
