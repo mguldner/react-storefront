@@ -233,6 +233,7 @@ importers:
       '@next/bundle-analyzer': 13.0.0
       '@saleor/sdk': 0.4.4
       '@saleor/ui-kit': workspace:*
+      '@splidejs/react-splide': ^0.7.12
       '@stripe/react-stripe-js': 1.14.0
       '@stripe/stripe-js': 1.42.0
       '@svgr/webpack': 6.5.0
@@ -278,6 +279,7 @@ importers:
       '@heroicons/react': 1.0.6_react@18.2.0
       '@saleor/sdk': 0.4.4_ydvm26ae5yhbju2x3rkxrdfexu
       '@saleor/ui-kit': link:../../packages/ui-kit
+      '@splidejs/react-splide': 0.7.12
       '@stripe/react-stripe-js': 1.14.0_6nr2xug6y4biiuh7urbys4ixky
       '@stripe/stripe-js': 1.42.0
       '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.2.1
@@ -4209,7 +4211,7 @@ packages:
       '@graphql-codegen/plugin-helpers': 2.7.2_graphql@15.8.0
       '@graphql-codegen/visitor-plugin-common': 2.13.8_graphql@15.8.0
       graphql: 15.8.0
-      tslib: 2.4.0
+      tslib: 2.4.1
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4332,7 +4334,7 @@ packages:
       '@graphql-codegen/visitor-plugin-common': 2.13.0_graphql@15.8.0
       auto-bind: 4.0.0
       graphql: 15.8.0
-      tslib: 2.4.0
+      tslib: 2.4.1
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4496,7 +4498,7 @@ packages:
       graphql: 16.6.0
       graphql-tag: 2.12.6_graphql@16.6.0
       parse-filepath: 1.0.2
-      tslib: 2.4.1
+      tslib: 2.4.0
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4516,7 +4518,7 @@ packages:
       graphql: 15.8.0
       graphql-tag: 2.12.6_graphql@15.8.0
       parse-filepath: 1.0.2
-      tslib: 2.4.0
+      tslib: 2.4.1
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4606,7 +4608,7 @@ packages:
       '@graphql-tools/utils': 9.2.1_graphql@15.8.0
       globby: 11.1.0
       graphql: 15.8.0
-      tslib: 2.4.0
+      tslib: 2.5.0
       unixify: 1.0.0
     transitivePeerDependencies:
       - '@babel/core'
@@ -5100,7 +5102,7 @@ packages:
       '@ardatan/relay-compiler': 12.0.0_graphql@15.8.0
       '@graphql-tools/utils': 9.2.1_graphql@15.8.0
       graphql: 15.8.0
-      tslib: 2.5.0
+      tslib: 2.4.1
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -7034,6 +7036,16 @@ packages:
     dependencies:
       '@sinonjs/commons': 1.8.6
     dev: true
+
+  /@splidejs/react-splide/0.7.12:
+    resolution: {integrity: sha512-UfXH+j47jsMc4x5HA/aOwuuHPqn6y9+ZTNYPWDRD8iLKvIVMZlzq2unjUEvyDAU+TTVPZOXkG2Ojeoz0P4AkZw==}
+    dependencies:
+      '@splidejs/splide': 4.1.4
+    dev: false
+
+  /@splidejs/splide/4.1.4:
+    resolution: {integrity: sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==}
+    dev: false
 
   /@storybook/addon-actions/6.5.13_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-3Tji0gIy95havhTpSc6CsFl5lNxGn4O5Y1U9fyji+GRkKqDFOrvVLYAHPtLOpYdEI5tF0bDo+akiqfDouY8+eA==}
