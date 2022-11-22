@@ -233,7 +233,6 @@ importers:
       '@next/bundle-analyzer': 13.0.0
       '@saleor/sdk': 0.4.4
       '@saleor/ui-kit': workspace:*
-      '@splidejs/react-splide': ^0.7.12
       '@stripe/react-stripe-js': 1.14.0
       '@stripe/stripe-js': 1.42.0
       '@svgr/webpack': 6.5.0
@@ -266,6 +265,7 @@ importers:
       react-dom: 18.2.0
       react-hook-form: 7.38.0
       react-intl: 6.2.1
+      react-responsive-carousel: ^3.2.23
       react-use: 17.4.0
       tailwind-scrollbar-hide: 1.1.7
       tailwindcss: 3.2.1
@@ -279,7 +279,6 @@ importers:
       '@heroicons/react': 1.0.6_react@18.2.0
       '@saleor/sdk': 0.4.4_ydvm26ae5yhbju2x3rkxrdfexu
       '@saleor/ui-kit': link:../../packages/ui-kit
-      '@splidejs/react-splide': 0.7.12
       '@stripe/react-stripe-js': 1.14.0_6nr2xug6y4biiuh7urbys4ixky
       '@stripe/stripe-js': 1.42.0
       '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.2.1
@@ -300,6 +299,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       react-hook-form: 7.38.0_react@18.2.0
       react-intl: 6.2.1_uz2ogxeagc4rbieizlfzyaazee
+      react-responsive-carousel: 3.2.23
       react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
       tailwind-scrollbar-hide: 1.1.7
       url-join: 4.0.1
@@ -6798,16 +6798,6 @@ packages:
     dependencies:
       '@sinonjs/commons': 1.8.5
     dev: true
-
-  /@splidejs/react-splide/0.7.12:
-    resolution: {integrity: sha512-UfXH+j47jsMc4x5HA/aOwuuHPqn6y9+ZTNYPWDRD8iLKvIVMZlzq2unjUEvyDAU+TTVPZOXkG2Ojeoz0P4AkZw==}
-    dependencies:
-      '@splidejs/splide': 4.1.4
-    dev: false
-
-  /@splidejs/splide/4.1.4:
-    resolution: {integrity: sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==}
-    dev: false
 
   /@storybook/addon-actions/6.5.13_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-3Tji0gIy95havhTpSc6CsFl5lNxGn4O5Y1U9fyji+GRkKqDFOrvVLYAHPtLOpYdEI5tF0bDo+akiqfDouY8+eA==}
@@ -22341,6 +22331,13 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
 
+  /react-easy-swipe/0.0.21:
+    resolution: {integrity: sha512-OeR2jAxdoqUMHIn/nS9fgreI5hSpgGoL5ezdal4+oO7YSSgJR8ga+PkYGJrSrJ9MKlPcQjMQXnketrD7WNmNsg==}
+    engines: {node: '>= 6'}
+    dependencies:
+      prop-types: 15.8.1
+    dev: false
+
   /react-element-to-jsx-string/14.3.4_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-t4ZwvV6vwNxzujDQ+37bspnLwA4JlgUPWhLjBJWsNIDceAf6ZKUTCjdm08cN6WeZ5pTMKiCJkmAYnpmR4Bm+dg==}
     peerDependencies:
@@ -22465,6 +22462,14 @@ packages:
     resolution: {integrity: sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /react-responsive-carousel/3.2.23:
+    resolution: {integrity: sha512-pqJLsBaKHWJhw/ItODgbVoziR2z4lpcJg+YwmRlSk4rKH32VE633mAtZZ9kDXjy4wFO+pgUZmDKPsPe1fPmHCg==}
+    dependencies:
+      classnames: 2.3.2
+      prop-types: 15.8.1
+      react-easy-swipe: 0.0.21
+    dev: false
 
   /react-scripts/5.0.1_uqvmreaiyeoclate435itmzle4:
     resolution: {integrity: sha512-8VAmEm/ZAwQzJ+GOMLbBsTdDKOpuZh7RPs0UymvBR2vRk4iZWCskjbFnxqjrzoIvlNNRZ3QJFx6/qDSi6zSnaQ==}
