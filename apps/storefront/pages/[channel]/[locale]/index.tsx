@@ -1,10 +1,11 @@
 import { ApolloQueryResult } from "@apollo/client";
-import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from "next";
+import { GetStaticPaths, GetStaticPropsContext } from "next";
 import React, { ReactElement } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Image from "next/image";
 
-import { HomepageBlock, Layout } from "@/components";
+import { Layout } from "@/components";
 import { BaseSeo } from "@/components/seo/BaseSeo";
 import { HOMEPAGE_MENU } from "@/lib/const";
 import apolloClient from "@/lib/graphql";
@@ -30,7 +31,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     revalidate: 60 * 60, // value in seconds, how often ISR will trigger on the server
   };
 };
-function Home({ menuData }: InferGetStaticPropsType<typeof getStaticProps>) {
+function Home() {
   return (
     <>
       <BaseSeo />
@@ -45,15 +46,21 @@ function Home({ menuData }: InferGetStaticPropsType<typeof getStaticProps>) {
               showThumbs={false}
             >
               <div className="h-fit">
-                <img
+                <Image
                   className="object-contain h-[60vh]"
-                  src="https://cpmr.org/cpmr-islands/wp-content/uploads/sites/4/2019/07/test.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png"
+                  alt="Pokémon"
+                  width={400}
+                  height={400}
                 />
               </div>
               <div className="h-fit">
-                <img
+                <Image
                   className="object-contain h-[60vh]"
-                  src="https://cdn.pixabay.com/photo/2015/11/03/08/56/question-mark-1019820_1280.jpg"
+                  src="https://upload.wikimedia.org/wikipedia/fr/a/a5/Yu-Gi-Oh_Logo.JPG"
+                  alt="Yu-Gi-Oh!"
+                  width={400}
+                  height={400}
                 />
               </div>
             </Carousel>
