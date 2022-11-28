@@ -10,7 +10,7 @@ export function SocialBanner() {
   });
 
   if (error) {
-    console.error("Social Banner/Menu component error", error.message);
+    console.error("Social Banner/Menu component error : ", error.message);
   }
 
   const menuItems = data?.menu?.items || [],
