@@ -1,0 +1,8 @@
+query SocialbannerMenu($locale: LanguageCodeEnum!, $channel: String!) {
+  menu(slug: "social-banner", channel: $channel) {
+    id
+    items {
+      ...MenuItemFragment
+    }
+  }
+}
