@@ -33,6 +33,7 @@ export const ShippingAddressSection: React.FC<CommonSectionProps> = ({ collapsed
   const addresses = user?.addresses;
   const errorProps = useErrors<AddressFormData>();
   const { setApiErrors } = errorProps;
+  const { setCheckoutUpdateState } = useCheckoutUpdateStateChange("checkoutShippingUpdate");
 
   const [, checkoutShippingAddressUpdate] = useCheckoutShippingAddressUpdateMutation();
 

@@ -27,6 +27,8 @@ export const DeliveryMethods: React.FC<CommonSectionProps> = ({ collapsed }) => 
   const { checkout } = useCheckout();
   const { shippingMethods, shippingAddress, deliveryMethod } = checkout;
 
+  const { setCheckoutUpdateState } = useCheckoutUpdateStateChange("checkoutDeliveryMethodUpdate");
+
   const previousShippingCountry = useRef<CountryCode | undefined | null>(
     shippingAddress?.country?.code as CountryCode | undefined
   );
