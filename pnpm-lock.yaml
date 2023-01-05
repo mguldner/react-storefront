@@ -904,6 +904,7 @@ importers:
       eslint: registry.npmjs.org/eslint/8.26.0
     devDependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@typescript-eslint/eslint-plugin': registry.npmjs.org/@typescript-eslint/eslint-plugin/5.41.0_b5xhfrgxhcelhgpcwhcuffyfeu
       '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser/5.41.0_v5bglvupnukcksncywgdzapdrq
       eslint-config-next: registry.npmjs.org/eslint-config-next/13.0.0_v5bglvupnukcksncywgdzapdrq
@@ -912,13 +913,27 @@ importers:
       eslint-plugin-import: registry.npmjs.org/eslint-plugin-import/2.26.0_c2flhriocdzler6lrwbyxxyoca
       eslint-plugin-require-form-method: registry.npmjs.org/eslint-plugin-require-form-method/1.0.2
 =======
+=======
+>>>>>>> c65e5e7e (fix: form submission on password visibility change (#693))
       '@typescript-eslint/eslint-plugin': 5.41.0_tjw2ummbojxf5sntldpoge2ipi
       '@typescript-eslint/parser': 5.41.0_s6zjlrzpskv7oc5fqmwkfkbdxm
       eslint-config-next: 13.0.0_s6zjlrzpskv7oc5fqmwkfkbdxm
       eslint-config-prettier: 8.5.0_eslint@8.26.0
       eslint-plugin-formatjs: 4.3.4_eslint@8.26.0
       eslint-plugin-import: 2.26.0_c2flhriocdzler6lrwbyxxyoca
+<<<<<<< HEAD
 >>>>>>> f5629e05 (Add slider main page)
+=======
+=======
+      '@typescript-eslint/eslint-plugin': registry.npmjs.org/@typescript-eslint/eslint-plugin/5.41.0_b5xhfrgxhcelhgpcwhcuffyfeu
+      '@typescript-eslint/parser': registry.npmjs.org/@typescript-eslint/parser/5.41.0_v5bglvupnukcksncywgdzapdrq
+      eslint-config-next: registry.npmjs.org/eslint-config-next/13.0.0_v5bglvupnukcksncywgdzapdrq
+      eslint-config-prettier: registry.npmjs.org/eslint-config-prettier/8.5.0_eslint@8.26.0
+      eslint-plugin-formatjs: registry.npmjs.org/eslint-plugin-formatjs/4.3.4_eslint@8.26.0
+      eslint-plugin-import: registry.npmjs.org/eslint-plugin-import/2.26.0_c2flhriocdzler6lrwbyxxyoca
+      eslint-plugin-require-form-method: registry.npmjs.org/eslint-plugin-require-form-method/1.0.2
+>>>>>>> b535821f (fix: form submission on password visibility change (#693))
+>>>>>>> c65e5e7e (fix: form submission on password visibility change (#693))
 
   packages/tsconfig:
     specifiers: {}
@@ -30006,9 +30021,29 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
+<<<<<<< HEAD
   /eslint-plugin-testing-library/5.9.1_wyqvi574yv7oiwfeinomdzmc3m:
     resolution: {integrity: sha512-6BQp3tmb79jLLasPHJmy8DnxREe+2Pgf7L+7o09TSWPfdqqtQfRZmZNetr5mOs3yqZk/MRNxpN3RUpJe0wB4LQ==}
+<<<<<<< HEAD
 >>>>>>> f5629e05 (Add slider main page)
+=======
+=======
+  registry.npmjs.org/eslint-plugin-require-form-method/1.0.2:
+    resolution: {integrity: sha512-cdHE+LTMAMwwHo4Rk8ZP/of7t3bekT65wuBmm37Is+if0PzADDN1x6ctPX7k2Xam2XDQdaWvzv6Dg3oJfMZxnA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/eslint-plugin-require-form-method/-/eslint-plugin-require-form-method-1.0.2.tgz}
+    name: eslint-plugin-require-form-method
+    version: 1.0.2
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      requireindex: registry.npmjs.org/requireindex/1.1.0
+    dev: true
+
+  registry.npmjs.org/eslint-plugin-testing-library/5.9.1_wyqvi574yv7oiwfeinomdzmc3m:
+    resolution: {integrity: sha512-6BQp3tmb79jLLasPHJmy8DnxREe+2Pgf7L+7o09TSWPfdqqtQfRZmZNetr5mOs3yqZk/MRNxpN3RUpJe0wB4LQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/eslint-plugin-testing-library/-/eslint-plugin-testing-library-5.9.1.tgz}
+    id: registry.npmjs.org/eslint-plugin-testing-library/5.9.1
+    name: eslint-plugin-testing-library
+    version: 5.9.1
+>>>>>>> b535821f (fix: form submission on password visibility change (#693))
+>>>>>>> c65e5e7e (fix: form submission on password visibility change (#693))
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0, npm: '>=6'}
     peerDependencies:
       eslint: ^7.5.0 || ^8.0.0
@@ -47516,8 +47551,22 @@ packages:
   /require-main-filename/2.0.0:
     resolution: {integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==}
 
+<<<<<<< HEAD
   /requires-port/1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
+=======
+  registry.npmjs.org/requireindex/1.1.0:
+    resolution: {integrity: sha512-LBnkqsDE7BZKvqylbmn7lTIVdpx4K/QCduRATpO5R+wtPmky/a8pN1bO2D6wXppn1497AJF9mNjqAXr6bdl9jg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/requireindex/-/requireindex-1.1.0.tgz}
+    name: requireindex
+    version: 1.1.0
+    engines: {node: '>=0.10.5'}
+    dev: true
+
+  registry.npmjs.org/requires-port/1.0.0:
+    resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz}
+    name: requires-port
+    version: 1.0.0
+>>>>>>> b535821f (fix: form submission on password visibility change (#693))
     dev: true
 
   /resize-observer-polyfill/1.5.1:
