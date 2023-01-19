@@ -70,11 +70,8 @@ export function Navbar() {
   return (
     <>
       <div className={clsx(styles.navbar)}>
-        <div className={clsx(styles.inner)}>
-          <div className="flex-1 h-full hidden xs:flex">
-            <Menu />
-          </div>
-          <div className="flex-1 flex xs:justify-center">
+        <div className="container grid grid-cols-3 items-center xs:justify-center">
+          <div className="justify-self-center col-start-2">
             <Link href={paths.$url()} passHref legacyBehavior>
               <a href="pass" className={styles.logo}>
                 <Stamp />
@@ -104,6 +101,11 @@ export function Navbar() {
               className="ml-2 lg:hidden"
               onClick={() => setBurgerOpen(true)}
             />
+          </div>
+        </div>
+        <div className={clsx(styles.inner)}>
+          <div className="flex-1 xs:flex">
+            <Menu />
           </div>
         </div>
       </div>
