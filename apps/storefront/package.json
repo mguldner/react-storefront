@@ -58,6 +58,8 @@
     "@graphql-codegen/typescript": "2.8.0",
     "@graphql-codegen/typescript-operations": "2.5.5",
     "@graphql-codegen/typescript-react-apollo": "3.3.5",
+    "@graphql-tools/mock": "^8.7.15",
+    "@graphql-tools/schema": "^9.0.13",
     "@next/bundle-analyzer": "13.0.0",
     "@svgr/webpack": "6.5.0",
     "@types/node": "16.11.22",
