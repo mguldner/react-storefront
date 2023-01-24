@@ -81,6 +81,9 @@ module.exports = {
         decorative: "16px 16px 0 #394052",
         modal: "0px 4px 20px 0px rgba(0, 0, 0, 0.12)",
       },
+      borderRadius: {
+        full2: "5000px",
+      },
     },
   },
   plugins: [
