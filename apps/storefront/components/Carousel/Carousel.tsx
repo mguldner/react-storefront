@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function Carousel() {
   return (
-    <div className="bg-gradient-to-r from-neutral-800 to-stone-400 pt-8">
+    <div className="bg-gradient-to-r from-neutral-800 to-stone-400 pt-8 rounded-full2">
       <ResponsiveCarousel
         infiniteLoop={true}
         interval={5000}
