@@ -17,8 +17,8 @@ export function SocialBanner() {
     itemsName = menuItems.map(({ name }) => name).join(" || ");
 
   return (
-    <div className="bg-gradient-to-r from-slate-500 to-sky-500 h-11 grid grid-cols-3 items-center">
-      <div className="flex flex-row items-center">
+    <div className="bg-gradient-to-r from-slate-500 to-sky-500 h-11 sm:grid sm:grid-cols-[1fr_5fr_1fr] items-center">
+      <div className="flex sm:flex-row items-center">
         <a href="https://www.youtube.com/" className="ml-3">
           <svg height="25px" viewBox="0 0 24 24">
             <path
