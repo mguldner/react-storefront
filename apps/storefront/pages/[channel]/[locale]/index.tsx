@@ -12,8 +12,7 @@ import {
   HomepageBlocksQueryDocument,
   HomepageBlocksQueryVariables,
 } from "@/saleor/api";
-import { Carousel } from "@/components/Carousel";
-import { NewProducts } from "@/components/NewProducts";
+import { HomePage } from "@/components/HomePage";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const result: ApolloQueryResult<HomepageBlocksQuery> = await apolloClient.query<
@@ -37,8 +36,7 @@ function Home() {
       <div className="py-10">
         <header></header>
         <main>
-          <Carousel />
-          <NewProducts />
+          <HomePage />
         </main>
       </div>
     </>
