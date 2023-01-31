@@ -1,0 +1,1 @@
+export { FooterSimplified } from "./FooterSimplified";
