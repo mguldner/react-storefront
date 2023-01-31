@@ -468,12 +468,14 @@ importers:
       react-hook-form: 7.38.0
       react-intl: 6.2.1
       react-responsive-carousel: ^3.2.23
+      react-scroll-parallax: ^3.3.2
       react-use: 17.4.0
       tailwind-scrollbar-hide: 1.1.7
       tailwindcss: 3.2.1
       typescript: 4.8.4
       url-join: 4.0.1
     dependencies:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       '@apollo/client': registry.npmjs.org/@apollo/client/3.7.1_gdcq4dv6opitr3wbfwyjmanyra
@@ -488,6 +490,13 @@ importers:
       '@apollo/client': 3.7.1_gdcq4dv6opitr3wbfwyjmanyra
 >>>>>>> 078d4047 (Add slider main page)
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+      '@apollo/client': 3.7.1_gdcq4dv6opitr3wbfwyjmanyra
+>>>>>>> 078d4047 (Add slider main page)
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@formatjs/swc-plugin': 1.4.14
       '@graphql-codegen/typescript-apollo-client-helpers': 2.2.5_graphql@16.6.0
       '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
@@ -563,6 +572,7 @@ importers:
       react-intl: 6.2.1_uz2ogxeagc4rbieizlfzyaazee
 <<<<<<< HEAD
       react-responsive-carousel: 3.2.23
+      react-scroll-parallax: 3.3.2_biqbaboplfbrettd7655fr4n2y
       react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
       tailwind-scrollbar-hide: 1.1.7
       url-join: 4.0.1
@@ -619,15 +629,23 @@ importers:
 =======
       '@apollo/server': 4.3.2_graphql@16.6.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
 =======
       react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
       tailwind-scrollbar-hide: 1.1.7
       url-join: 4.0.1
     devDependencies:
 >>>>>>> 078d4047 (Add slider main page)
+<<<<<<< HEAD
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@formatjs/cli': 5.1.3
       '@graphql-codegen/add': 3.2.1_graphql@16.6.0
       '@graphql-codegen/cli': 2.13.7_mrtf67frrhpzibu4cfom6brd6i
@@ -1275,6 +1293,9 @@ packages:
     dev: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
   /@apollo/cache-control-types/1.0.2_graphql@16.6.0:
     resolution: {integrity: sha512-Por80co1eUm4ATsvjCOoS/tIR8PHxqVjsA6z76I6Vw0rFn4cgyVElQcmQDIZiYsy41k8e5xkrMRECkM2WR8pNw==}
     peerDependencies:
@@ -1283,8 +1304,11 @@ packages:
       graphql: 16.6.0
     dev: true
 
+<<<<<<< HEAD
 =======
 >>>>>>> 078d4047 (Add slider main page)
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
   /@apollo/client/3.7.1_gdcq4dv6opitr3wbfwyjmanyra:
     resolution: {integrity: sha512-xu5M/l7p9gT9Fx7nF3AQivp0XukjB7TM7tOd5wifIpI8RskYveL4I+rpTijzWrnqCPZabkbzJKH7WEAKdctt9w==}
 >>>>>>> f5629e05 (Add slider main page)
@@ -1344,10 +1368,14 @@ packages:
       symbol-observable: 4.0.0
       ts-invariant: 0.10.3
 <<<<<<< HEAD
+<<<<<<< HEAD
       tslib: 2.4.0
 =======
       tslib: 2.4.1
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      tslib: 2.4.0
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       zen-observable-ts: 1.2.5
     dev: false
 
@@ -1414,6 +1442,7 @@ packages:
     dev: false
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   /@apollo/protobufjs/1.2.7:
     resolution: {integrity: sha512-Lahx5zntHPZia35myYDBRuF58tlwPskwHc5CWBZC/4bMKB6siTBWwtMrkqXcsNwQiFSzSx5hKdRPUmemrEp3Gg==}
 =======
@@ -1424,6 +1453,13 @@ packages:
     requiresBuild: true
     dependencies:
 <<<<<<< HEAD
+=======
+  /@apollo/protobufjs/1.2.7:
+    resolution: {integrity: sha512-Lahx5zntHPZia35myYDBRuF58tlwPskwHc5CWBZC/4bMKB6siTBWwtMrkqXcsNwQiFSzSx5hKdRPUmemrEp3Gg==}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       '@protobufjs/aspromise': 1.1.2
       '@protobufjs/base64': 1.1.2
       '@protobufjs/codegen': 2.0.4
@@ -1483,6 +1519,7 @@ packages:
       node-fetch: 2.6.7
       uuid: 9.0.0
       whatwg-mimetype: 3.0.0
+<<<<<<< HEAD
 =======
       '@babel/core': 7.20.2
       '@babel/generator': 7.20.4
@@ -1503,12 +1540,17 @@ packages:
       signedsource: 1.0.0
       yargs: 15.4.1
 >>>>>>> 078d4047 (Add slider main page)
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
     transitivePeerDependencies:
       - encoding
       - supports-color
     dev: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
   /@apollo/usage-reporting-protobuf/4.0.2:
     resolution: {integrity: sha512-GfE8aDqi/lAFut95pjH9IRvH0zGsQ5G/2lYL0ZLZfML7ArX+A4UVHFANQcPCcUYGE6bI6OPhLekg4Vsjf6B1cw==}
     dependencies:
@@ -11749,10 +11791,14 @@ packages:
 =======
       '@jest/types': 27.5.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       chalk: 4.1.2
       jest-message-util: 27.5.1
       jest-util: 27.5.1
@@ -11781,10 +11827,14 @@ packages:
 =======
       '@jest/types': 28.1.3
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       chalk: 4.1.2
       jest-message-util: 28.1.3
       jest-util: 28.1.3
@@ -11903,10 +11953,14 @@ packages:
       '@jest/fake-timers': 27.5.1
       '@jest/types': 27.5.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       jest-mock: 27.5.1
     dev: true
 
@@ -11924,10 +11978,14 @@ packages:
       '@jest/types': 27.5.1
       '@sinonjs/fake-timers': 8.1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       jest-message-util: 27.5.1
       jest-mock: 27.5.1
       jest-util: 27.5.1
@@ -12100,10 +12158,14 @@ packages:
       '@jest/transform': 27.5.1
       '@jest/types': 27.5.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       chalk: 4.1.2
       collect-v8-coverage: 1.0.1
       exit: 0.1.2
@@ -12212,10 +12274,14 @@ packages:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       '@types/yargs': 15.0.14
       chalk: 4.1.2
     dev: true
@@ -12227,10 +12293,14 @@ packages:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       '@types/yargs': 16.0.4
       chalk: 4.1.2
     dev: true
@@ -12243,10 +12313,14 @@ packages:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       '@types/yargs': 17.0.13
       chalk: 4.1.2
     dev: true
@@ -12263,15 +12337,20 @@ packages:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       '@types/yargs': 17.0.13
       chalk: 4.1.2
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
     dev: true
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -12504,6 +12583,10 @@ packages:
 =======
 =======
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
   /@josephg/resolvable/1.0.1:
     resolution: {integrity: sha512-CtzORUwWTTOTqfVtHaKRJ0I1kNQd1bpn3sUh8I3nJDVY+5/M/Oe1DnEWzPQvqq/xPIIkzzzIP7mfCoAjFRvDhg==}
     dev: true
@@ -14365,6 +14448,7 @@ packages:
     dev: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/@pollyjs/persister-fs/6.0.5:
     resolution: {integrity: sha512-+zEuPNDoVwA89X/LnmW6l/4LkJXHnZrk/Wyj3ShXLb6sS05LXEThgpriJWLIHh68hPZnqlB4lXsYGjczORiJHw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/@pollyjs/persister-fs/-/persister-fs-6.0.5.tgz}
     name: '@pollyjs/persister-fs'
@@ -14437,6 +14521,11 @@ packages:
 =======
 =======
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
   /@protobufjs/aspromise/1.1.2:
     resolution: {integrity: sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==}
     dev: true
@@ -14481,11 +14570,18 @@ packages:
     dev: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 65cb590c (Réarrangement de la page de présentation)
 =======
 =======
 >>>>>>> 078d4047 (Add slider main page)
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
   /@react-types/button/3.6.2_react@18.2.0:
     resolution: {integrity: sha512-qgrYT6yiGVuZSPbzeDT6kTREQVxzJ9p5chV+JX7G5Rpjl2vyUDkEhZ5V/AHLKguBALgFaWJvjtwejHQ7FtycTw==}
     peerDependencies:
@@ -19467,6 +19563,7 @@ packages:
 >>>>>>> f5629e05 (Add slider main page)
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/connect': registry.npmjs.org/@types/connect/3.4.35
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
@@ -19491,11 +19588,20 @@ packages:
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+<<<<<<< HEAD
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+<<<<<<< HEAD
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
     dev: true
 
 <<<<<<< HEAD
@@ -19514,6 +19620,7 @@ packages:
 =======
       '@types/express-serve-static-core': 4.17.31
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 <<<<<<< HEAD
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
@@ -19521,7 +19628,13 @@ packages:
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+<<<<<<< HEAD
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
     dev: true
 
 <<<<<<< HEAD
@@ -19699,10 +19812,14 @@ packages:
     dependencies:
       '@types/minimatch': 5.1.2
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
     dev: true
 
   /@types/glob/8.0.0:
@@ -19715,6 +19832,7 @@ packages:
 =======
       '@types/minimatch': 5.1.2
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 <<<<<<< HEAD
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
@@ -19722,7 +19840,13 @@ packages:
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+<<<<<<< HEAD
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
     dev: true
 
   registry.npmjs.org/@types/glob/8.0.0:
@@ -19752,16 +19876,25 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+<<<<<<< HEAD
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
     dev: true
 
 <<<<<<< HEAD
@@ -19833,16 +19966,25 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+<<<<<<< HEAD
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
     dev: true
 
 <<<<<<< HEAD
@@ -20034,12 +20176,18 @@ packages:
     dev: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
   /@types/long/4.0.2:
     resolution: {integrity: sha512-MqTGEo5bj5t157U6fA/BiDynNkn0YknVdh48CMPkTSpFTVmvao5UQmm7uEF6xBEo7qIMAlY/JSleYaE6VOdpaA==}
     dev: true
 
+<<<<<<< HEAD
 =======
 >>>>>>> 078d4047 (Add slider main page)
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
 >>>>>>> f5629e05 (Add slider main page)
@@ -20309,16 +20457,25 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+<<<<<<< HEAD
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
     dev: true
 
 <<<<<<< HEAD
@@ -20381,6 +20538,7 @@ packages:
 >>>>>>> f5629e05 (Add slider main page)
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/mime': registry.npmjs.org/@types/mime/3.0.1
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
@@ -20405,11 +20563,20 @@ packages:
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+<<<<<<< HEAD
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+<<<<<<< HEAD
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
     dev: true
 
 <<<<<<< HEAD
@@ -20459,16 +20626,25 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+<<<<<<< HEAD
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
     dev: true
 
 <<<<<<< HEAD
@@ -20580,16 +20756,22 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
       '@types/source-list-map': registry.npmjs.org/@types/source-list-map/0.1.2
       source-map: registry.npmjs.org/source-map/0.7.4
 =======
 =======
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       '@types/source-list-map': 0.1.2
       source-map: 0.7.4
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
@@ -20618,10 +20800,14 @@ packages:
     resolution: {integrity: sha512-PPajH64Ft2vWevkerISMtnZ8rTs4YmRbs+23c402J0INmxDKCrhZNvwZYtzx96gY2wAtXdrK1BS2fiC8MlLr3g==}
     dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       '@types/tapable': 1.0.8
       '@types/uglify-js': 3.17.1
       '@types/webpack-sources': 3.2.0
@@ -20635,16 +20821,25 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
 =======
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+<<<<<<< HEAD
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
     dev: true
 
 <<<<<<< HEAD
@@ -20705,6 +20900,7 @@ packages:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/14.18.34
     dev: true
     optional: true
@@ -20720,11 +20916,19 @@ packages:
       '@types/node': 18.11.9
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
 =======
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 14.18.33
 >>>>>>> 078d4047 (Add slider main page)
+<<<<<<< HEAD
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
     dev: true
     optional: true
 
@@ -24337,6 +24541,7 @@ packages:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/bfj/7.0.2:
     resolution: {integrity: sha512-+e/UqUzwmzJamNF50tBV6tZPTORow7gQ96iFow+8b562OdMpEK0BcJEq2OSPEDmAbSMBQ7PKZ87ubFkgxpYWgw==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/bfj/-/bfj-7.0.2.tgz}
     name: bfj
@@ -24355,13 +24560,18 @@ packages:
     version: 1.6.51
 =======
 =======
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
   /bezier-easing/2.1.0:
     resolution: {integrity: sha512-gbIqZ/eslnUFC1tjEvtz0sgx+xTK20wDnYMIA27VA04R7w6xxXQPZDbibjA9DTWZRA2CXtwHykkVzlCaAJAZig==}
     dev: false
 
+<<<<<<< HEAD
 >>>>>>> 65cb590c (Réarrangement de la page de présentation)
 =======
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
   /bfj/7.0.2:
     resolution: {integrity: sha512-+e/UqUzwmzJamNF50tBV6tZPTORow7gQ96iFow+8b562OdMpEK0BcJEq2OSPEDmAbSMBQ7PKZ87ubFkgxpYWgw==}
     engines: {node: '>= 8.0.0'}
@@ -36708,10 +36918,14 @@ packages:
       '@jest/test-result': 27.5.1
       '@jest/types': 27.5.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       chalk: 4.1.2
       co: 4.6.0
       dedent: 0.7.0
@@ -37023,10 +37237,14 @@ packages:
       '@jest/fake-timers': 27.5.1
       '@jest/types': 27.5.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       jest-mock: 27.5.1
       jest-util: 27.5.1
       jsdom: 16.7.0
@@ -37059,10 +37277,14 @@ packages:
       '@jest/fake-timers': 27.5.1
       '@jest/types': 27.5.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       jest-mock: 27.5.1
       jest-util: 27.5.1
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
@@ -37188,10 +37410,14 @@ packages:
       '@jest/types': 26.6.2
       '@types/graceful-fs': 4.1.5
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.10
@@ -37236,10 +37462,14 @@ packages:
       '@jest/types': 27.5.1
       '@types/graceful-fs': 4.1.5
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.10
@@ -37289,10 +37519,14 @@ packages:
       '@jest/test-result': 27.5.1
       '@jest/types': 27.5.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       chalk: 4.1.2
       co: 4.6.0
       expect: 27.5.1
@@ -37477,6 +37711,7 @@ packages:
 =======
       '@jest/types': 27.5.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 <<<<<<< HEAD
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
@@ -37484,7 +37719,13 @@ packages:
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+<<<<<<< HEAD
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
     dev: true
 
 <<<<<<< HEAD
@@ -37635,10 +37876,14 @@ packages:
       '@jest/transform': 27.5.1
       '@jest/types': 27.5.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       chalk: 4.1.2
       emittery: 0.8.1
       graceful-fs: 4.2.10
@@ -37712,15 +37957,21 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
       graceful-fs: registry.npmjs.org/graceful-fs/4.2.10
 =======
 =======
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       graceful-fs: 4.2.10
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
     dev: true
@@ -37738,15 +37989,21 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
       graceful-fs: registry.npmjs.org/graceful-fs/4.2.10
 =======
 =======
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       graceful-fs: 4.2.10
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
     dev: true
@@ -37833,10 +38090,14 @@ packages:
 =======
       '@jest/types': 26.6.2
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       chalk: 4.1.2
       graceful-fs: 4.2.10
       is-ci: 2.0.0
@@ -37910,10 +38171,14 @@ packages:
     dependencies:
       '@jest/types': 28.1.3
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       chalk: 4.1.2
       ci-info: 3.6.1
       graceful-fs: 4.2.10
@@ -37926,10 +38191,14 @@ packages:
     dependencies:
       '@jest/types': 29.3.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       chalk: 4.1.2
       ci-info: 3.6.1
       graceful-fs: 4.2.10
@@ -37996,10 +38265,14 @@ packages:
       '@jest/test-result': 27.5.1
       '@jest/types': 27.5.1
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       jest-util: 27.5.1
@@ -38031,10 +38304,14 @@ packages:
       '@jest/test-result': 28.1.3
       '@jest/types': 28.1.3
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       emittery: 0.10.2
@@ -38076,16 +38353,22 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
       merge-stream: registry.npmjs.org/merge-stream/2.0.0
       supports-color: registry.npmjs.org/supports-color/8.1.1
 =======
 =======
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       merge-stream: 2.0.0
       supports-color: 8.1.1
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
@@ -38104,16 +38387,22 @@ packages:
     dependencies:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       '@types/node': registry.npmjs.org/@types/node/16.11.22
       merge-stream: registry.npmjs.org/merge-stream/2.0.0
       supports-color: registry.npmjs.org/supports-color/8.1.1
 =======
 =======
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
       '@types/node': 18.11.9
 =======
       '@types/node': 16.11.22
 >>>>>>> 078d4047 (Add slider main page)
+=======
+      '@types/node': 18.11.9
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
       merge-stream: 2.0.0
       supports-color: 8.1.1
 >>>>>>> dbfbc093 (Fix AppBridge not being able to get the token or receive handshake (#653))
@@ -39546,10 +39835,14 @@ packages:
     dev: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
   /long/4.0.0:
     resolution: {integrity: sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==}
     dev: true
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   registry.npmjs.org/loose-envify/1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz}
@@ -39557,7 +39850,11 @@ packages:
     version: 1.4.0
 =======
 =======
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
+=======
 >>>>>>> 078d4047 (Add slider main page)
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
   /loose-envify/1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
 >>>>>>> e7f3dedf (Add slider main page)
@@ -39656,6 +39953,7 @@ packages:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/lru-memoizer/2.1.4:
     resolution: {integrity: sha512-IXAq50s4qwrOBrXJklY+KhgZF+5y98PDaNo0gi/v2KQBFLyWr+JyFvijZXkGKjQj/h9c0OwoE+JZbwUXce76hQ==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/lru-memoizer/-/lru-memoizer-2.1.4.tgz}
     name: lru-memoizer
@@ -39664,17 +39962,28 @@ packages:
 =======
 =======
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
   /lru-cache/7.14.1:
     resolution: {integrity: sha512-ysxwsnTKdAx96aTRdhDOCQfDgbHnt8SK0KY8SEjO0wHinhWOFTESbjVCMPbU1uGXg/ch4lifqx0wfjOawU2+WA==}
     engines: {node: '>=12'}
     dev: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 65cb590c (Réarrangement de la page de présentation)
 =======
 =======
 >>>>>>> 078d4047 (Add slider main page)
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+>>>>>>> 078d4047 (Add slider main page)
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
   /lru-memoizer/2.1.4:
     resolution: {integrity: sha512-IXAq50s4qwrOBrXJklY+KhgZF+5y98PDaNo0gi/v2KQBFLyWr+JyFvijZXkGKjQj/h9c0OwoE+JZbwUXce76hQ==}
 >>>>>>> f5629e05 (Add slider main page)
@@ -41492,6 +41801,7 @@ packages:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/node-dir/0.1.17:
     resolution: {integrity: sha512-tmPX422rYgofd4epzrNoOXiE8XFZYOcCq1vD7MAXCDO+O+zndlA2ztdKKMa+EeuBG5tHETpr4ml4RGgpqDCCAg==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/node-dir/-/node-dir-0.1.17.tgz}
     name: node-dir
@@ -41500,6 +41810,10 @@ packages:
 =======
 =======
 >>>>>>> e7f3dedf (Add slider main page)
+=======
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
   /node-abort-controller/3.0.1:
     resolution: {integrity: sha512-/ujIVxthRs+7q6hsdjHMaj8hRG9NuWmwrz+JdRwZ14jdFoKSkm+vDsCbF9PLpnSqjaWQJuTmVtcWHNLr+vrOFw==}
     dev: true
@@ -42704,6 +43018,13 @@ packages:
   /pako/1.0.11:
     resolution: {integrity: sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==}
     dev: true
+
+  /parallax-controller/1.6.0:
+    resolution: {integrity: sha512-IVRuEMMcLtAnlthB3MJ+bzkOQWz26DESXsP3x+CBsGjIjmXxLr+l1IkR799dQETXgGBZQTUyhRUXFaThBc6+lA==}
+    engines: {node: '>=12'}
+    dependencies:
+      bezier-easing: 2.1.0
+    dev: false
 
   /parallel-transform/1.2.0:
     resolution: {integrity: sha512-P2vSmIu38uIlvdcU7fDkyrxj33gTUy/ABO5ZUbGowxNCopBq/OoD42bP4UmMrJoPyk4Uqf0mu3mtWBhHCZD8yg==}
@@ -47637,6 +47958,7 @@ packages:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   registry.npmjs.org/react-shallow-renderer/16.15.0_react@18.2.0:
     resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==, registry: https://registry.npmjs.com/, tarball: https://registry.npmjs.org/react-shallow-renderer/-/react-shallow-renderer-16.15.0.tgz}
     id: registry.npmjs.org/react-shallow-renderer/16.15.0
@@ -47647,6 +47969,22 @@ packages:
   /react-scroll-parallax/3.3.2_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-mLgcLqyFhrIp31gLjz11yYmWEwS8NJoOoCZ15ZFXPOcpPQK8R+jZfeuO59Trm9bReok/iDUyx3ZyCCZjkxj37Q==}
     engines: {node: '>=10'}
+=======
+  /react-scroll-parallax/3.3.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-mLgcLqyFhrIp31gLjz11yYmWEwS8NJoOoCZ15ZFXPOcpPQK8R+jZfeuO59Trm9bReok/iDUyx3ZyCCZjkxj37Q==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16.8.0-0 || >=17.0.1 || ^18.0.0
+      react-dom: ^16.8.0-0 || >=17.0.1 || ^18.0.0
+    dependencies:
+      parallax-controller: 1.6.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /react-shallow-renderer/16.15.0_react@18.2.0:
+    resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
+>>>>>>> e9762885 (Réarrangement de la page de présentation)
     peerDependencies:
       react: ^16.8.0-0 || >=17.0.1 || ^18.0.0
       react-dom: ^16.8.0-0 || >=17.0.1 || ^18.0.0
@@ -54171,6 +54509,9 @@ packages:
     hasBin: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
   /uuid/9.0.0:
     resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
     hasBin: true
@@ -54664,13 +55005,19 @@ packages:
     dev: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
   /whatwg-mimetype/3.0.0:
     resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}
     engines: {node: '>=12'}
     dev: true
 
+<<<<<<< HEAD
 =======
 >>>>>>> 078d4047 (Add slider main page)
+=======
+>>>>>>> c518e37d (Réarrangement de la page de présentation)
   /whatwg-url/5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
     dependencies:
