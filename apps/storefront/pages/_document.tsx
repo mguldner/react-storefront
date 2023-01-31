@@ -20,6 +20,10 @@ class MyDocument extends Document<{ lang?: string }> {
             href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;800&display=swap"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body spellCheck={false}>
           <Main />

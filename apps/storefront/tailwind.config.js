@@ -57,6 +57,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Inconsolata"],
+        display: ["Permanent Marker"],
       },
       fontWeight: {
         normal: 400,
