@@ -1,7 +1,5 @@
-import { Footer } from "../Footer";
 import { FooterSimplified } from "../FooterSimplified";
 import { Navbar } from "../Navbar";
-import { SocialBanner } from "../SocialBanner";
 
 export interface LayoutProps {
   children?: React.ReactNode;
