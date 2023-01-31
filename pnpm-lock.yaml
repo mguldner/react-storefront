@@ -266,6 +266,7 @@ importers:
       react-hook-form: 7.38.0
       react-intl: 6.2.1
       react-responsive-carousel: ^3.2.23
+      react-scroll-parallax: ^3.3.2
       react-use: 17.4.0
       tailwind-scrollbar-hide: 1.1.7
       tailwindcss: 3.2.1
@@ -300,6 +301,7 @@ importers:
       react-hook-form: 7.38.0_react@18.2.0
       react-intl: 6.2.1_uz2ogxeagc4rbieizlfzyaazee
       react-responsive-carousel: 3.2.23
+      react-scroll-parallax: 3.3.2_biqbaboplfbrettd7655fr4n2y
       react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
       tailwind-scrollbar-hide: 1.1.7
       url-join: 4.0.1
@@ -4418,7 +4420,7 @@ packages:
       '@graphql-codegen/visitor-plugin-common': 2.13.0_graphql@15.8.0
       auto-bind: 4.0.0
       graphql: 15.8.0
-      tslib: 2.4.0
+      tslib: 2.4.1
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -11433,6 +11435,10 @@ packages:
     dependencies:
       open: 7.4.2
     dev: true
+
+  /bezier-easing/2.1.0:
+    resolution: {integrity: sha512-gbIqZ/eslnUFC1tjEvtz0sgx+xTK20wDnYMIA27VA04R7w6xxXQPZDbibjA9DTWZRA2CXtwHykkVzlCaAJAZig==}
+    dev: false
 
   /bfj/7.0.2:
     resolution: {integrity: sha512-+e/UqUzwmzJamNF50tBV6tZPTORow7gQ96iFow+8b562OdMpEK0BcJEq2OSPEDmAbSMBQ7PKZ87ubFkgxpYWgw==}
@@ -20457,6 +20463,13 @@ packages:
     resolution: {integrity: sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==}
     dev: true
 
+  /parallax-controller/1.6.0:
+    resolution: {integrity: sha512-IVRuEMMcLtAnlthB3MJ+bzkOQWz26DESXsP3x+CBsGjIjmXxLr+l1IkR799dQETXgGBZQTUyhRUXFaThBc6+lA==}
+    engines: {node: '>=12'}
+    dependencies:
+      bezier-easing: 2.1.0
+    dev: false
+
   /parallel-transform/1.2.0:
     resolution: {integrity: sha512-P2vSmIu38uIlvdcU7fDkyrxj33gTUy/ABO5ZUbGowxNCopBq/OoD42bP4UmMrJoPyk4Uqf0mu3mtWBhHCZD8yg==}
     dependencies:
@@ -22863,6 +22876,18 @@ packages:
       - webpack-hot-middleware
       - webpack-plugin-serve
     dev: true
+
+  /react-scroll-parallax/3.3.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-mLgcLqyFhrIp31gLjz11yYmWEwS8NJoOoCZ15ZFXPOcpPQK8R+jZfeuO59Trm9bReok/iDUyx3ZyCCZjkxj37Q==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16.8.0-0 || >=17.0.1 || ^18.0.0
+      react-dom: ^16.8.0-0 || >=17.0.1 || ^18.0.0
+    dependencies:
+      parallax-controller: 1.6.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /react-shallow-renderer/16.15.0_react@18.2.0:
     resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}

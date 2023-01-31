@@ -74,7 +74,10 @@ export function Navbar() {
           <div className="justify-self-center col-start-2">
             <Link href={paths.$url()} passHref legacyBehavior>
               <a href="pass" className={styles.logo}>
-                <Stamp />
+                <div className="flex flex-col items-center gap-3">
+                  <p className="text-white text-6xl font-display">Psyaïeaïe Studio</p>
+                  <Stamp />
+                </div>
               </a>
             </Link>
           </div>

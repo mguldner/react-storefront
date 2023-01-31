@@ -1,5 +1,5 @@
 .navbar {
-  @apply bg-transparent text-main flex flex-col mt-6 gap-6 sticky top-0 z-50;
+  @apply bg-transparent text-main flex flex-col mt-6 gap-6 fixed top-0 z-50;
 }
 
 .inner {
