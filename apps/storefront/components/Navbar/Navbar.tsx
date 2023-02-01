@@ -22,9 +22,15 @@ export function Navbar() {
   const router = useRouter();
 
   const [isBurgerOpen, setBurgerOpen] = useState(false);
-  const { authenticated } = useAuthState();
+  const [authenticated, setAuthenticated] = useState(false);
+  const { authenticated: actuallyAuthenticated } = useAuthState();
   const { checkout } = useCheckout();
   const { currentLocale, currentChannel } = useRegions();
+
+  // Avoid hydration warning by setting authenticated state in useEffect
+  useEffect(() => {
+    setAuthenticated(actuallyAuthenticated);
+  }, [actuallyAuthenticated]);
 
   const saleorApiUrl = process.env.NEXT_PUBLIC_API_URI;
   invariant(saleorApiUrl, "Missing NEXT_PUBLIC_API_URI");
@@ -85,9 +91,9 @@ export function Navbar() {
             ) : (
               <UserMenu />
             )}
-            <Link href={externalCheckoutUrl} className="ml-2 hidden xs:flex" data-testid="cartIcon">
+            <a href={externalCheckoutUrl} className="ml-2 hidden xs:flex" data-testid="cartIcon">
               <NavIconButton isButton={false} icon="bag" aria-hidden="true" counter={counter} />
-            </Link>
+            </a>
             <Link href={paths.search.$url()} passHref legacyBehavior>
               <a href="pass" className="hidden lg:flex ml-2" data-testid="searchIcon">
                 <NavIconButton isButton={false} icon="spyglass" />
