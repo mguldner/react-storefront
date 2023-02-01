@@ -1,8 +1,8 @@
 import { ApolloQueryResult } from "@apollo/client";
-import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from "next";
+import { GetStaticPaths, GetStaticPropsContext } from "next";
 import React, { ReactElement } from "react";
 
-import { HomepageBlock, Layout } from "@/components";
+import { Layout } from "@/components";
 import { BaseSeo } from "@/components/seo/BaseSeo";
 import { HOMEPAGE_MENU } from "@/lib/const";
 import apolloClient from "@/lib/graphql";
@@ -12,6 +12,7 @@ import {
   HomepageBlocksQueryDocument,
   HomepageBlocksQueryVariables,
 } from "@/saleor/api";
+import { HomePage } from "@/components/HomePage";
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const result: ApolloQueryResult<HomepageBlocksQuery> = await apolloClient.query<
@@ -28,23 +29,14 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     revalidate: 60 * 60, // value in seconds, how often ISR will trigger on the server
   };
 };
-function Home({ menuData }: InferGetStaticPropsType<typeof getStaticProps>) {
+function Home() {
   return (
     <>
       <BaseSeo />
       <div className="py-10">
-        <header className="mb-4">
-          <div className="container" />
-        </header>
+        <header></header>
         <main>
-          <div className="container">
-            {menuData?.menu?.items?.map((m) => {
-              if (!m) {
-                return null;
-              }
-              return <HomepageBlock key={m.id} menuItem={m} />;
-            })}
-          </div>
+          <HomePage />
         </main>
       </div>
     </>

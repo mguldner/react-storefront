@@ -1,4 +1,4 @@
-import { Footer } from "../Footer";
+import { FooterSimplified } from "../FooterSimplified";
 import { Navbar } from "../Navbar";
 
 export interface LayoutProps {
@@ -8,9 +8,14 @@ export interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   return (
     <>
-      <Navbar />
-      <div className="align-middle flex flex-col flex-grow">{children}</div>
-      <Footer />
+      <div className={`bg-fixed bg-center bg-cover bg-[url('../public/image_bg.jpg')]`}>
+        <Navbar />
+        <div className="h-screen"></div>
+        <div className="bg-sky-800">
+          <div className="align-middle flex flex-col flex-grow">{children}</div>
+          <FooterSimplified />
+        </div>
+      </div>
     </>
   );
 }
