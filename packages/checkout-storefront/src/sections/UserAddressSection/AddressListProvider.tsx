@@ -14,16 +14,15 @@ import {
   AddressFormData,
   UserAddressFormData,
 } from "@/checkout-storefront/components/AddressForm/types";
-import { extractMutationErrors } from "@/checkout-storefront/lib/utils";
 import {
   getAddressInputData,
   getMatchingAddressFromList,
   getUserAddressFormDataFromAddress,
   isMatchingAddress,
 } from "@/checkout-storefront/lib/utils";
-import { ApiErrors, useAlerts } from "@/checkout-storefront/hooks";
 import { debounce } from "lodash-es";
 import { useAddressAvailability } from "@/checkout-storefront/hooks/useAddressAvailability";
+import { SubmitReturnWithErrors, useSubmit } from "@/checkout-storefront/hooks/useSubmit";
 
 interface AddressListProviderProps {
   onCheckoutAddressUpdate: (address: UserAddressFormData) => void;
@@ -32,18 +31,13 @@ interface AddressListProviderProps {
   checkAddressAvailability: boolean;
 }
 
-type SubmitReturnWithErrors = Promise<{
-  hasErrors: boolean;
-  errors: ApiErrors<AddressFormData>;
-}>;
-
 interface ContextConsumerProps {
   addressList: AddressFragment[];
   selectedAddressId: string | undefined;
   setSelectedAddressId: (id: string) => void;
-  addressUpdate: (formData: UserAddressFormData) => SubmitReturnWithErrors;
-  addressCreate: (formData: AddressFormData) => SubmitReturnWithErrors;
-  addressDelete: (id: string) => SubmitReturnWithErrors;
+  addressUpdate: (formData: UserAddressFormData) => SubmitReturnWithErrors<UserAddressFormData>;
+  addressCreate: (formData: AddressFormData) => SubmitReturnWithErrors<UserAddressFormData>;
+  addressDelete: ({ id }: { id: string }) => SubmitReturnWithErrors<{ id: string }>;
   updating: boolean;
   deleting: boolean;
   creating: boolean;
@@ -65,14 +59,12 @@ export const AddressListProvider: React.FC<PropsWithChildren<AddressListProvider
 
   const { isAvailable } = useAddressAvailability(!checkAddressAvailability);
 
-  const { showErrors } = useAlerts();
-
   const user = data?.me;
   const addresses = user?.addresses || [];
 
+  const [{ fetching: creating }, userAddressCreate] = useUserAddressCreateMutation();
   const [{ fetching: updating }, userAddressUpdate] = useUserAddressUpdateMutation();
   const [{ fetching: deleting }, userAddressDelete] = useUserAddressDeleteMutation();
-  const [{ fetching: creating }, userAddressCreate] = useUserAddressCreateMutation();
 
   const [addressList, setAddressList] = useState(addresses);
 
@@ -95,81 +87,13 @@ export const AddressListProvider: React.FC<PropsWithChildren<AddressListProvider
     [addressList, selectedAddressId]
   );
 
-  const addressUpdate = useCallback(
-    async (formData: UserAddressFormData) => {
-      const result = await userAddressUpdate({
-        address: getAddressInputData({
-          ...formData,
-        }),
-        id: formData.id,
-      });
-
-      const [hasErrors, errors] = extractMutationErrors(result);
-
-      if (hasErrors) {
-        showErrors(errors, "userAddressUpdate");
-        return { hasErrors, errors };
-      }
-
-      const updatedAddress = result?.data?.accountAddressUpdate?.address as AddressFragment;
-
-      const updatedList = addressList.map((existingAddress) =>
-        existingAddress.id === updatedAddress.id ? updatedAddress : existingAddress
-      );
-
-      setAddressList(updatedList);
-
-      if (isAvailable(updatedAddress)) {
-        setSelectedAddressId(updatedAddress.id);
-
-        handleCheckoutAddressUpdate(updatedAddress);
-      }
-
-      return { hasErrors: false, errors: [] };
-    },
-    [addressList, handleCheckoutAddressUpdate, isAvailable, showErrors, userAddressUpdate]
-  );
-
-  const addressDelete = useCallback(
-    async (id: string) => {
-      const result = await userAddressDelete({
-        id,
-      });
-
-      const [hasErrors, errors] = extractMutationErrors(result);
-
-      if (hasErrors) {
-        showErrors(errors, "userAddressDelete");
-      }
-
-      setAddressList(addressList.filter(getByUnmatchingId(id)));
-
-      if (selectedAddressId === id && addressList[0]) {
-        const newAddress = addressList[0];
-        setSelectedAddressId(newAddress.id);
-        handleCheckoutAddressUpdate(newAddress);
-      }
-
-      return { hasErrors, errors };
-    },
-    [addressList, handleCheckoutAddressUpdate, showErrors, userAddressDelete, selectedAddressId]
-  );
-
-  const addressCreate = useCallback(
-    async (formData: AddressFormData) => {
-      const result = await userAddressCreate({
-        address: getAddressInputData({
-          ...formData,
-        }),
-      });
-
-      const [hasErrors, errors] = extractMutationErrors(result);
-
-      if (hasErrors) {
-        showErrors(errors, "userAddressCreate");
-      } else {
-        const address = result?.data?.accountAddressCreate?.address as AddressFragment;
-
+  const addressCreate = useSubmit<AddressFormData, typeof userAddressCreate>({
+    scope: "userAddressCreate",
+    onSubmit: userAddressCreate,
+    formDataParse: (addressFormData) => ({ address: getAddressInputData(addressFormData) }),
+    onSuccess: (_, result) => {
+      const address = result?.data?.accountAddressCreate?.address;
+      if (address) {
         setAddressList([...addressList, address]);
 
         if (isAvailable(address)) {
@@ -177,12 +101,45 @@ export const AddressListProvider: React.FC<PropsWithChildren<AddressListProvider
           handleCheckoutAddressUpdate(address);
         }
       }
-
-      return { hasErrors, errors };
     },
-    [addressList, handleCheckoutAddressUpdate, showErrors, isAvailable, userAddressCreate]
-  );
+  });
 
+  const addressUpdate = useSubmit<UserAddressFormData, typeof userAddressUpdate>({
+    scope: "userAddressUpdate",
+    onSubmit: userAddressUpdate,
+    formDataParse: ({ id, ...address }) => ({ address: getAddressInputData(address), id }),
+    onSuccess: (_, result) => {
+      const updatedAddress = result?.data?.accountAddressUpdate?.address;
+
+      const updatedList = addressList.map((existingAddress) =>
+        existingAddress.id === updatedAddress?.id ? updatedAddress : existingAddress
+      );
+
+      setAddressList(updatedList);
+
+      if (updatedAddress && isAvailable(updatedAddress)) {
+        setSelectedAddressId(updatedAddress.id);
+        handleCheckoutAddressUpdate(updatedAddress);
+      }
+    },
+  });
+
+  const addressDelete = useSubmit<{ id: string }, typeof userAddressDelete>({
+    scope: "userAddressDelete",
+    onSubmit: userAddressDelete,
+    formDataParse: ({ id }) => ({ id }),
+    onSuccess: ({ id }) => {
+      setAddressList(addressList.filter(getByUnmatchingId(id)));
+
+      if (selectedAddressId === id && addressList[0]) {
+        const newAddress = addressList[0];
+        setSelectedAddressId(newAddress.id);
+        handleCheckoutAddressUpdate(newAddress);
+      }
+    },
+  });
+
+  // after adding formik this could be changed to useFormDebouncedSubmit?
   // because eslint is unable to read deps inside of debounce
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedUpdate = useCallback(
@@ -195,7 +152,10 @@ export const AddressListProvider: React.FC<PropsWithChildren<AddressListProvider
   const handleAddressSelect = useCallback(
     (addressId: string) => {
       setSelectedAddressId(addressId);
-      debouncedUpdate(getSelectedAddress(addressId) as AddressFragment);
+      const address = getSelectedAddress(addressId);
+      if (address) {
+        debouncedUpdate(address);
+      }
     },
     [getSelectedAddress, debouncedUpdate]
   );
