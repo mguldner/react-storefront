@@ -14,6 +14,7 @@ const apolloClient = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache({ typePolicies }),
   ssrMode: typeof window === "undefined",
+  connectToDevTools: process.env.NODE_ENV !== "production",
 });
 
 export const saleorClient = createSaleorClient({

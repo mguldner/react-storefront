@@ -12,7 +12,7 @@ export function Layout({ children }: LayoutProps) {
       <div className={`bg-fixed bg-center bg-cover bg-[url('../public/image_bg.jpg')]`}>
         <Navbar />
         <div className="h-screen"></div>
-        <div className="bg-sky-800">
+        <div className="bg-[#194452]">
           <div className="align-middle flex flex-col flex-grow">{children}</div>
           <FooterSimplified />
         </div>

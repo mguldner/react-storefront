@@ -2,8 +2,8 @@ import React from "react";
 
 export function Links() {
   return (
-    <div className="text-white text-center font-display flex flex-col gap-10">
-      <p className="text-8xl">
+    <div className="text-gray-500 text-center font-display flex flex-col gap-10">
+      <p className="text-white text-8xl">
         Tu souhaites nous contacter, voir notre activité sur les réseaux sociaux ou obtenir des
         informations sur notre société?
       </p>
@@ -14,7 +14,7 @@ export function Links() {
       <div className="grid grid-cols-3 text-4xl">
         <div className="flex flex-col gap-8">
           <div className="gap-3">
-            <p className="uppercase">{"Marine Ford"}</p>
+            <p className="uppercase text-white">Marine Ford</p>
             <p>Mieux protégé que ton compte en banque!</p>
           </div>
           <div className="gap-3">
@@ -26,7 +26,7 @@ export function Links() {
 
         <div className="flex flex-col gap-8">
           <div className="gap-3">
-            <p className="uppercase">{"La fontaine des rêves"}</p>
+            <p className="uppercase text-white">La fontaine des rêves</p>
             <p>A mi-chemin entre Skypédia et Dreamland</p>
           </div>
           <div className="gap-3">
@@ -39,7 +39,7 @@ export function Links() {
 
         <div className="flex flex-col gap-8">
           <div className="gap-3">
-            <p className="uppercase">{"L'île de Kedétrau"}</p>
+            <p className="uppercase text-white">L&apos;île de Kedétrau</p>
             <p>Rejoins notre équipage sur les réseaux en t&apos;abonnant</p>
           </div>
           <div className="gap-3">
