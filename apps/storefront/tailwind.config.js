@@ -72,6 +72,7 @@ module.exports = {
         md: ["1.6rem", "1.9rem"],
         lg: ["2.4rem", "3.2rem"],
         xl: ["3.2rem", "4.6rem"],
+        xxl: ["15rem", "13.7rem"],
       },
       borderRadius: {
         DEFAULT: "4px",
@@ -84,6 +85,156 @@ module.exports = {
       },
       borderRadius: {
         full2: "5000px",
+      },
+      keyframes: {
+        // créé via Animista
+        "text-pop-up-top": {
+          "0%": {
+            transform: "translateY(0)",
+            "transform-origin": "50% 50%",
+            "text-shadow": "0 0 #0000",
+          },
+          "100%": {
+            transform: "translateY(-50px)",
+            "transform-origin": "50% 50%",
+            "text-shadow":
+              "0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3)",
+          },
+        },
+        "text-flicker-in-glow": {
+          "0%": {
+            opacity: 0,
+          },
+          "10%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "10.1%": {
+            opacity: 1,
+            "text-shadow": "0 0 #0000",
+          },
+          "10.2%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "20%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "20.1%": {
+            opacity: 1,
+            "text-shadow": "0 0 30px rgba(255, 255, 255, 0.25)",
+          },
+          "20.6%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "30%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "30.1%": {
+            opacity: 1,
+            "text-shadow": "0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)",
+          },
+          "30.5%": {
+            opacity: 1,
+            "text-shadow": "0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)",
+          },
+          "30.6%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "45%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "45.1%": {
+            opacity: 1,
+            "text-shadow": "0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)",
+          },
+          "50%": {
+            opacity: 1,
+            "text-shadow": "0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)",
+          },
+          "55%": {
+            opacity: 1,
+            "text-shadow": "0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25)",
+          },
+          "55.1%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "57%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "57.1%": {
+            opacity: 1,
+            "text-shadow": "0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35)",
+          },
+          "60%": {
+            opacity: 1,
+            "text-shadow": "0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35)",
+          },
+          "60.1%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "65%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "65.1%": {
+            opacity: 1,
+            "text-shadow":
+              "0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1)",
+          },
+          "75%": {
+            opacity: 1,
+            "text-shadow":
+              "0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1)",
+          },
+          "75.1%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "77%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "77.1%": {
+            opacity: 1,
+            "text-shadow":
+              "0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1)",
+          },
+          "85%": {
+            opacity: 1,
+            "text-shadow":
+              "0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1)",
+          },
+          "85.1%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "86%": {
+            opacity: 0,
+            "text-shadow": "0 0 #0000",
+          },
+          "86.1%": {
+            opacity: 1,
+            "text-shadow":
+              "0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1)",
+          },
+          "100%": {
+            opacity: 1,
+            "text-shadow":
+              "0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1)",
+          },
+        },
+      },
+      animation: {
+        "text-pop-up-top-3": "text-pop-up-top 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
       },
     },
   },
