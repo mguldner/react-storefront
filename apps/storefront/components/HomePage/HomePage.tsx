@@ -2,8 +2,6 @@ import { Products } from "@/components/Products";
 import { Join } from "@/components/Join";
 import { Presentation } from "@/components/Presentation";
 import { Links } from "@/components/Links";
-import clsx from "clsx";
-import styles from "./Homepage.module.css";
 
 export function HomePage() {
   return (

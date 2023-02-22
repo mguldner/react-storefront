@@ -29,7 +29,11 @@ export function CarouselProducts({ collectionIDs }: CarouselProductsProps) {
 
       return (
         <div key={product.id} className="w-full h-20 relative">
-          {thumbnailUrl ? <Image src={thumbnailUrl} layout="fill" objectFit="contain" /> : <p></p>}
+          {thumbnailUrl ? (
+            <Image alt={product.name} src={thumbnailUrl} layout="fill" objectFit="contain" />
+          ) : (
+            <p></p>
+          )}
         </div>
       );
     });

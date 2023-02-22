@@ -15,7 +15,7 @@ export function CarouselProduct({ product }: ProductCardProps) {
     <Link href={paths.products._slug(product.slug).$url()} prefetch={false} passHref legacyBehavior>
       <a>
         {thumbnailUrl ? (
-          <Image src={thumbnailUrl} width={512} height={512} />
+          <Image alt={product.name} src={thumbnailUrl} width={512} height={512} />
         ) : (
           <p>Problème au chargement</p>
         )}
