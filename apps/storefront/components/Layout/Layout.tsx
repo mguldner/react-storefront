@@ -9,7 +9,7 @@ export function Layout({ children }: LayoutProps) {
   return (
     <>
       {/*<SocialBanner />*/}
-      <div className={`bg-fixed bg-center bg-cover bg-[url('../public/image_bg.jpg')]`}>
+      <div className="bg-fixed bg-center bg-cover bg-[url('../public/image_bg.jpg')]">
         <Navbar />
         <div className="align-middle flex flex-col flex-grow">{children}</div>
         <FooterSimplified />
